@@ -18,6 +18,8 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguageState] = useState<Language>('de');
 
+  /* Read URL/localStorage after mount to avoid an SSR hydration mismatch. */
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     // Check URL search param first, then localStorage
     const params = new URLSearchParams(window.location.search);
@@ -32,6 +34,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       setLanguageState(saved);
     }
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -53,3 +56,6 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 };
 
 export const useLanguage = () => useContext(LanguageContext);
+
+
+

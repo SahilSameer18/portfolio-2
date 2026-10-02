@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --paper: #eeeae1;
   --ink: #23231f;

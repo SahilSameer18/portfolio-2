@@ -7,7 +7,7 @@ const DUR = 0.95;
 
 /**
  * Hero opening sequence (photo reveal, then staged fade-ins). Skippable by any input.
- * Returns a cleanup that stops it without leaving the page in the intro state.
+ * Returns a cleanup that cancels this run (the intro state is left for a re-run to pick up).
  */
 export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean): () => void {
   const fig = document.querySelector('[data-motion="hero-photo"]') as HTMLElement | null;
@@ -122,5 +122,15 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
   ]);
   Promise.race([ready, new Promise((r) => setTimeout(r, 350))]).then(() => requestAnimationFrame(startIntro));
 
-  return finishIntro;
+  // Cleanup only cancels this run. It must not end the intro: React StrictMode (dev) runs the
+  // effect twice, and the second run needs the "intro" state still in place to replay it.
+  return () => {
+    over = true;
+    clearTimeout(fallback);
+    skipEvents.forEach((t) => window.removeEventListener(t, finishIntro));
+    tl?.kill();
+    tl = null;
+    skipBtn?.remove();
+    skipBtn = null;
+  };
 }

@@ -25,11 +25,11 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Anurag Maurya — Gestalter für Print- und Digitalmedien',
+  title: 'Sahil Sameer Siddique — Backend-Focused Full Stack Developer',
   description:
-    'Anurag Maurya macht eine Ausbildung im Bereich Print- und Digitalmediendesign an der Macromedia Hamburg. Entdecke Arbeiten zu Markenidentität, Editorial Design, Typografie und Geschäftsausstattung.',
+    'Backend-Focused Full Stack Developer building scalable web applications with Node.js, PostgreSQL, MongoDB, Prisma ORM, and secure APIs. Creator of PrepStack and SkillBridge AI.',
   icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232320'/%3E%3Ctext x='8' y='44' font-family='serif' font-size='36' fill='%23eee9df'%3EAM%3C/text%3E%3C/svg%3E",
+    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232320'/%3E%3Ctext x='7' y='44' font-family='serif' font-size='34' fill='%23eee9df'%3ESS%3C/text%3E%3C/svg%3E",
   },
 };
 

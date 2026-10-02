@@ -22,6 +22,8 @@ export interface Project {
   imageAlt: LocalizedString;
   tags: LocalizedStringArray;
   wide?: boolean;
+  link?: string;
+  github?: string;
 }
 
 export interface SkillCategory {

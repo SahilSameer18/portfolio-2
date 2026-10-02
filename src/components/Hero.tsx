@@ -10,13 +10,13 @@ export const Hero: React.FC = () => {
   const { personal } = portfolioData;
 
   const labels = {
-    eyebrow: language === 'de' ? 'HALLO, ICH BIN ANURAG' : "HELLO, I'M ANURAG",
+    eyebrow: language === 'de' ? 'HALLO, ICH BIN SAHIL' : "HELLO, I'M SAHIL",
     explore: language === 'de' ? 'Arbeiten entdecken' : 'Explore selected work',
     resume: language === 'de' ? 'Lebenslauf ansehen' : 'View résumé',
     edition: language === 'de' ? '01 — VORSTELLUNG' : '01 — INTRODUCTION',
     scroll: language === 'de' ? 'WEITER SCROLLEN ↓' : 'SCROLL TO EXPLORE ↓',
-    photoCaption: language === 'de' ? 'FORM. SCHRIFT. EIN NEUER BLICKWINKEL.' : 'FORM. TYPE. A FRESH PERSPECTIVE.',
-    photoAlt: language === 'de' ? 'Anurag Maurya im warmen Abendlicht im Freien' : 'Anurag Maurya outdoors in warm evening light',
+    photoCaption: language === 'de' ? 'SYSTEME. DATENBANKEN. SKALIERUNG.' : 'SYSTEMS. DATABASES. SCALE.',
+    photoAlt: language === 'de' ? 'Sahil Sameer Siddique Porträt' : 'Sahil Sameer Siddique portrait',
     portfolioYear: 'PORTFOLIO / 2026',
   };
 

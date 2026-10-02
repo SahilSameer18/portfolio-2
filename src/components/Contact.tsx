@@ -20,13 +20,13 @@ export const Contact: React.FC = () => {
   };
 
   const labels = {
-    eyebrow: language === 'de' ? '04 / INS GESPRÄCH KOMMEN' : '04 / START A CONVERSATION',
-    sub: language === 'de' ? 'FREELANCE / PRAKTIKA / ZUSAMMENARBEIT' : 'FREELANCE / INTERNSHIPS / COLLABORATION',
+    eyebrow: language === 'de' ? '04 / KONTAKT AUFNEHMEN' : '04 / GET IN TOUCH',
+    sub: language === 'de' ? 'FULL-STACK / BACKEND / SYSTEMARCHITEKTUR' : 'FULL-STACK / BACKEND / ENGINEERING',
     intro: language === 'de'
-      ? 'Kreative Projekte — in Hamburg und darüber hinaus.'
-      : 'Creative projects — based in Hamburg and working remotely.',
-    headingLine1: language === 'de' ? 'LASS UNS' : "LET'S MAKE",
-    headingLine2: language === 'de' ? 'ETWAS BEWEGEN.' : 'IT MATTER.',
+      ? 'Skalierbare Webanwendungen & moderne Software-Ökosysteme.'
+      : 'Engineering scalable web systems, high-QPS APIs & AI products.',
+    headingLine1: language === 'de' ? 'LASS UNS' : "LET'S BUILD",
+    headingLine2: language === 'de' ? 'WAS BAUEN.' : 'SOMETHING GREAT.',
     emailAria: language === 'de' ? `E-Mail an ${personal.name} ${personal.surname}` : `Email ${personal.name} ${personal.surname}`,
     copyBtn: copied
       ? (language === 'de' ? 'Kopiert ✓' : 'Copied ✓')
@@ -34,10 +34,10 @@ export const Contact: React.FC = () => {
     copyStatus: copied
       ? (language === 'de' ? 'E-Mail-Adresse kopiert.' : 'Email address copied.')
       : '',
-    location: language === 'de' ? 'Hamburg, Deutschland' : 'Hamburg, Germany',
+    location: language === 'de' ? 'Delhi, Indien' : 'Delhi, India',
     resumeLink: language === 'de' ? 'Lebenslauf ↗' : 'Résumé ↗',
     copyright: `© 2026 ${personal.name.toUpperCase()} ${personal.surname.toUpperCase()}`,
-    tagline: language === 'de' ? 'MIT BEDACHT GESTALTET. IMMER IN BEWEGUNG.' : 'THOUGHTFULLY DESIGNED. ALWAYS EVOLVING.',
+    tagline: language === 'de' ? 'PERFORMANT GEBAUT. KONTINUIERLICH WEITERENTWICKELT.' : 'SCALABLE ARCHITECTURE. CRAFTED WITH CARE.',
     backToTop: language === 'de' ? 'NACH OBEN ↑' : 'BACK TO TOP ↑',
   };
 
@@ -82,7 +82,27 @@ export const Contact: React.FC = () => {
         )}
 
         <div className="socials">
-          <span>{labels.location}</span>
+          <a
+            href="https://github.com/SahilSameer18"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+          <a
+            href="https://www.linkedin.com/in/sahil-sameer-siddique/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+          <a
+            href="https://www.instagram.com/sahilsameer18/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram ↗
+          </a>
           <a
             href={personal.resumePdf}
             target="_blank"

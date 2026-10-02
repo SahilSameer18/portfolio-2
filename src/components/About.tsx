@@ -10,15 +10,13 @@ export const About: React.FC = () => {
   const { personal, skills } = portfolioData;
 
   const labels = {
-    eyebrow: language === 'de' ? '02 / DER MENSCH HINTER DER ARBEIT' : '02 / THE PERSON BEHIND THE WORK',
-    location: language === 'de' ? 'HAMBURG, DEUTSCHLAND' : 'HAMBURG, GERMANY',
-    photoAlt: language === 'de' ? 'Porträt von Anurag Maurya' : 'Portrait of Anurag Maurya',
-    photoCaption: language === 'de'
-      ? 'ANURAG MAURYA / GESTALTER FÜR PRINT- UND DIGITALMEDIEN'
-      : 'ANURAG MAURYA / PRINT & DIGITAL MEDIA DESIGNER',
-    resumeLink: language === 'de' ? 'Mehr über mich im Lebenslauf' : 'Read more in my résumé',
-    toolkitHeadline: language === 'de' ? 'Mein Werkzeugkasten.' : 'The Toolkit.',
-    toolkitItalic: language === 'de' ? 'Immer in Bewegung.' : 'Always evolving.',
+    eyebrow: language === 'de' ? '02 / DER ENTWICKLER HINTER DEM CODE' : '02 / THE DEVELOPER BEHIND THE CODE',
+    location: personal.location[language],
+    photoAlt: `${personal.name} ${personal.surname} — ${personal.role[language]}`,
+    photoCaption: `${personal.name.toUpperCase()} ${personal.surname.toUpperCase()} / ${personal.role[language].toUpperCase()}`,
+    resumeLink: language === 'de' ? 'Lebenslauf herunterladen' : 'View full résumé',
+    toolkitHeadline: language === 'de' ? 'Mein Tech-Stack.' : 'The Core Stack.',
+    toolkitItalic: language === 'de' ? 'Skalierbar & robust.' : 'Engineered to scale.',
   };
 
   return (
@@ -40,7 +38,7 @@ export const About: React.FC = () => {
           />
           <figcaption>{labels.photoCaption}</figcaption>
           <span className="photo-mark" aria-hidden="true">
-            a.
+            s.
           </span>
         </figure>
 
@@ -65,7 +63,7 @@ export const About: React.FC = () => {
           </a>
 
           <div className="signature" aria-hidden="true">
-            {personal.name} {personal.surname.charAt(0) + personal.surname.slice(1).toLowerCase()}
+            Sahil Sameer Siddique
           </div>
         </div>
       </div>
@@ -88,4 +86,3 @@ export const About: React.FC = () => {
     </section>
   );
 };
-

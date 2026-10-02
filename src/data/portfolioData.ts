@@ -2,406 +2,350 @@ import { PortfolioData } from '../types/portfolio';
 
 export const portfolioData: PortfolioData = {
   personal: {
-    name: 'Anurag',
-    surname: 'MAURYA',
-    monogram: 'am.',
-    email: 'anuragmaurya51489@gmail.com',
+    name: 'Sahil',
+    surname: 'SAMEER',
+    monogram: 'ss.',
+    email: 'sahilsameer.dev18@gmail.com',
     location: {
-      de: 'HAMBURG, DEUTSCHLAND / DESIGN & HANDWERK',
-      en: 'HAMBURG, GERMANY / DESIGN & CRAFT'
+      de: 'DELHI, INDIEN / BACKEND & SYSTEME',
+      en: 'DELHI, INDIA / BACKEND & SYSTEMS'
     },
     role: {
-      de: 'Gestalter für Print- und Digitalmedien',
-      en: 'Print & Digital Media Designer'
+      de: 'Backend-fokussierter Full-Stack-Entwickler',
+      en: 'Backend-Focused Full Stack Developer'
     },
     subrole: {
-      de: 'MARKENIDENTITÄT / EDITORIAL / TYPOGRAFIE',
-      en: 'BRAND IDENTITY / EDITORIAL / TYPOGRAPHY'
+      de: 'NODE.JS / POSTGRESQL / MONGODB / REACT / AI',
+      en: 'NODE.JS / POSTGRESQL / MONGODB / REACT / AI'
     },
     heroHeadline: {
-      de: 'Geschichten durch Gestaltung.',
-      en: 'Stories told through design.'
+      de: 'Skalierbare Systeme bauen.',
+      en: 'Engineering scalable systems.'
     },
     heroItalic: {
-      de: 'Mit Absicht gestaltet.',
-      en: 'Formed with intent.'
+      de: 'Für maximale Performance.',
+      en: 'Built for performance.'
     },
     heroBio: {
-      de: 'Ich gestalte Print- und Digitalmedien und beschäftige mich mit Typografie, Markenidentität und Editorial Design.',
-      en: 'Crafting print and digital experiences with an editorial focus on typography, brand identity, and visual systems.'
+      de: 'Backend-fokussierter Full-Stack-Entwickler mit Leidenschaft für skalierbare Serverarchitektur, High-QPS-APIs, Datenbankoptimierung und GenAI-Pipelines.',
+      en: 'Backend-focused full stack developer architecting resilient server-side architectures, high-QPS APIs, optimized databases, and AI-driven platforms.'
     },
     availability: {
-      de: 'OFFEN FÜR NEUE PROJEKTE',
-      en: 'AVAILABLE FOR NEW WORK'
+      de: 'OFFEN FÜR PROJEKTE & POSITIONEN',
+      en: 'OPEN TO OPPORTUNITIES'
     },
     asideCopy: {
-      de: 'Von der ersten Skizze bis zur gedruckten Seite.',
-      en: 'From the initial sketch to the printed page.'
+      de: 'Vom relationalen Datenbankschema bis zum responsiven Frontend.',
+      en: 'From database schema modeling to production-grade interfaces.'
     },
     aboutHeadline: {
-      de: 'Ein Auge für Gestaltung.',
-      en: 'An eye for composition.'
+      de: 'Architektur im Fokus.',
+      en: 'Architecture first.'
     },
     aboutItalic: {
-      de: 'Ein Sinn für das Wesentliche.',
-      en: 'A focus on what matters.'
+      de: 'Präzise bis ins Detail.',
+      en: 'Driven by precision.'
     },
     aboutParagraphs: {
       de: [
-        'Ich bin Anurag und mache eine Ausbildung im Bereich Print- und Digitalmediendesign an der Macromedia Hamburg.',
-        'Meine Arbeit beginnt bei den Grundlagen: typografische Hierarchie, Proportionen und Rastersysteme. Diese Prinzipien übertrage ich auf Markenidentitäten, Editorial-Layouts und digitale Medien.',
-        'Der direkte Austausch mit Menschen prägt meine Gestaltung. Ich schätze Klarheit, handwerkliche Sorgfalt und bewusste Einfachheit — für visuelle Geschichten, die leicht zu verstehen sind.'
+        'Ich bin Sahil Sameer Siddique, ein Full-Stack-Entwickler mit starkem Fokus auf Backend-Engineering, relationale Datenbanken und performante API-Architekturen.',
+        'Mein Schwerpunkt liegt auf der Entwicklung robuster REST-Microservices, sub-40ms Datenbankabfragen via Compound Indexing, Replay-sicheren JWT-Dual-Token-Systemen und typsicheren GenAI-Pipelines mit Zod.',
+        'Während mein Herz für verteilte Backend-Systeme und Datenbankoptimierung schlägt, verbinde ich diese Zuverlässigkeit mit schnellen, hochgradig reaktiven React- und Next.js-Oberflächen für ein nahtloses Nutzererlebnis.'
       ],
       en: [
-        "I'm Anurag, currently completing my apprenticeship in Print & Digital Media Design at Macromedia Hamburg.",
-        'My work starts with fundamentals: typographic hierarchy, proportional balance, and modular grid systems. I translate these principles across brand identities, editorial spreads, and digital media.',
-        'Direct dialogue with collaborators shapes everything I design. I value clarity, precision, and restrained simplicity — making visual stories that are intuitive and impactful.'
+        "I'm Sahil Sameer Siddique, a full-stack software engineer specializing in backend architecture, database indexing, and high-performance API design.",
+        'My core focus centers on architecting resilient microservices, achieving sub-40ms database query times via compound indexing, implementing replay-proof dual-token authentication, and building deterministic GenAI pipelines with Zod schema validation.',
+        'While my passion lies in backend systems and database engineering, I pair this structural rigor with modern, highly responsive React and Next.js interfaces to deliver complete, production-grade web applications.'
       ]
     },
-    resumePdf: '/assets/anurag-maurya-resume.pdf',
-    portraitPhoto: '/assets/anurag-portrait.jpg',
-    outdoorPhoto: '/assets/anurag-outdoors.jpg'
+    resumePdf: '/assets/sameer-resume.pdf',
+    portraitPhoto: '/assets/sahil-portrait.jpg',
+    outdoorPhoto: '/assets/sahil-portrait.jpg'
   },
   projects: [
     {
-      id: 'hmc-media',
+      id: 'prepstack',
       number: '01',
       kicker: {
-        de: '01 / HAMBURG MESSE + CONGRESS / MEDIEN',
-        en: '01 / HAMBURG MESSE + CONGRESS / MEDIA'
+        de: '01 / INTERVIEW-ÖKOSYSTEM & GENAI',
+        en: '01 / SDE INTERVIEW ECOSYSTEM'
       },
       badge: {
-        de: 'Portfolio-Studie',
-        en: 'Portfolio study'
+        de: 'React 19 · Express 5 · Gemini AI',
+        en: 'React 19 · Express 5 · Gemini AI'
       },
       title: {
-        de: 'Hamburg Messe + Congress — Medienkonzepte',
-        en: 'Hamburg Messe + Congress — Media Concepts'
+        de: 'PrepStack — SDE Vorbereitungs-Plattform',
+        en: 'PrepStack — SDE Interview Ecosystem'
       },
       subtitle: {
-        de: 'Visuelle Recherche für Medien und Events',
-        en: 'Visual research for media and live events'
+        de: 'Zentrales DSA-Tracking & KI-Projektgenerator',
+        en: 'Centralized DSA tracking & AI project blueprint generator'
       },
       description: {
-        de: 'Eine visuelle Recherchetafel, die Print, Social Media, Eventidentität und neue Technologien für Hamburg Messe + Congress zusammenführt.',
-        en: 'A curated visual research board bridging print collateral, social media touchpoints, event branding, and emerging technologies for Hamburg Messe + Congress.'
+        de: 'Eine Full-Stack-Plattform zur Software-Interview-Vorbereitung. Vereint Gemini-gestützte Projektgenerierung mit Zod-Schemas, asynchrones DSA-Tracking über kuratierte Sheets und Single-Roundtrip-Dashboard-Aggregation unter 40ms.',
+        en: 'A full-stack interview preparation ecosystem unifying Gemini AI project generation, asynchronous DSA progress tracking across industry sheets, and sub-40ms single-roundtrip dashboard aggregation.'
       },
-      image: '/assets/hmc-media-board.png',
+      image: '/assets/prepstack.png',
       imageAlt: {
-        de: 'Collage aus Print, digitalen Medien, Technologie und Motiven von Hamburg Messe + Congress',
-        en: 'Collage of print, digital media, technology, and branding motifs for Hamburg Messe + Congress'
+        de: 'PrepStack Webanwendung Vorschau',
+        en: 'PrepStack SDE Interview Ecosystem dashboard preview'
       },
       tags: {
-        de: ['Visuelle Recherche', 'Eventmedien', 'Moodboard'],
-        en: ['Visual Research', 'Event Media', 'Moodboard']
+        de: ['React 19', 'Express 5', 'MongoDB', 'Zod', 'Gemini AI', 'JWT'],
+        en: ['React 19', 'Express 5', 'MongoDB', 'Zod', 'Gemini AI', 'JWT']
       },
-      wide: true
+      wide: true,
+      link: 'https://prepstack-ss.vercel.app/',
+      github: 'https://github.com/SahilSameer18/prepstack'
     },
     {
-      id: 'hmc-design',
+      id: 'skillbridge-ai',
       number: '02',
       kicker: {
-        de: '02 / HAMBURG MESSE + CONGRESS / GESTALTUNG',
-        en: '02 / HAMBURG MESSE + CONGRESS / DESIGN'
+        de: '02 / KI-KARRIERE- & LEBENSLAUF-ANALYSE',
+        en: '02 / AI CAREER & RESUME ANALYZER'
       },
       badge: {
-        de: 'Portfolio-Studie',
-        en: 'Portfolio study'
+        de: 'PostgreSQL · Neon · Prisma · Redis',
+        en: 'PostgreSQL · Neon · Prisma · Redis'
       },
       title: {
-        de: 'Hamburg Messe + Congress — Gestaltungskonzepte',
-        en: 'Hamburg Messe + Congress — Design Concepts'
+        de: 'SkillBridge AI — Diagnose-Engine',
+        en: 'SkillBridge AI — Career Diagnostic Engine'
       },
       subtitle: {
-        de: 'Recherche zu Design und Kommunikation',
-        en: 'Design systems and communication research'
+        de: 'Deterministische Skill-Gap-Erkennung & Scoring',
+        en: 'Deterministic skill gap resolution & readiness scoring'
       },
       description: {
-        de: 'Eine zweite Erkundung von Gestaltungs- und Kommunikationsrichtungen, die Grafikdesign, digitale Oberflächen und Social-Media-Referenzen verbindet.',
-        en: 'An in-depth study of visual identity directions, harmonizing print layout, responsive digital surfaces, and social campaigns.'
+        de: 'Verwandelt Lebensläufe und Jobbeschreibungen in strukturierte KI-Bereitschaftsberichte. Mit Word-Boundary-Regex gegen False Positives, Redis-Cloud-Fail-Open-Caching und Compound-Index-Optimierung auf PostgreSQL.',
+        en: 'Transforms resumes and job descriptions into structured AI readiness reports with word-boundary regex skill gap resolution, Redis fail-open caching, and compound-indexed PostgreSQL queries.'
       },
-      image: '/assets/hmc-design-board.png',
+      image: '/assets/skillbridgeAI.png',
       imageAlt: {
-        de: 'Collage zu Gestaltungsprozess, Social Media und Markenbild von Hamburg Messe + Congress',
-        en: 'Collage exploring design process, social media, and brand presentation'
+        de: 'SkillBridge AI Analysebericht Vorschau',
+        en: 'SkillBridge AI Career Diagnostic Engine preview'
       },
       tags: {
-        de: ['Visuelle Recherche', 'Digitales Design', 'Moodboard'],
-        en: ['Visual Research', 'Digital Design', 'Moodboard']
-      }
+        de: ['PostgreSQL', 'Neon', 'Prisma ORM', 'Redis Cloud', 'Gemini AI', 'Express 5'],
+        en: ['PostgreSQL', 'Neon', 'Prisma ORM', 'Redis Cloud', 'Gemini AI', 'Express 5']
+      },
+      link: 'https://skillbridgeai-s.vercel.app/',
+      github: 'https://github.com/SahilSameer18/skillbridgeAI'
     },
     {
-      id: 'lumiere',
+      id: 'safar-ai',
       number: '03',
       kicker: {
-        de: '03 / GASTRONOMIE / WEBKONZEPT',
-        en: '03 / HOSPITALITY / WEB CONCEPT'
+        de: '03 / ANGEWANDTE KI & REISEPLANUNG',
+        en: '03 / APPLIED AI & SCHEDULING'
       },
       badge: {
-        de: 'Portfolio-Studie',
-        en: 'Portfolio study'
+        de: 'Firebase · Gemini API · React',
+        en: 'Firebase · Gemini API · React'
       },
       title: {
-        de: 'Lumiere — Restaurant-Website',
-        en: 'Lumiere — Restaurant Website'
+        de: 'SafarAI — Kontextbasierter Reiseplaner',
+        en: 'SafarAI — Context-Aware Travel Planner'
       },
       subtitle: {
-        de: 'Konzept für eine Restaurant-Startseite',
-        en: 'Atmospheric landing page for fine dining'
+        de: 'KI-gestützte Tagesrouten nach Budget & Vorlieben',
+        en: 'AI-powered personalized day-by-day travel itinerary scheduler'
       },
       description: {
-        de: 'Ein Konzept für eine Restaurant-Startseite mit atmosphärischer Fotografie, eleganter Serifentypografie und klaren Wegen zur Speisekarte und Reservierung.',
-        en: 'A digital experience pairing moody dining-room photography with refined serif typography and intuitive booking flows.'
+        de: 'Ein intelligenter Routenplaner, der Reiseziele, Budgets und Zeitpläne in minutenschnelle, praxiserprobte Reisepläne verwandelt. Mit strukturierter Schema-Generierung und Firestore-Cloud-Synchronisierung.',
+        en: 'A context-aware day-by-day travel itinerary scheduler adjusting to user budget, timing constraints, and regional interests with schema-enforced Gemini JSON outputs and Firestore sync.'
       },
-      image: '/assets/lumiere-website.jpg',
+      image: '/assets/safar.png',
       imageAlt: {
-        de: 'Lumiere-Restaurantseite mit dunkler Fotografie des Gastraums und eleganter Überschrift',
-        en: 'Lumiere restaurant homepage with atmospheric interior photography and serif headline'
+        de: 'SafarAI Reiseplaner Vorschau',
+        en: 'SafarAI Travel Planner application preview'
       },
       tags: {
-        de: ['Webdesign', 'Art Direction', 'Typografie'],
-        en: ['Web Design', 'Art Direction', 'Typography']
-      }
+        de: ['React', 'Node.js', 'Firebase', 'Gemini API', 'Tailwind CSS'],
+        en: ['React', 'Node.js', 'Firebase', 'Gemini API', 'Tailwind CSS']
+      },
+      link: 'https://www.safarai.in/',
+      github: 'https://github.com/SahilSameer18'
     },
     {
-      id: 'cafe-farol',
+      id: 'task-zen',
       number: '04',
       kicker: {
-        de: '04 / GASTRONOMIE / WEBKONZEPT',
-        en: '04 / HOSPITALITY / WEB CONCEPT'
+        de: '04 / ECHTZEIT-KOLLABORATION',
+        en: '04 / REAL-TIME COLLABORATION'
       },
       badge: {
-        de: 'Portfolio-Studie',
-        en: 'Portfolio study'
+        de: 'Next.js · Socket.IO · MongoDB',
+        en: 'Next.js · Socket.IO · MongoDB'
       },
       title: {
-        de: 'Café Farol — Website',
-        en: 'Café Farol — Website'
+        de: 'Task Zen — Kollaboratives Aufgabenmanagement',
+        en: 'Task Zen — Collaborative Workflow Manager'
       },
       subtitle: {
-        de: 'Konzept für eine Café-Startseite',
-        en: 'Warm editorial concept for an artisan coffee bar'
+        de: 'Echtzeit-Synchronisierung für Entwicklerteams',
+        en: 'Low-latency collaborative task boards with instant sync'
       },
       description: {
-        de: 'Ein Konzept für eine Café-Startseite mit warmer Innenraumfotografie, prägnanter Editorial-Typografie und einer einladenden Einführung.',
-        en: 'A warm, welcoming café homepage combining cozy natural light photography with bespoke typographic framing.'
+        de: 'Kollaborative Aufgabenverwaltung mit Live-Socket-Events, optimistischen UI-Aktualisierungen und organisierten Team-Workflows zur Reduzierung von Reibungspunkten im Sprint.',
+        en: 'Collaborative task management platform featuring WebSocket event streaming, optimistic client-side updates, and team collaboration workflows with real-time updates.'
       },
-      image: '/assets/cafe-farol-website.jpg',
+      image: '/assets/task-zen.jpeg',
       imageAlt: {
-        de: 'Café-Farol-Startseite mit Innenraumfotografie, großer Überschrift und Navigation',
-        en: 'Café Farol homepage layout with warm café interior photography'
+        de: 'Task Zen Vorschau',
+        en: 'Task Zen collaborative task management preview'
       },
       tags: {
-        de: ['Webdesign', 'Art Direction', 'Typografie'],
-        en: ['Web Design', 'Art Direction', 'Typography']
-      }
+        de: ['Next.js', 'MongoDB', 'Socket.IO', 'Node.js'],
+        en: ['Next.js', 'MongoDB', 'Socket.IO', 'Node.js']
+      },
+      link: 'https://github.com/SahilSameer18',
+      github: 'https://github.com/SahilSameer18'
     },
     {
-      id: 'medientage',
+      id: 'ai-agent',
       number: '05',
       kicker: {
-        de: '05 / EDITORIAL / PRINT',
-        en: '05 / EDITORIAL / PRINT'
+        de: '05 / AUTOMATISIERUNG & LLM-PIPELINES',
+        en: '05 / AUTOMATION & LLM PIPELINES'
       },
       badge: {
-        de: 'Studienkonzept · Macromedia · 2026',
-        en: 'Academic Concept · Macromedia · 2026'
+        de: 'Hugging Face · Node.js · Express',
+        en: 'Hugging Face · Node.js · Express'
       },
       title: {
-        de: 'Medientage Hamburg 2026',
-        en: 'Medientage Hamburg 2026'
+        de: 'AI Social Agent — Content-Automatisierung',
+        en: 'AI Social Agent — Content Engine'
       },
       subtitle: {
-        de: 'Publikations- und Veranstaltungskonzept',
-        en: 'Publication and media convention identity'
+        de: 'Autonome Generierung & Publishing-Pipelines',
+        en: 'Autonomous social media content generation and scheduling agent'
       },
       description: {
-        de: 'Ein Konzept für Veranstaltungsidentität und Editorial-Publikation zu den Hamburger Medientagen. Im Mittelpunkt stehen modulare Raster und kontrastreiche Typografie.',
-        en: 'A comprehensive brand identity and editorial publication concept for Hamburg Media Days, rooted in high-contrast Swiss-style grid systems.'
+        de: 'KI-gestützte Content-Erstellung, Planungs- und Interaktions-Pipeline für Social-Media-Kanäle mit asynchronen Warteschlangen und strukturierter API-Anbindung.',
+        en: 'AI-powered content creation, scheduling, and engagement engine combining LLMs with automated publishing queues to schedule and optimize social campaigns.'
       },
-      image: '/assets/anurag-medientage.png',
+      image: '/assets/ai-agent.webp',
       imageAlt: {
-        de: 'Gestaltungsstudie zu Medientage Hamburg 2026 von Anurag Maurya',
-        en: 'Design study for Medientage Hamburg 2026 by Anurag Maurya'
+        de: 'AI Social Agent Vorschau',
+        en: 'AI Social Media Agent preview'
       },
       tags: {
-        de: ['Adobe InDesign', 'Editorial-Layout', 'Typografie'],
-        en: ['Adobe InDesign', 'Editorial Layout', 'Typography']
-      }
-    },
-    {
-      id: 'safarai-logo',
-      number: '06',
-      kicker: {
-        de: '06 / MARKENIDENTITÄT',
-        en: '06 / BRAND IDENTITY'
+        de: ['React', 'Node.js', 'Hugging Face', 'Express'],
+        en: ['React', 'Node.js', 'Hugging Face', 'Express']
       },
-      badge: {
-        de: 'Eigenständige Studie · Macromedia · 2026',
-        en: 'Independent Study · Macromedia · 2026'
-      },
-      title: {
-        de: 'Safarai — Bildmarke',
-        en: 'Safarai — Logomark'
-      },
-      subtitle: {
-        de: 'Vektorzeichen und Identitätsstudie',
-        en: 'Geometric vector mark and symbol system'
-      },
-      description: {
-        de: 'Eine geometrische Bildmarke, die organische Bewegung, präzise Kurven und zeitgemäßen Minimalismus verbindet.',
-        en: 'A geometric logomark uniting fluid organic curves, mathematical precision, and contemporary editorial minimalism.'
-      },
-      image: '/assets/anurag-logo.png',
-      imageAlt: {
-        de: 'Studie zur Safarai-Bildmarke von Anurag Maurya',
-        en: 'Vector logo mark study for Safarai by Anurag Maurya'
-      },
-      tags: {
-        de: ['Adobe Illustrator', 'Vektorkonstruktion', 'Identität'],
-        en: ['Adobe Illustrator', 'Vector Geometry', 'Identity']
-      }
-    },
-    {
-      id: 'safarai-stationery',
-      number: '07',
-      kicker: {
-        de: '07 / PRINT & GESCHÄFTSAUSSTATTUNG',
-        en: '07 / PRINT & STATIONERY'
-      },
-      badge: {
-        de: 'Eigenständige Studie · Macromedia · 2026',
-        en: 'Independent Study · Macromedia · 2026'
-      },
-      title: {
-        de: 'Safarai — Geschäftsausstattung',
-        en: 'Safarai — Corporate Stationery'
-      },
-      subtitle: {
-        de: 'Visitenkarten-Layout und Mock-up',
-        en: 'Business collateral & tactile card mockups'
-      },
-      description: {
-        de: 'Eine Studie zur Geschäftsausstattung mit dunklen, kontrastreichen Karton-Mock-ups und verfeinerter Serifentypografie.',
-        en: 'A tactile corporate identity study featuring dark matte stock mockups, subtle debossing effects, and tailored typography.'
-      },
-      image: '/assets/anurag-stationery.png',
-      imageAlt: {
-        de: 'Studie zur Safarai-Geschäftsausstattung von Anurag Maurya',
-        en: 'Corporate stationery mockup for Safarai by Anurag Maurya'
-      },
-      tags: {
-        de: ['Adobe InDesign', 'Adobe Photoshop', 'Print-Layout'],
-        en: ['Adobe InDesign', 'Adobe Photoshop', 'Print Layout']
-      }
+      link: 'https://github.com/SahilSameer18',
+      github: 'https://github.com/SahilSameer18'
     }
   ],
   skills: [
     {
       number: '01',
       title: {
-        de: 'Gestaltungsbereiche',
-        en: 'Core Disciplines'
+        de: 'Backend & Systemarchitektur',
+        en: 'Backend & Systems Architecture'
       },
       content: {
-        de: 'Marken- und visuelle Identität · Editorial-Layouts · Typografie · Rastersysteme · Print-Grundlagen · Digitale Mock-ups',
-        en: 'Brand & Visual Identity · Editorial Design · Typographic Systems · Modular Grids · Pre-press Fundamentals · Digital Interfaces'
+        de: 'Node.js · Express 5 · PostgreSQL (Neon) · MongoDB (Mongoose) · Prisma ORM · Redis Cloud · REST APIs · JWT Auth & Token Rotation · Zod Validation · WebSockets (Socket.IO)',
+        en: 'Node.js · Express 5 · PostgreSQL (Neon) · MongoDB (Mongoose) · Prisma ORM · Redis Cloud · REST APIs · Dual-Token Auth · Zod Validation · WebSockets (Socket.IO)'
       }
     },
     {
       number: '02',
       title: {
-        de: 'Software & Werkzeuge',
-        en: 'Software & Tools'
+        de: 'Frontend & UI-Entwicklung',
+        en: 'Frontend & User Interfaces'
       },
       content: {
-        de: 'Adobe InDesign · Adobe Illustrator · Adobe Photoshop · HTML & CSS · Figma',
-        en: 'Adobe InDesign · Adobe Illustrator · Adobe Photoshop · HTML5 & CSS3 · Figma'
+        de: 'React 19 · Next.js · TypeScript · JavaScript (ES6+) · Tailwind CSS · HTML5 & Modern CSS · GSAP Animations · Responsive & Mobile-First Design · State Management',
+        en: 'React 19 · Next.js · TypeScript · JavaScript (ES6+) · Tailwind CSS · HTML5 & CSS3 · GSAP Motion · Responsive Mobile-First Design · State Management'
       }
     },
     {
       number: '03',
       title: {
-        de: 'Sprachen',
-        en: 'Languages'
+        de: 'KI-Integration & DevOps-Werkzeuge',
+        en: 'AI Integration & DevOps'
       },
       content: {
-        de: 'Deutsch — fließend · Englisch, Hindi & Punjabi — Muttersprachen',
-        en: 'German — Fluent · English, Hindi & Punjabi — Native / Bilingual'
+        de: 'Gemini AI SDK · Hugging Face · Docker · Git & GitHub · Postman · Vercel · Render · Linux Shell · Performance-Monitoring & Caching-Strategien',
+        en: 'Gemini AI SDK · Hugging Face · Docker · Git & GitHub · Postman · Vercel · Render · Linux Shell · Performance Monitoring & Caching Strategies'
       }
     }
   ],
   experience: [
     {
       meta: {
-        de: 'DESIGNAUSBILDUNG · HAMBURG',
-        en: 'APPRENTICESHIP · HAMBURG'
+        de: 'STUDIUM · 2021 – 2025',
+        en: 'DEGREE · 2021 – 2025'
       },
       title: {
-        de: 'Print- und Digitalmediendesign',
-        en: 'Print & Digital Media Design'
+        de: 'B.Tech in Computer Science & Engineering',
+        en: 'B.Tech in Computer Science & Engineering'
       },
       organization: {
-        de: 'Macromedia Hamburg',
-        en: 'Macromedia Hamburg'
+        de: 'International Institute of Technology and Management, Sonipat',
+        en: 'International Institute of Technology and Management, Sonipat'
       },
       description: {
-        de: 'Ausbildung in Publikationsgestaltung, Typografie, visueller Identität und Druckvorstufe — auf klassischen Gestaltungsprinzipien aufgebaut und in digitale Medien übertragen.',
-        en: 'Professional training in editorial publishing, typography, visual identity, and print production — applying classic Bauhaus/Swiss design tenets to modern screens and print.'
+        de: 'Fundierte Ausbildung in Datenstrukturen & Algorithmen, relationalen & NoSQL-Datenbanksystemen, Betriebssystemen und modernen verteilten Webanwendungen.',
+        en: 'Comprehensive education in Data Structures & Algorithms, Relational & NoSQL Database Management, Operating Systems, and Distributed Web Engineering.'
       }
     },
     {
       meta: {
-        de: 'STUDIUM & EIGENE PROJEKTE',
-        en: 'STUDIES & INDEPENDENT PROJECTS'
+        de: 'FULL-STACK-PROJEKTE & ARCHITEKTUR',
+        en: 'FULL-STACK SYSTEMS'
       },
       title: {
-        de: 'Vom Konzept zum visuellen System',
-        en: 'From Concept to Unified Visual Systems'
+        de: 'Entwicklung produktionsreifer Plattformen',
+        en: 'Architecting Production Platforms'
       },
       organization: {
-        de: 'Identität, Editorial & Geschäftsausstattung',
-        en: 'Identity, Editorial & Corporate Systems'
+        de: 'PrepStack & SkillBridge AI',
+        en: 'PrepStack & SkillBridge AI'
       },
       description: {
-        de: 'Ich entwickle Vektorzeichen in Illustrator, Publikationslayouts in InDesign und digitale Mock-ups in Photoshop. Dabei untersuche ich, wie einheitliche Raster Logo, Visitenkarte und Druckseite verbinden.',
-        en: 'Crafting precision vectors in Illustrator, multi-page grids in InDesign, and photorealistic mockups in Photoshop with consistent proportional cohesion.'
+        de: 'Konzeption und Bau von Web-Ökosystemen mit sub-40ms Latenz, deterministischer Zod-Validierung für Gemini-KI, PostgreSQL-Compound-Indexing und ausfallsicherem Redis-Caching.',
+        en: 'Engineered complete production web platforms with sub-40ms aggregated response times, deterministic Zod-enforced GenAI pipelines, and fail-open Redis caching.'
       }
     },
     {
       meta: {
-        de: 'GESTALTUNGSGRUNDLAGEN',
-        en: 'DESIGN FOUNDATIONS'
+        de: 'SYSTEMDESIGN & DATENBANKEN',
+        en: 'SYSTEMS & SECURITY'
       },
       title: {
-        de: 'Details, die den Unterschied machen',
-        en: 'Craftsmanship & Production Rigor'
+        de: 'High-QPS-APIs & Sicherheitsstandards',
+        en: 'High-QPS APIs & Database Engineering'
       },
       organization: {
-        de: 'Schrift, Proportion & Produktion',
-        en: 'Type Hierarchy, Proportion & Pre-press'
+        de: 'Zero-Collscan Queries & Token-Rotation',
+        en: 'Zero-Collscan Queries & Token Rotation'
       },
       description: {
-        de: 'Schriftkombinationen, optischer Ausgleich, modulare Raster, Bildaufbereitung mit 300 DPI, Beschnitt, Ränder und druckfertige PDFs.',
-        en: 'Optical kerning, modular type scales, CMYK ink limits, 300 DPI image processing, bleed setup, and press-ready PDF standards.'
+        de: 'Implementierung von 100% index-abgedeckten Datenbankabfragen, Replay-Schutz durch Refresh-Token-Rotation, Zod-Validierungs-Middleware und Cache-Aside-Mustern.',
+        en: 'Designed compound-indexed schemas, replay attack defense with refresh token rotation, structured Zod validation middleware, and cache-aside patterns.'
       }
     },
     {
       meta: {
-        de: 'PORTFOLIO-PRAXIS',
-        en: 'APPLIED PRACTICE'
+        de: 'SCHULISCHE AUSBILDUNG · 2018 – 2020',
+        en: 'FOUNDATIONS · 2018 – 2020'
       },
       title: {
-        de: 'Eventmedien und Webkonzepte für die Gastronomie',
-        en: 'Event Media & Hospitality Digital Concepts'
+        de: 'Senior Secondary (Class XII - Science)',
+        en: 'Senior Secondary (Class XII - Science)'
       },
       organization: {
-        de: 'Visuelle Recherche und Webdesign',
-        en: 'Visual Research & Digital Navigation'
+        de: 'Dr Zakir Hussain High School, Patna',
+        en: 'Dr Zakir Hussain High School, Patna'
       },
       description: {
-        de: 'Visuelle Konzepttafeln für Hamburg Messe + Congress sowie Startseitenkonzepte für das Restaurant Lumiere und das Café Farol. Diese Studien verbinden Editorial-Typografie, Bildsprache und klare digitale Navigation.',
-        en: 'Exhibition and media concept boards for Hamburg Messe + Congress alongside web studies for Lumiere and Café Farol, uniting editorial typography with seamless user flows.'
+        de: 'Vertiefte Schwerpunkte in Mathematik, Physik und Chemie als mathematische und analytische Grundlage für algorithmische Problemlösungen.',
+        en: 'Rigorous foundation in Mathematics, Physics, and Chemistry, cultivating strong analytical and algorithmic problem-solving capabilities.'
       }
     }
   ]

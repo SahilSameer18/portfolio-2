@@ -1,19 +1,20 @@
-# Anurag Maurya — Portfolio
+# Sahil Sameer Siddique — Portfolio
 
-Portfolio for Anurag Maurya, Print and Digital Media Designer (Macromedia Hamburg).
+Portfolio for Sahil Sameer Siddique, Backend-Focused Full Stack Web Developer & Software Engineer.
 
 ## Features
 
-- **Multi-language Support**: German (DE) and English (EN) toggle with full localized copy.
-- **Fluid Motion & Scroll**: Integrated Lenis smooth scrolling, GSAP ScrollTrigger, SplitText, and pointer spring physics.
-- **Projects Showcase**: 
-  - Hamburg Messe + Congress (Medienkonzepte & Gestaltungskonzepte)
-  - Lumiere (Restaurant Website Concept)
-  - Café Farol (Website Concept)
-  - Medientage Hamburg 2026 (Publication & Event Concept)
-  - Safarai (Brand Identity & Stationery)
-- **Responsive Layout**: Mobile-first responsive grid, custom typography (`Barlow Condensed`, `DM Sans`, `Italiana`).
-- **Accessible Interactions**: Floating dock navigation, copy-email feedback, screen-reader optimizations.
+- **Next.js & TypeScript Architecture**: High-performance App Router with server-rendered markup and client-side hydration.
+- **Editorial Design & Motion**: Fluid Lenis smooth scrolling, GSAP ScrollTrigger timeline choreography, custom split-text typography animations, and cursor physics.
+- **Multi-language Support**: German (DE) and English (EN) toggle with comprehensive localized copy.
+- **Featured Projects**:
+  - **PrepStack** — Full-stack developer interview preparation ecosystem with simulated coding assessments and analytics.
+  - **SkillBridge AI** — Intelligent career diagnostic engine evaluating skills and mapping personalized learning pathways.
+  - **SafarAI** — AI-powered intelligent travel itinerary and trip planning platform.
+  - **Task Zen** — Collaborative workspace with real-time kanban boards, task dependencies, and sprint tracking.
+  - **AI Social Agent** — Autonomous social media intelligence engine generating optimized content schedules.
+- **Responsive Layout**: Mobile-first responsive design, custom typographic styling (`Barlow Condensed`, `DM Sans`, `Italiana`).
+- **Interactive Details**: Floating dock navigation, quick-copy email toast feedback, project live/code links, and integrated PDF résumé viewer.
 
 ## Run Locally
 
@@ -22,16 +23,11 @@ npm install
 npm run dev
 ```
 
-Then open [http://localhost:4173](http://localhost:4173).
+Open [http://localhost:3000](http://localhost:3000) with your browser.
 
-## Project Structure
+## Build for Production
 
-- `dist/index.html` — Main HTML structure
-- `dist/style.css` — Core design system & layout styles
-- `dist/selected-work.css` — Project gallery styles
-- `dist/motion.css` — Motion system styles
-- `dist/i18n.css` & `dist/i18n.js` — Language switching system (DE/EN)
-- `dist/motion.js` — GSAP + Lenis scroll and animations
-- `dist/script.js` — Interactive UI elements (e.g. copy email)
-- `dist/vendor/` — Vendor scripts (GSAP, Lenis, ScrollTrigger, SplitText)
-- `dist/assets/` — Images, project mockups, and résumé PDF
+```bash
+npm run build
+npm run start
+```

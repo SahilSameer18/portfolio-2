@@ -11,8 +11,6 @@ Portfolio for Sahil Sameer Siddique, Backend-Focused Full Stack Web Developer & 
   - **PrepStack** — Full-stack developer interview preparation ecosystem with simulated coding assessments and analytics.
   - **SkillBridge AI** — Intelligent career diagnostic engine evaluating skills and mapping personalized learning pathways.
   - **SafarAI** — AI-powered intelligent travel itinerary and trip planning platform.
-  - **Task Zen** — Collaborative workspace with real-time kanban boards, task dependencies, and sprint tracking.
-  - **AI Social Agent** — Autonomous social media intelligence engine generating optimized content schedules.
 - **Responsive Layout**: Mobile-first responsive design, custom typographic styling (`Barlow Condensed`, `DM Sans`, `Italiana`).
 - **Interactive Details**: Floating dock navigation, quick-copy email toast feedback, project live/code links, and integrated PDF résumé viewer.
 

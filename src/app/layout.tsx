@@ -46,6 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
+      suppressHydrationWarning
       className={`${barlowCondensed.variable} ${italiana.variable} ${dmSans.variable}`}
     >
       <head>

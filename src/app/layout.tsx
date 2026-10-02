@@ -5,21 +5,21 @@ import './globals.css';
 const barlowCondensed = Barlow_Condensed({
   weight: ['600', '700', '800'],
   subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--nf-display',
   display: 'swap',
 });
 
 const italiana = Italiana({
   weight: ['400'],
   subsets: ['latin'],
-  variable: '--font-serif',
+  variable: '--nf-serif',
   display: 'swap',
 });
 
 const dmSans = DM_Sans({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--nf-sans',
   display: 'swap',
 });
 
@@ -62,13 +62,6 @@ export default function RootLayout({
             `,
           }}
         />
-        <style dangerouslySetInnerHTML={{ __html: `
-          :root {
-            --display: var(--font-display), 'Arial Narrow', sans-serif;
-            --serif: var(--font-serif), Georgia, serif;
-            --sans: var(--font-sans), Arial, sans-serif;
-          }
-        ` }} />
       </head>
       <body>
         {children}

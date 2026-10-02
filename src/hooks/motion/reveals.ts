@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { m } from './selector';
 
 type RiseOpts = { duration?: number; delay?: number; stagger?: number; filter?: string };
 
@@ -60,24 +61,26 @@ export function createReveals() {
 
 /** Registers every section's reveal animation. */
 export function registerSectionReveals({ rise, wipe }: Pick<ReturnType<typeof createReveals>, 'rise' | 'wipe'>) {
-  wipe('.about-photo img');
-  rise('.about-copy');
-  rise('.expertise h3', { filter: 'blur(6px)' });
-  rise('.skill-row');
-  rise('.experience h2', { filter: 'blur(6px)' });
-  rise('.timeline article');
-  rise('.contact-main > p');
-  rise('.contact-main h2', { filter: 'blur(6px)' });
+  wipe(m('about-image'));
+  rise(m('about-copy'));
+  rise(m('expertise-title'), { filter: 'blur(6px)' });
+  rise(m('skill-row'));
+  rise(m('experience-title'), { filter: 'blur(6px)' });
+  rise(m('timeline-item'));
+  rise(m('contact-lead'));
+  rise(m('contact-title'), { filter: 'blur(6px)' });
 
-  rise('.work .section-heading h2 .r-line, .work .section-heading h2 > span', { filter: 'blur(6px)' });
-  rise('.work-intro');
-  document.querySelectorAll('.project').forEach((p) => {
-    rise(
-      [p.querySelector('.project-kicker'), p.querySelector('.project-image')].filter(Boolean) as HTMLElement[],
-      { stagger: 0.06 }
-    );
-    rise(Array.from(p.querySelectorAll('.project-heading, .project-description, .tags')) as HTMLElement[], {
-      stagger: 0,
+  rise(m('work-title-line'), { filter: 'blur(6px)' });
+  rise(m('work-intro'));
+  document.querySelectorAll(m('project')).forEach((p) => {
+    rise([p.querySelector(m('project-kicker')), p.querySelector(m('project-image'))].filter(Boolean) as HTMLElement[], {
+      stagger: 0.06,
     });
+    rise(
+      Array.from(
+        p.querySelectorAll(['project-heading', 'project-description', 'project-tags'].map(m).join(', '))
+      ) as HTMLElement[],
+      { stagger: 0 }
+    );
   });
 }

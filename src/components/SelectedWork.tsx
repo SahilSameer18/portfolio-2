@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
 
+const imageBackground = ['bg-[#c5c6b8]', 'bg-[#cec3b9]', 'bg-[#bdbfc3]'];
+
 export const SelectedWork: React.FC = () => {
   const { projects, personal } = portfolioData;
 
@@ -26,57 +28,83 @@ export const SelectedWork: React.FC = () => {
   };
 
   return (
-    <section className="work dark" id="work" aria-label={labels.sectionAria}>
-      <div className="section-top">
-        <span className="eyebrow">{labels.eyebrow}</span>
-        <span>{labels.category}</span>
+    <section
+      className="dark bg-[#191a17] pb-20 pl-[6%] pr-[6%] pt-16 text-paper desk:pl-[max(6%,108px)]"
+      data-motion="dark"
+      id="work"
+      aria-label={labels.sectionAria}
+    >
+      <div className="flex justify-between gap-6 border-b border-[#45463f] pb-6 text-[12px] tracking-[1.4px] phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+        <span className="text-[12px] font-medium tracking-[1.6px] text-[#d7a68f]">{labels.eyebrow}</span>
+        <span className="text-[#b7b3a8] phone:hidden">{labels.category}</span>
       </div>
 
-      <div className="section-heading">
-        <h2>
-          <span className="r-line">{labels.headingLine1}</span>
+      <div className="mb-16 mt-14 grid grid-cols-[1.8fr_1fr] items-end justify-between gap-[6%] phone:my-[35px] phone:block">
+        <h2 className="m-0 font-display text-[length:clamp(76px,10.8vw,174px)] font-bold leading-[.86] tracking-[-.025em] phone:text-[length:clamp(45px,16vw,76px)]">
+          <span className="inline-flex items-start text-[#d7a68f]" data-motion="work-title-line">
+            {labels.headingLine1}
+          </span>
           <br />
-          <span>
+          <span className="inline-flex items-start text-[#d7a68f]" data-motion="work-title-line">
             {labels.headingLine2}
-            <span className="work-count" aria-label={labels.workCountAria}>
+            <span
+              className="ml-5 mt-3 font-serif text-[24px] font-normal leading-[1.2] tracking-[0] text-paper"
+              aria-label={labels.workCountAria}
+            >
               ({countStr})
             </span>
           </span>
         </h2>
-        <div className="work-intro">
-          <span className="work-note">{labels.workNote}</span>
-          <p>{labels.workIntro}</p>
+        <div className="max-w-[330px] pb-1 [justify-self:end] phone:mt-8" data-motion="work-intro">
+          <span className="font-serif text-[32px] font-normal leading-[1.15] text-paper">{labels.workNote}</span>
+          <p className="mb-[22px] mt-[18px] text-[16px] leading-[1.7] text-[#babbb1]">{labels.workIntro}</p>
           <a
+            className="link-underline nudge-ne flex justify-between border-b border-[#77776b] py-3.5 text-[14px]"
             href={personal.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {labels.resumeLink} <span aria-hidden="true">↗</span>
+            {labels.resumeLink} <span className="text-[20px]" aria-hidden="true">↗</span>
           </a>
         </div>
       </div>
 
-      <div className="project-grid">
-        {projects.map((project) => {
+      <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-9 gap-y-16 phone:block">
+        {projects.map((project, idx) => {
           const targetUrl = project.link || project.github;
+          const wide = !!project.wide;
           return (
             <article
               key={project.id}
-              className={`project ${project.wide ? 'project-wide' : ''}`}
+              className={`m-0 min-w-0 p-0 phone:mb-[45px] ${
+                wide ? 'col-[1/-1] grid grid-cols-[1.2fr_1fr] gap-x-[8%] gap-y-0 tablet:block' : ''
+              }`}
+              data-motion="project"
             >
-              <div className="project-kicker">
-                <span>{project.kicker}</span>
+              <div
+                className={`flex justify-between gap-5 pb-[17px] text-[12px] leading-[1.5] tracking-[1.3px] text-[#c6c5ba] ${
+                  wide ? 'col-[1/-1]' : ''
+                }`}
+                data-motion="project-kicker"
+              >
+                <span className="text-[#d7a68f]">{project.kicker}</span>
                 <span>{project.badge}</span>
               </div>
 
               <a
-                className="project-image"
+                className={`group relative isolate block overflow-hidden border border-[#dfdbd0] ${
+                  imageBackground[idx] ?? imageBackground[0]
+                } ${
+                  wide ? 'col-[1/-1] row-auto aspect-[2.15] px-[8%] py-[3.5%]' : 'aspect-[1.4] p-[7%]'
+                } phone:aspect-[1.28] phone:p-[6%]`}
+                data-motion="project-image"
                 href={targetUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${labels.openProject} - ${project.title}`}
               >
                 <Image
+                  className="h-full w-full object-contain [box-shadow:0_16px_40px_#191a1726] [transition:transform_.35s_ease] group-hover:[transform:translateY(-4px)_scale(1.015)]"
                   src={project.image}
                   alt={project.imageAlt}
                   width={1200}
@@ -84,16 +112,34 @@ export const SelectedWork: React.FC = () => {
                   loading="lazy"
                   style={{ width: '100%', height: 'auto', display: 'block' }}
                 />
-                <span className="project-open">{labels.openProject}</span>
+                <span className="absolute bottom-[18px] right-[18px] border border-[#ffffff2b] bg-[#1e211d] px-[18px] py-3.5 text-[12px] tracking-[1px] text-[#f4eee3] [transition:background_.2s,color_.2s] group-hover:bg-paper group-hover:text-ink phone:bottom-3 phone:right-3 phone:p-3">
+                  {labels.openProject}
+                </span>
               </a>
 
-              <div className="project-heading">
-                <span className="project-number">{project.number}</span>
-                <div>
-                  <h3>{project.title}</h3>
-                  <p>{project.subtitle}</p>
+              <div
+                className={`flex items-center gap-[15px] ${
+                  wide ? '[align-self:start] pt-7' : 'pt-[25px]'
+                } phone:gap-3.5 phone:pt-5`}
+                data-motion="project-heading"
+              >
+                <span className="[align-self:start] pt-[7px] font-serif text-[20px] font-normal leading-[normal] text-[#d7a68f]">
+                  {project.number}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h3
+                    className={`mb-2.5 font-display font-semibold leading-none tracking-[0] [overflow-wrap:anywhere] phone:text-[28px] ${
+                      wide
+                        ? 'text-[length:clamp(48px,5.2vw,76px)]'
+                        : 'text-[length:clamp(28px,3vw,44px)]'
+                    }`}
+                  >
+                    {project.title}
+                  </h3>
+                  <p className="text-[14px] leading-[1.5] text-[#babbb1]">{project.subtitle}</p>
                 </div>
                 <a
+                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-[#d7a68f] hover:text-[#191a17]"
                   href={targetUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -103,18 +149,30 @@ export const SelectedWork: React.FC = () => {
                 </a>
               </div>
 
-              <p className="project-description">{project.description}</p>
+              <p
+                className={`max-w-full text-[16px] leading-[1.7] text-[#bcbeb3] ${
+                  wide ? 'col-start-2 mt-7' : 'mt-[22px]'
+                }`}
+                data-motion="project-description"
+              >
+                {project.description}
+              </p>
 
-              <div className="tags">
-                {project.tags.map((tag, idx) => (
-                  <span key={idx}>{tag}</span>
+              <div
+                className={`mt-[19px] flex flex-wrap gap-2 [align-self:start] ${wide ? 'col-start-2' : ''}`}
+                data-motion="project-tags"
+              >
+                {project.tags.map((tag, i) => (
+                  <span key={i} className="border border-[#484b40] px-2.5 py-[7px] text-[12px] text-[#d1d1c6]">
+                    {tag}
+                  </span>
                 ))}
                 {project.github && project.link && (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2.5 py-[7px] text-xs underline"
+                    className="px-2.5 py-[7px] text-[12px] underline"
                   >
                     {labels.openGithub}
                   </a>
@@ -125,8 +183,11 @@ export const SelectedWork: React.FC = () => {
         })}
       </div>
 
-      <a className="all-work" href={`mailto:${personal.email}`}>
-        {labels.ctaPrompt} <span>{labels.ctaAction}</span>
+      <a
+        className="mt-14 flex items-center justify-between border-t border-[#45463f] pt-6 text-[16px] phone:mt-[15px] phone:gap-5 phone:text-[14px] phone:leading-[1.7]"
+        href={`mailto:${personal.email}`}
+      >
+        {labels.ctaPrompt} <span className="font-serif text-[26px] font-normal leading-[normal]">{labels.ctaAction}</span>
       </a>
     </section>
   );

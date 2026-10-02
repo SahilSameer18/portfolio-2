@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
 
+const meta = 'text-[12px] font-medium tracking-[1.6px]';
+
 export const About: React.FC = () => {
   const { personal, skills } = portfolioData;
 
@@ -18,15 +20,20 @@ export const About: React.FC = () => {
   };
 
   return (
-    <section className="about" id="about">
-      <div className="section-top">
-        <span className="eyebrow">{labels.eyebrow}</span>
-        <span>{labels.location}</span>
+    <section
+      className="pb-20 pl-[6%] pr-[6%] pt-16 desk:pl-[max(6%,108px)] phone:pb-[50px] phone:pt-10"
+      id="about"
+    >
+      <div className="flex justify-between gap-6 border-b border-line pb-6 text-[12px] tracking-[1.4px] phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+        <span className={`${meta} text-accent phone:text-[12px]`}>{labels.eyebrow}</span>
+        <span className="text-muted phone:hidden">{labels.location}</span>
       </div>
 
-      <div className="about-grid">
-        <figure className="about-photo">
+      <div className="mb-[85px] mt-[70px] grid grid-cols-[.9fr_1.2fr] items-center gap-[12%] tablet:gap-[7%] phone:mb-[50px] phone:mt-10 phone:flex phone:flex-col phone:gap-[38px]">
+        <figure className="relative m-0 phone:w-[90%] phone:[align-self:start]">
           <Image
+            data-motion="about-image"
+            className="object-cover object-[center_30%] [filter:grayscale(1)]"
             src={personal.portraitPhoto}
             alt={labels.photoAlt}
             width={1402}
@@ -35,25 +42,37 @@ export const About: React.FC = () => {
             loading="lazy"
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
-          <figcaption>{labels.photoCaption}</figcaption>
-          <span className="photo-mark" aria-hidden="true">
+          <figcaption className={`${meta} pt-3.5 text-muted`}>{labels.photoCaption}</figcaption>
+          <span
+            className="absolute bottom-2.5 right-[-30px] font-serif text-[150px] font-normal leading-[normal] text-accent"
+            aria-hidden="true"
+          >
             s.
           </span>
         </figure>
 
-        <div className="about-copy">
-          <h2>
+        <div data-motion="about-copy">
+          <h2 className="m-0 mb-8 font-serif text-[length:clamp(38px,4vw,62px)] font-normal leading-[1.05] phone:text-[43px]">
             {personal.aboutHeadline}
             <br />
-            <em>{personal.aboutItalic}</em>
+            <em className="not-italic text-[#a2654f]">{personal.aboutItalic}</em>
           </h2>
 
           {personal.aboutParagraphs.map((paragraph, idx) => (
-            <p key={idx}>{paragraph}</p>
+            <p
+              key={idx}
+              className={
+                idx === 0
+                  ? 'max-w-[560px] text-[20px] leading-[1.6] text-ink phone:text-[18px]'
+                  : 'max-w-[560px] text-muted'
+              }
+            >
+              {paragraph}
+            </p>
           ))}
 
           <a
-            className="line-link"
+            className="link-underline nudge-se mt-5 flex max-w-[320px] justify-between border-b border-ink py-4 text-[14px] phone:mt-2.5"
             href={personal.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
@@ -61,24 +80,34 @@ export const About: React.FC = () => {
             {labels.resumeLink} <span>↗</span>
           </a>
 
-          <div className="signature" aria-hidden="true">
+          <div
+            className="mt-10 text-[36px] italic leading-[normal] tracking-[-2px] [font-family:Georgia,serif]"
+            aria-hidden="true"
+          >
             Sahil Sameer Siddique
           </div>
         </div>
       </div>
 
-      <div className="expertise">
-        <h3>
+      <div className="grid grid-cols-[1fr_2fr] gap-x-[10%] tablet:gap-x-[5%] phone:block">
+        <h3
+          className="my-5 font-serif text-[40px] font-normal leading-[1.12] [grid-row:1/4] phone:mb-8 phone:mt-0 phone:text-[36px]"
+          data-motion="expertise-title"
+        >
           {labels.toolkitHeadline}
           <br />
-          <em>{labels.toolkitItalic}</em>
+          <em className="not-italic text-[#a2654f]">{labels.toolkitItalic}</em>
         </h3>
 
         {skills.map((skill) => (
-          <div key={skill.number} className="skill-row">
-            <span>{skill.number}</span>
-            <h4>{skill.title}</h4>
-            <p>{skill.content}</p>
+          <div
+            key={skill.number}
+            className="grid grid-cols-[30px_1fr] gap-x-[18px] gap-y-0 border-t border-line py-[22px]"
+            data-motion="skill-row"
+          >
+            <span className="pt-[5px] text-[12px] text-accent">{skill.number}</span>
+            <h4 className="m-0 text-[19px] font-medium">{skill.title}</h4>
+            <p className="col-start-2 mb-0 mt-2.5 text-[14px] text-muted">{skill.content}</p>
           </div>
         ))}
       </div>

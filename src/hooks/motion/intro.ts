@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import type Lenis from 'lenis';
+import { m } from './selector';
 
 const HOLD = 0.2;
 const DUR = 0.95;
@@ -9,7 +10,7 @@ const DUR = 0.95;
  * Returns a cleanup that stops it without leaving the page in the intro state.
  */
 export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean): () => void {
-  const fig = document.querySelector('.hero-photo') as HTMLElement | null;
+  const fig = document.querySelector('[data-motion="hero-photo"]') as HTMLElement | null;
   const heroImg = fig?.querySelector('img') as HTMLImageElement | null;
   const runIntro = isMotionOk && root.classList.contains('intro') && fig && heroImg && window.scrollY === 0;
 
@@ -41,7 +42,7 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
       tl = null;
     }
     gsap.set([fig, heroImg], { clearProps: 'all' });
-    gsap.set('.dock', { clearProps: 'transform' });
+    gsap.set(m('dock'), { clearProps: 'transform' });
     introDone();
     skipBtn?.remove();
     skipBtn = null;
@@ -88,19 +89,19 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
     tl.call(() => root.classList.remove('intro-lift'), [], settle);
 
     const stage: [string, number][] = [
-      ['.dock', 0],
-      ['.hero-top', 0.05],
-      ['#hero-title', 0.11],
-      ['.hero-intro', 0.19],
-      ['.hero-aside', 0.25],
-      ['.hero-photo figcaption', 0.25],
-      ['.hero-bottom', 0.31],
-      ['.surname', 0.38],
+      ['dock', 0],
+      ['hero-top', 0.05],
+      ['hero-title', 0.11],
+      ['hero-intro', 0.19],
+      ['hero-aside', 0.25],
+      ['hero-caption', 0.25],
+      ['hero-bottom', 0.31],
+      ['hero-surname', 0.38],
     ];
     stage.forEach(([sel, d]) => {
-      const el = document.querySelector(sel);
+      const el = document.querySelector(m(sel));
       if (!el) return;
-      const to = sel === '.dock' ? { opacity: 1 } : { opacity: 1, y: 0 };
+      const to = sel === 'dock' ? { opacity: 1 } : { opacity: 1, y: 0 };
       tl?.to(el, { ...to, duration: 0.55, ease: 'power2.out' }, settle + d);
     });
 

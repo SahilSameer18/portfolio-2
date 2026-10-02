@@ -4,6 +4,8 @@ import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
 
+const meta = 'text-[12px] font-medium tracking-[1.6px]';
+
 export const Hero: React.FC = () => {
   const { personal } = portfolioData;
 
@@ -19,32 +21,52 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="hero" id="home" aria-labelledby="hero-title">
-      <div className="hero-top">
+    <section
+      className="m-auto max-w-[1800px] pb-0 pl-[4%] pr-[4%] pt-7 desk:pl-[max(4%,108px)] phone:px-[6%] phone:pt-[22px]"
+      id="home"
+      aria-labelledby="hero-title"
+    >
+      <div
+        className={`${meta} flex justify-between phone:gap-4 phone:pt-[38px] phone:text-[11px]`}
+        data-motion="hero-top"
+      >
         <span>{personal.location}</span>
-        <span>{labels.portfolioYear}</span>
+        <span className="phone:whitespace-nowrap">{labels.portfolioYear}</span>
       </div>
 
-      <h1 id="hero-title">
+      <h1
+        id="hero-title"
+        className="-mx-[1%] mb-0 mt-6 text-center font-display text-[length:clamp(90px,21.7vw,360px)] font-extrabold leading-[.9] tracking-[-.02em] phone:mx-0 phone:mt-[25px] phone:text-[22vw]"
+        data-motion="hero-title"
+      >
         {personal.name.toUpperCase()}
         <span className="sr-only"> {personal.surname} — {personal.role}</span>
       </h1>
 
-      <div className="hero-stage">
-        <div className="hero-intro">
-          <span className="eyebrow">{labels.eyebrow}</span>
-          <h2>
+      <div className="relative mt-[-58px] grid min-h-[610px] grid-cols-[1fr_1.4fr_.75fr] items-center gap-[5%] wide:min-h-[730px] tablet:mt-[-25px] tablet:min-h-[570px] tablet:grid-cols-[1fr_1.25fr] tablet:gap-[6%] phone:mt-[-9px] phone:flex phone:min-h-0 phone:flex-col phone:items-stretch phone:gap-0">
+        <div
+          className="z-[2] pb-[115px] tablet:pb-[70px] phone:order-1 phone:pb-[30px] phone:pt-[35px]"
+          data-motion="hero-intro"
+        >
+          <span className={`${meta} text-accent phone:text-[11px]`}>{labels.eyebrow}</span>
+          <h2 className="my-6 font-serif text-[length:clamp(26px,2.8vw,46px)] font-normal leading-[1.15] phone:my-4 phone:text-[38px]">
             {personal.heroHeadline}
             <br />
-            <em>{personal.heroItalic}</em>
+            <em className="not-italic text-accent">{personal.heroItalic}</em>
           </h2>
-          <p>{personal.heroBio}</p>
-          <a className="line-link" href="#work">
+          <p className="max-w-[285px] text-[16px] text-muted phone:max-w-full">{personal.heroBio}</p>
+          <a
+            className="link-underline nudge-se mt-5 flex max-w-[230px] justify-between border-b border-ink py-4 text-[14px] phone:mt-2.5 phone:max-w-full"
+            href="#work"
+          >
             {labels.explore} <span>↘</span>
           </a>
         </div>
 
-        <figure className="hero-photo">
+        <figure
+          className="relative z-1 m-0 h-[570px] w-full [align-self:start] wide:h-[680px] tablet:h-[500px] phone:order-0 phone:ml-auto phone:h-[460px] phone:w-[84%]"
+          data-motion="hero-photo"
+        >
           <Image
             src={personal.outdoorPhoto}
             alt={labels.photoAlt}
@@ -52,33 +74,49 @@ export const Hero: React.FC = () => {
             height={1184}
             sizes="(max-width: 900px) 90vw, 40vw"
             priority
-            className="hero-image"
+            className="h-full w-full object-cover object-[center_38%] [filter:saturate(.65)]"
           />
-          <figcaption>{labels.photoCaption}</figcaption>
+          <figcaption
+            className={`${meta} absolute left-[18px] top-[18px] text-white [text-shadow:0_1px_3px_rgba(0,0,0,.85),0_0_14px_rgba(0,0,0,.6)] [writing-mode:vertical-rl] phone:text-[11px]`}
+            data-motion="hero-caption"
+          >
+            {labels.photoCaption}
+          </figcaption>
         </figure>
 
-        <div className="hero-aside">
-          <span className="availability">{personal.availability}</span>
-          <p>{personal.asideCopy}</p>
+        <div className="relative z-3 [align-self:start] pt-[155px] tablet:hidden" data-motion="hero-aside">
+          <span className="inline-block border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent">
+            {personal.availability}
+          </span>
+          <p className="my-6 text-[14px] text-muted">{personal.asideCopy}</p>
           <a
             href={personal.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="resume"
+            className="link-underline nudge-ne inline-flex gap-8 border-b border-line py-3.5 text-[14px]"
           >
             {labels.resume} <span>↗</span>
           </a>
-          <span className="edition">{labels.edition}</span>
+          <span className={`${meta} mt-[70px] block text-muted`}>{labels.edition}</span>
         </div>
 
-        <div className="surname" aria-hidden="true">
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-[7px] z-[2] text-center font-display text-[length:clamp(90px,20vw,325px)] font-extrabold leading-none tracking-[.025em] text-ink [-webkit-text-stroke:3px_var(--color-paper)] [paint-order:stroke_fill] [text-shadow:0_2px_8px_#eeeae140] tablet:bottom-[25px] tablet:text-[20vw] phone:-inset-x-[3%] phone:bottom-auto phone:top-[370px] phone:text-[21vw]"
+          data-motion="hero-surname"
+          aria-hidden="true"
+        >
           {personal.surname}
         </div>
       </div>
 
-      <div className="hero-bottom">
+      <div
+        className={`${meta} flex justify-between border-t border-line pb-7 pt-6 phone:gap-[15px] phone:text-[11px]`}
+        data-motion="hero-bottom"
+      >
         <span>{personal.subrole}</span>
-        <a href="#work">{labels.scroll}</a>
+        <a className="-mt-[9px] py-[9px]" href="#work">
+          {labels.scroll}
+        </a>
       </div>
     </section>
   );

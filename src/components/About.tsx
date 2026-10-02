@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
 
-const meta = 'text-[12px] font-medium tracking-[1.6px]';
+const meta = 'text-[12px] font-medium tracking-label';
 
 export const About: React.FC = () => {
   const { personal } = portfolioData;
@@ -19,10 +19,10 @@ export const About: React.FC = () => {
 
   return (
     <section
-      className="pb-20 pl-[6%] pr-[6%] pt-16 desk:pl-[max(6%,108px)] phone:pb-[50px] phone:pt-10"
+      className="pb-20 pl-[6%] pr-[6%] pt-16 desk:pb-28 desk:pl-[max(6%,108px)] desk:pt-24 phone:pb-[50px] phone:pt-10"
       id="about"
     >
-      <div className="flex justify-between gap-6 border-b border-line pb-6 text-[12px] tracking-[1.4px] phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+      <div className="flex justify-between gap-6 border-b border-line pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
         <span className={`${meta} text-accent phone:text-[12px]`}>{labels.eyebrow}</span>
         <span className="text-muted phone:hidden">{labels.location}</span>
       </div>
@@ -33,9 +33,9 @@ export const About: React.FC = () => {
             data-motion="about-image"
             src={personal.aboutPhoto}
             alt={labels.photoAlt}
-            width={864}
-            height={1184}
+            className="border border-ink/10"
             sizes="(max-width: 900px) 90vw, 45vw"
+            placeholder="blur"
             loading="lazy"
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />

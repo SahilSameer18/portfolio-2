@@ -15,6 +15,11 @@ export default function Home() {
 
   return (
     <>
+      <div
+        className="pointer-events-none fixed inset-x-0 top-0 z-[70] h-0.5 origin-left bg-paper mix-blend-difference [transform:scaleX(0)]"
+        data-motion="progress"
+        aria-hidden="true"
+      />
       <Navigation />
       <main id="main">
         <Hero />

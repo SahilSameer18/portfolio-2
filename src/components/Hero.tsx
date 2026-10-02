@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
 
-const meta = 'text-[12px] font-medium tracking-[1.6px]';
+const meta = 'text-[12px] font-medium tracking-label';
 
 export const Hero: React.FC = () => {
   const { personal } = portfolioData;
@@ -70,11 +70,10 @@ export const Hero: React.FC = () => {
           <Image
             src={personal.heroPhoto}
             alt={labels.photoAlt}
-            width={1402}
-            height={1122}
             sizes="(max-width: 900px) 90vw, 40vw"
+            placeholder="blur"
             priority
-            className="h-full w-full object-cover object-[center_38%] [transition:filter_.6s_ease] group-hover:[filter:grayscale(1)]"
+            className="h-full w-full object-cover object-[center_38%] [transition:filter_.6s_var(--ease-expo)] group-hover:[filter:grayscale(1)]"
           />
           <figcaption
             className={`${meta} absolute left-[18px] top-[18px] text-white [text-shadow:0_1px_3px_rgba(0,0,0,.85),0_0_14px_rgba(0,0,0,.6)] [writing-mode:vertical-rl] phone:text-[11px]`}

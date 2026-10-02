@@ -15,11 +15,11 @@ export const Education: React.FC = () => {
 
   return (
     <section
-      className="bg-[#e3dfd5] pb-20 pl-[6%] pr-[6%] pt-16 desk:pl-[max(6%,108px)] phone:pb-[50px] phone:pt-10"
+      className="bg-[#e3dfd5] bg-[image:var(--grain)] pb-20 pl-[6%] pr-[6%] pt-16 desk:pb-28 desk:pl-[max(6%,108px)] desk:pt-24 phone:pb-[50px] phone:pt-10"
       id="education"
     >
-      <div className="flex justify-between gap-6 border-b border-line pb-6 text-[12px] tracking-[1.4px] phone:items-start phone:text-[11px] phone:tracking-[.7px]">
-        <span className="text-[12px] font-medium tracking-[1.6px] text-accent phone:text-[12px]">{labels.eyebrow}</span>
+      <div className="flex justify-between gap-6 border-b border-line pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+        <span className="text-[12px] font-medium tracking-label text-accent phone:text-[12px]">{labels.eyebrow}</span>
         <span className="text-muted phone:hidden">{labels.tagline}</span>
       </div>
 

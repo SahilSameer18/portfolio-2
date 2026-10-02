@@ -1,4 +1,9 @@
 import { PortfolioData } from '../types/portfolio';
+import heroPhoto from '../../public/assets/sahil-outdoor.webp';
+import aboutPhoto from '../../public/assets/sahil-portrait.jpg';
+import prepstackImage from '../../public/assets/prepstack.png';
+import skillbridgeImage from '../../public/assets/skillbridgeAI.png';
+import vaultdriveImage from '../../public/assets/vaultdrive.png';
 
 export const portfolioData: PortfolioData = {
   personal: {
@@ -22,8 +27,8 @@ export const portfolioData: PortfolioData = {
         'While my passion lies in backend systems and database engineering, I pair this structural rigor with modern, highly responsive React and Next.js interfaces to deliver complete, production-grade web applications.'
       ],
     resumePdf: '/assets/sameer-resume.pdf',
-    heroPhoto: '/assets/sahil-outdoor.webp',
-    aboutPhoto: '/assets/sahil-portrait.jpg'
+    heroPhoto,
+    aboutPhoto
   },
   projects: [
     {
@@ -34,7 +39,7 @@ export const portfolioData: PortfolioData = {
       title: 'PrepStack — SDE Interview Ecosystem',
       subtitle: 'Centralized DSA tracking & AI project blueprint generator',
       description: 'A full-stack interview preparation ecosystem unifying Gemini AI project generation, asynchronous DSA progress tracking across industry sheets, and sub-40ms single-roundtrip dashboard aggregation.',
-      image: '/assets/prepstack.png',
+      image: prepstackImage,
       imageAlt: 'PrepStack SDE Interview Ecosystem dashboard preview',
       metrics: [
         { value: '−31%', label: 'initial bundle size via route-based code splitting' },
@@ -53,7 +58,7 @@ export const portfolioData: PortfolioData = {
       title: 'SkillBridge AI — Career Diagnostic Engine',
       subtitle: 'Deterministic skill gap resolution & readiness scoring',
       description: 'Transforms resumes and job descriptions into structured AI readiness reports with word-boundary regex skill gap resolution, Redis fail-open caching, and compound-indexed PostgreSQL queries.',
-      image: '/assets/skillbridgeAI.png',
+      image: skillbridgeImage,
       imageAlt: 'SkillBridge AI Career Diagnostic Engine preview',
       tags: ['PostgreSQL', 'Neon', 'Prisma ORM', 'Redis Cloud', 'Gemini AI', 'Express 5'],
       link: 'https://skillbridgeai-s.vercel.app/',
@@ -67,7 +72,7 @@ export const portfolioData: PortfolioData = {
       title: 'VaultDrive — Cloud Asset & Storage Platform',
       subtitle: 'Direct-to-cloud uploads, nested folders and secure file sharing',
       description: 'A cloud storage platform with a zero-memory, direct-to-cloud upload pipeline, nested folder trees with cycle guards, soft-delete trash recovery, and user-to-user or public-link sharing with instant access revocation, secured by JWT token rotation and Google OAuth 2.0.',
-      image: '/assets/vaultdrive.png',
+      image: vaultdriveImage,
       imageAlt: 'VaultDrive cloud storage workspace preview',
       metrics: [
         { value: '100MB', label: 'files uploaded direct-to-cloud with zero server memory' },

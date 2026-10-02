@@ -34,12 +34,12 @@ export const Contact: React.FC = () => {
 
   return (
     <section
-      className="dark bg-ink pb-0 pl-[6%] pr-[6%] pt-16 text-paper desk:pl-[max(6%,108px)] tablet:pb-20 phone:pt-10"
+      className="dark dark-depth bg-ink pb-0 pl-[6%] pr-[6%] pt-16 text-paper desk:pl-[max(6%,108px)] desk:pt-24 tablet:pb-20 phone:pt-10"
       data-motion="dark"
       id="contact"
     >
-      <div className="flex justify-between gap-6 border-b border-[#494943] pb-6 text-[12px] tracking-[1.4px] phone:items-start phone:text-[11px] phone:tracking-[.7px]">
-        <span className="text-[12px] font-medium tracking-[1.6px] text-[#c9a493]">{labels.eyebrow}</span>
+      <div className="flex justify-between gap-6 border-b border-[#494943] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+        <span className="text-[12px] font-medium tracking-label text-[#c9a493]">{labels.eyebrow}</span>
         <span className="text-[#b7b3a8] phone:hidden">{labels.sub}</span>
       </div>
 

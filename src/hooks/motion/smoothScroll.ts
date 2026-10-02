@@ -2,10 +2,12 @@ import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/** Lenis smooth scroll driven by the GSAP ticker; hash links are routed through it. */
-export function initSmoothScroll() {
+/** Lenis smooth scroll driven by the GSAP ticker; hash links are routed through it.
+ *  With smooth=false (reduced motion) wheel scrolling stays native and anchor jumps are instant. */
+export function initSmoothScroll(smooth = true) {
   const lenis = new Lenis({
     autoRaf: false,
+    smoothWheel: smooth,
     duration: 1.05,
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   });
@@ -24,7 +26,7 @@ export function initSmoothScroll() {
     const element = document.querySelector(href);
     if (element) {
       e.preventDefault();
-      lenis.scrollTo(element as HTMLElement, { offset: -24 });
+      lenis.scrollTo(element as HTMLElement, { offset: -24, immediate: !smooth });
     }
   };
   document.addEventListener('click', onAnchorClick);

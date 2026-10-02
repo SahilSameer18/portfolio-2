@@ -64,8 +64,8 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
     const x1 = r.left + (r.width - iw * sf) * 0.5;
     const y1 = r.top + (r.height - ih * sf) * 0.38;
 
-    const FACE = 0.24;
-    const AIM = 0.32;
+    const FACE = 0.34;
+    const AIM = 0.36;
     const zoom = vw < 700 ? 1.45 : 1;
     const s0 = Math.max(vw / iw, vh / ih) * zoom;
     const x0 = (vw - iw * s0) * 0.5;

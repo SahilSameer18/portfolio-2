@@ -1,3 +1,5 @@
+import type { StaticImageData } from 'next/image';
+
 export interface Project {
   id: string;
   number: string;
@@ -6,7 +8,7 @@ export interface Project {
   title: string;
   subtitle: string;
   description: string;
-  image: string;
+  image: StaticImageData;
   imageAlt: string;
   metrics?: { value: string; label: string }[];
   tags: string[];
@@ -54,8 +56,8 @@ export interface PortfolioData {
     aboutItalic: string;
     aboutParagraphs: string[];
     resumePdf: string;
-    heroPhoto: string;
-    aboutPhoto: string;
+    heroPhoto: StaticImageData;
+    aboutPhoto: StaticImageData;
   };
   projects: Project[];
   skills: SkillCategory[];

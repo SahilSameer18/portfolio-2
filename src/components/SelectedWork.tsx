@@ -4,8 +4,6 @@ import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
 
-const imageBackground = ['bg-[#c5c6b8]', 'bg-[#cec3b9]', 'bg-[#bdbfc3]'];
-
 export const SelectedWork: React.FC = () => {
   const { projects, personal } = portfolioData;
 
@@ -29,13 +27,13 @@ export const SelectedWork: React.FC = () => {
 
   return (
     <section
-      className="dark bg-[#191a17] pb-20 pl-[6%] pr-[6%] pt-16 text-paper desk:pl-[max(6%,108px)]"
+      className="dark dark-depth bg-[#191a17] pb-20 pl-[6%] pr-[6%] pt-16 text-paper desk:pb-28 desk:pl-[max(6%,108px)] desk:pt-24"
       data-motion="dark"
       id="work"
       aria-label={labels.sectionAria}
     >
-      <div className="flex justify-between gap-6 border-b border-[#45463f] pb-6 text-[12px] tracking-[1.4px] phone:items-start phone:text-[11px] phone:tracking-[.7px]">
-        <span className="text-[12px] font-medium tracking-[1.6px] text-[#d7a68f]">{labels.eyebrow}</span>
+      <div className="flex justify-between gap-6 border-b border-[#45463f] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+        <span className="text-[12px] font-medium tracking-label text-[#d7a68f]">{labels.eyebrow}</span>
         <span className="text-[#b7b3a8] phone:hidden">{labels.category}</span>
       </div>
 
@@ -70,7 +68,7 @@ export const SelectedWork: React.FC = () => {
       </div>
 
       <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)] gap-x-9 gap-y-16 phone:block">
-        {projects.map((project, idx) => {
+        {projects.map((project) => {
           const targetUrl = project.link || project.github;
           const wide = !!project.wide;
           return (
@@ -92,26 +90,35 @@ export const SelectedWork: React.FC = () => {
               </div>
 
               <a
-                className={`group relative isolate block overflow-hidden border border-[#dfdbd0] ${
-                  imageBackground[idx] ?? imageBackground[0]
-                } ${
-                  wide ? 'col-[1/-1] row-auto aspect-[2.15] px-[8%] py-[3.5%]' : 'aspect-[1.4] p-[7%]'
-                } phone:aspect-[1.28] phone:p-[6%]`}
+                className={`group relative isolate block overflow-hidden border border-[#d6d0c3]/60 bg-[linear-gradient(145deg,#ddd7ca,#c8c1b2)] ${
+                  wide ? 'col-[1/-1] row-auto px-[8%] py-[5%]' : 'p-[7%]'
+                } phone:p-[6%]`}
                 data-motion="project-image"
                 href={targetUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${labels.openProject} - ${project.title}`}
               >
-                <Image
-                  className="h-full w-full object-contain [box-shadow:0_16px_40px_#191a1726] [transition:transform_.35s_ease] group-hover:[transform:translateY(-4px)_scale(1.015)]"
-                  src={project.image}
-                  alt={project.imageAlt}
-                  width={1200}
-                  height={800}
-                  loading="lazy"
-                  style={{ width: '100%', height: 'auto', display: 'block' }}
-                />
+                <div className="overflow-hidden border border-[#0d0e0b]/40 bg-[#111210] [box-shadow:0_40px_70px_-30px_rgba(25,26,23,.55),0_12px_24px_-12px_rgba(25,26,23,.35)] [transition:transform_.6s_var(--ease-expo)] group-hover:[transform:translateY(-6px)]">
+                  <div
+                    className="flex items-center gap-1.5 border-b border-white/10 bg-[#191a16] px-3 py-[9px]"
+                    aria-hidden="true"
+                  >
+                    <span className="size-[7px] rounded-[50%] bg-[#4b4d44]" />
+                    <span className="size-[7px] rounded-[50%] bg-[#4b4d44]" />
+                    <span className="size-[7px] rounded-[50%] bg-[#4b4d44]" />
+                    <span className="ml-3 truncate text-[11px] leading-none tracking-[.04em] text-[#8d9084]">
+                      {targetUrl ? new URL(targetUrl).host : ''}
+                    </span>
+                  </div>
+                  <Image
+                    className="block h-auto w-full"
+                    src={project.image}
+                    alt={project.imageAlt}
+                    sizes={wide ? '(max-width: 900px) 90vw, 55vw' : '(max-width: 600px) 90vw, (max-width: 900px) 42vw, 36vw'}
+                    placeholder="blur"
+                  />
+                </div>
                 <span className="absolute bottom-[18px] right-[18px] border border-[#ffffff2b] bg-[#1e211d] px-[18px] py-3.5 text-[12px] tracking-[1px] text-[#f4eee3] [transition:background_.2s,color_.2s] group-hover:bg-paper group-hover:text-ink phone:bottom-3 phone:right-3 phone:p-3">
                   {labels.openProject}
                 </span>
@@ -123,7 +130,7 @@ export const SelectedWork: React.FC = () => {
                 } phone:gap-3.5 phone:pt-5`}
                 data-motion="project-heading"
               >
-                <span className="[align-self:start] pt-[7px] font-serif text-[20px] font-normal leading-[normal] text-[#d7a68f]">
+                <span className="[align-self:start] pt-[7px] font-sans text-[15px] font-normal leading-[normal] tracking-label text-[#d7a68f]">
                   {project.number}
                 </span>
                 <div className="min-w-0 flex-1">
@@ -165,7 +172,7 @@ export const SelectedWork: React.FC = () => {
                 >
                   {project.metrics.map((metric) => (
                     <div key={metric.value} className="max-w-[180px]">
-                      <span className="block font-serif text-[34px] font-normal leading-none text-[#d7a68f]">
+                      <span className="block font-display text-[40px] font-semibold leading-none tracking-[.01em] text-[#d7a68f]">
                         {metric.value}
                       </span>
                       <span className="mt-2 block text-[12px] leading-[1.5] text-[#bcbeb3]">{metric.label}</span>

@@ -64,8 +64,9 @@ export function registerSectionReveals({ rise, wipe }: Pick<ReturnType<typeof cr
   wipe(m('about-image'));
   rise(m('about-copy'));
   rise(m('expertise-title'), { filter: 'blur(6px)' });
+  rise(m('strength'));
   rise(m('skill-row'));
-  rise(m('experience-title'), { filter: 'blur(6px)' });
+  rise(m('education-title'), { filter: 'blur(6px)' });
   rise(m('timeline-item'));
   rise(m('contact-lead'));
   rise(m('contact-title'), { filter: 'blur(6px)' });
@@ -78,7 +79,7 @@ export function registerSectionReveals({ rise, wipe }: Pick<ReturnType<typeof cr
     });
     rise(
       Array.from(
-        p.querySelectorAll(['project-heading', 'project-description', 'project-tags'].map(m).join(', '))
+        p.querySelectorAll(['project-heading', 'project-description', 'project-metrics', 'project-tags'].map(m).join(', '))
       ) as HTMLElement[],
       { stagger: 0 }
     );

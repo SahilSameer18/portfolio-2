@@ -7,7 +7,7 @@ import { portfolioData } from '../data/portfolioData';
 const meta = 'text-[12px] font-medium tracking-[1.6px]';
 
 export const About: React.FC = () => {
-  const { personal, skills } = portfolioData;
+  const { personal } = portfolioData;
 
   const labels = {
     eyebrow: '02 / THE DEVELOPER BEHIND THE CODE',
@@ -15,8 +15,6 @@ export const About: React.FC = () => {
     photoAlt: `${personal.name} ${personal.surname} — ${personal.role}`,
     photoCaption: `${personal.name.toUpperCase()} ${personal.surname.toUpperCase()} / ${personal.role.toUpperCase()}`,
     resumeLink: 'View full résumé',
-    toolkitHeadline: 'The Core Stack.',
-    toolkitItalic: 'Engineered to scale.',
   };
 
   return (
@@ -33,11 +31,10 @@ export const About: React.FC = () => {
         <figure className="relative m-0 phone:w-[90%] phone:[align-self:start]">
           <Image
             data-motion="about-image"
-            className="object-cover object-[center_30%] [filter:grayscale(1)]"
-            src={personal.portraitPhoto}
+            src={personal.aboutPhoto}
             alt={labels.photoAlt}
-            width={1402}
-            height={1122}
+            width={864}
+            height={1184}
             sizes="(max-width: 900px) 90vw, 45vw"
             loading="lazy"
             style={{ width: '100%', height: 'auto', display: 'block' }}
@@ -87,29 +84,6 @@ export const About: React.FC = () => {
             Sahil Sameer Siddique
           </div>
         </div>
-      </div>
-
-      <div className="grid grid-cols-[1fr_2fr] gap-x-[10%] tablet:gap-x-[5%] phone:block">
-        <h3
-          className="my-5 font-serif text-[40px] font-normal leading-[1.12] [grid-row:1/4] phone:mb-8 phone:mt-0 phone:text-[36px]"
-          data-motion="expertise-title"
-        >
-          {labels.toolkitHeadline}
-          <br />
-          <em className="not-italic text-[#a2654f]">{labels.toolkitItalic}</em>
-        </h3>
-
-        {skills.map((skill) => (
-          <div
-            key={skill.number}
-            className="grid grid-cols-[30px_1fr] gap-x-[18px] gap-y-0 border-t border-line py-[22px]"
-            data-motion="skill-row"
-          >
-            <span className="pt-[5px] text-[12px] text-accent">{skill.number}</span>
-            <h4 className="m-0 text-[19px] font-medium">{skill.title}</h4>
-            <p className="col-start-2 mb-0 mt-2.5 text-[14px] text-muted">{skill.content}</p>
-          </div>
-        ))}
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export const Contact: React.FC = () => {
   };
 
   const labels = {
-    eyebrow: '04 / GET IN TOUCH',
+    eyebrow: '05 / GET IN TOUCH',
     sub: 'FULL-STACK / BACKEND / ENGINEERING',
     intro: 'Engineering scalable web systems, high-QPS APIs & AI products.',
     headingLine1: "LET'S BUILD",
@@ -28,7 +28,7 @@ export const Contact: React.FC = () => {
     copyStatus: copied ? 'Email address copied.' : '',
     resumeLink: 'Résumé ↗',
     copyright: `© 2026 ${personal.name.toUpperCase()} ${personal.surname.toUpperCase()}`,
-    tagline: 'SCALABLE ARCHITECTURE. CRAFTED WITH CARE.',
+    tagline: 'TURNING IDEAS INTO CODE, ONE COMMIT AT A TIME ☕',
     backToTop: 'BACK TO TOP ↑',
   };
 
@@ -124,9 +124,9 @@ export const Contact: React.FC = () => {
       </div>
 
       <footer className="flex justify-between gap-[25px] border-t border-[#494943] py-[25px] text-[12px] tracking-[1px] text-[#bbb7ad] phone:flex-wrap phone:gap-[18px] phone:text-[11px]">
-        <span>{labels.copyright}</span>
+        <span className="whitespace-nowrap">{labels.copyright}</span>
         <span className="phone:hidden">{labels.tagline}</span>
-        <a className="-my-4 py-4" href="#home">
+        <a className="-my-4 whitespace-nowrap py-4" href="#home">
           {labels.backToTop}
         </a>
       </footer>

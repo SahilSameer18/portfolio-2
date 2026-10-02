@@ -64,17 +64,17 @@ export const Hero: React.FC = () => {
         </div>
 
         <figure
-          className="relative z-1 m-0 h-[570px] w-full [align-self:start] wide:h-[680px] tablet:h-[500px] phone:order-0 phone:ml-auto phone:h-[460px] phone:w-[84%]"
+          className="group relative z-1 m-0 h-[570px] w-full [align-self:start] wide:h-[680px] tablet:h-[500px] phone:order-0 phone:ml-auto phone:h-[460px] phone:w-[84%]"
           data-motion="hero-photo"
         >
           <Image
-            src={personal.outdoorPhoto}
+            src={personal.heroPhoto}
             alt={labels.photoAlt}
-            width={864}
-            height={1184}
+            width={1402}
+            height={1122}
             sizes="(max-width: 900px) 90vw, 40vw"
             priority
-            className="h-full w-full object-cover object-[center_38%] [filter:saturate(.65)]"
+            className="h-full w-full object-cover object-[center_38%] [transition:filter_.6s_ease] group-hover:[filter:grayscale(1)]"
           />
           <figcaption
             className={`${meta} absolute left-[18px] top-[18px] text-white [text-shadow:0_1px_3px_rgba(0,0,0,.85),0_0_14px_rgba(0,0,0,.6)] [writing-mode:vertical-rl] phone:text-[11px]`}

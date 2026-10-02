@@ -23,7 +23,8 @@ export const Navigation: React.FC = () => {
     homeAria: `${personal.name} ${personal.surname} — Home`,
     work: 'Work',
     about: 'About',
-    experience: 'Experience',
+    skills: 'Skills',
+    education: 'Education',
     contact: "Let's talk",
   };
 
@@ -55,8 +56,11 @@ export const Navigation: React.FC = () => {
           <a className={dockLink} href="#about">
             {labels.about}
           </a>
-          <a className={dockLink} href="#experience">
-            {labels.experience}
+          <a className={dockLink} href="#skills">
+            {labels.skills}
+          </a>
+          <a className={dockLink} href="#education">
+            {labels.education}
           </a>
         </span>
         <a

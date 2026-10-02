@@ -158,6 +158,22 @@ export const SelectedWork: React.FC = () => {
                 {project.description}
               </p>
 
+              {project.metrics && (
+                <div
+                  className={`mt-6 flex flex-wrap gap-x-9 gap-y-4 ${wide ? 'col-start-2' : ''}`}
+                  data-motion="project-metrics"
+                >
+                  {project.metrics.map((metric) => (
+                    <div key={metric.value} className="max-w-[180px]">
+                      <span className="block font-serif text-[34px] font-normal leading-none text-[#d7a68f]">
+                        {metric.value}
+                      </span>
+                      <span className="mt-2 block text-[12px] leading-[1.5] text-[#bcbeb3]">{metric.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
               <div
                 className={`mt-[19px] flex flex-wrap gap-2 [align-self:start] ${wide ? 'col-start-2' : ''}`}
                 data-motion="project-tags"

@@ -55,8 +55,8 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
     const r = fig.getBoundingClientRect();
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const iw = heroImg.naturalWidth || 864;
-    const ih = heroImg.naturalHeight || 1184;
+    const iw = heroImg.naturalWidth || 1402;
+    const ih = heroImg.naturalHeight || 1122;
 
     if (!r.width || !r.height) return finishIntro();
 

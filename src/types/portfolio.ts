@@ -8,6 +8,7 @@ export interface Project {
   description: string;
   image: string;
   imageAlt: string;
+  metrics?: { value: string; label: string }[];
   tags: string[];
   wide?: boolean;
   link?: string;
@@ -17,11 +18,19 @@ export interface Project {
 export interface SkillCategory {
   number: string;
   title: string;
-  content: string;
+  items: string[];
 }
 
-export interface ExperienceItem {
+export interface Strength {
+  number: string;
+  label: string;
+  detail: string;
+}
+
+export interface EducationItem {
   meta: string;
+  location: string;
+  highlights: string[];
   title: string;
   organization: string;
   description: string;
@@ -45,10 +54,11 @@ export interface PortfolioData {
     aboutItalic: string;
     aboutParagraphs: string[];
     resumePdf: string;
-    portraitPhoto: string;
-    outdoorPhoto: string;
+    heroPhoto: string;
+    aboutPhoto: string;
   };
   projects: Project[];
   skills: SkillCategory[];
-  experience: ExperienceItem[];
+  strengths: Strength[];
+  education: EducationItem[];
 }

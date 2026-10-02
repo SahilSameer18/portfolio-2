@@ -10,7 +10,7 @@ Portfolio for Sahil Sameer Siddique, Backend-Focused Full Stack Web Developer & 
 - **Featured Projects**:
   - **PrepStack** — Full-stack developer interview preparation ecosystem with simulated coding assessments and analytics.
   - **SkillBridge AI** — Intelligent career diagnostic engine evaluating skills and mapping personalized learning pathways.
-  - **SafarAI** — AI-powered intelligent travel itinerary and trip planning platform.
+  - **VaultDrive** — Cloud storage platform with direct-to-cloud uploads, nested folders, trash recovery and secure file sharing.
 - **Responsive Layout**: Mobile-first responsive design, custom typographic styling (`Barlow Condensed`, `DM Sans`, `Italiana`).
 - **Interactive Details**: Floating dock navigation, quick-copy email toast feedback, project live/code links, and integrated PDF résumé viewer.
 

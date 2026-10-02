@@ -2,21 +2,19 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useLanguage } from '../context/LanguageContext';
 import { portfolioData } from '../data/portfolioData';
 
 export const About: React.FC = () => {
-  const { language } = useLanguage();
   const { personal, skills } = portfolioData;
 
   const labels = {
-    eyebrow: language === 'de' ? '02 / DER ENTWICKLER HINTER DEM CODE' : '02 / THE DEVELOPER BEHIND THE CODE',
-    location: personal.location[language],
-    photoAlt: `${personal.name} ${personal.surname} — ${personal.role[language]}`,
-    photoCaption: `${personal.name.toUpperCase()} ${personal.surname.toUpperCase()} / ${personal.role[language].toUpperCase()}`,
-    resumeLink: language === 'de' ? 'Lebenslauf herunterladen' : 'View full résumé',
-    toolkitHeadline: language === 'de' ? 'Mein Tech-Stack.' : 'The Core Stack.',
-    toolkitItalic: language === 'de' ? 'Skalierbar & robust.' : 'Engineered to scale.',
+    eyebrow: '02 / THE DEVELOPER BEHIND THE CODE',
+    location: personal.location,
+    photoAlt: `${personal.name} ${personal.surname} — ${personal.role}`,
+    photoCaption: `${personal.name.toUpperCase()} ${personal.surname.toUpperCase()} / ${personal.role.toUpperCase()}`,
+    resumeLink: 'View full résumé',
+    toolkitHeadline: 'The Core Stack.',
+    toolkitItalic: 'Engineered to scale.',
   };
 
   return (
@@ -31,8 +29,9 @@ export const About: React.FC = () => {
           <Image
             src={personal.portraitPhoto}
             alt={labels.photoAlt}
-            width={1198}
-            height={1599}
+            width={1402}
+            height={1122}
+            sizes="(max-width: 900px) 90vw, 45vw"
             loading="lazy"
             style={{ width: '100%', height: 'auto', display: 'block' }}
           />
@@ -44,12 +43,12 @@ export const About: React.FC = () => {
 
         <div className="about-copy">
           <h2>
-            {personal.aboutHeadline[language]}
+            {personal.aboutHeadline}
             <br />
-            <em>{personal.aboutItalic[language]}</em>
+            <em>{personal.aboutItalic}</em>
           </h2>
 
-          {personal.aboutParagraphs[language].map((paragraph, idx) => (
+          {personal.aboutParagraphs.map((paragraph, idx) => (
             <p key={idx}>{paragraph}</p>
           ))}
 
@@ -78,8 +77,8 @@ export const About: React.FC = () => {
         {skills.map((skill) => (
           <div key={skill.number} className="skill-row">
             <span>{skill.number}</span>
-            <h4>{skill.title[language]}</h4>
-            <p>{skill.content[language]}</p>
+            <h4>{skill.title}</h4>
+            <p>{skill.content}</p>
           </div>
         ))}
       </div>

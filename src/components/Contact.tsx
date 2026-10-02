@@ -1,11 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useLanguage } from '../context/LanguageContext';
 import { portfolioData } from '../data/portfolioData';
 
 export const Contact: React.FC = () => {
-  const { language } = useLanguage();
   const { personal } = portfolioData;
   const [copied, setCopied] = useState(false);
 
@@ -20,25 +18,23 @@ export const Contact: React.FC = () => {
   };
 
   const labels = {
-    eyebrow: language === 'de' ? '04 / KONTAKT AUFNEHMEN' : '04 / GET IN TOUCH',
-    sub: language === 'de' ? 'FULL-STACK / BACKEND / SYSTEMARCHITEKTUR' : 'FULL-STACK / BACKEND / ENGINEERING',
-    intro: language === 'de'
-      ? 'Skalierbare Webanwendungen & moderne Software-Ökosysteme.'
-      : 'Engineering scalable web systems, high-QPS APIs & AI products.',
-    headingLine1: language === 'de' ? 'LASS UNS' : "LET'S BUILD",
-    headingLine2: language === 'de' ? 'WAS BAUEN.' : 'SOMETHING GREAT.',
-    emailAria: language === 'de' ? `E-Mail an ${personal.name} ${personal.surname}` : `Email ${personal.name} ${personal.surname}`,
+    eyebrow: '04 / GET IN TOUCH',
+    sub: 'FULL-STACK / BACKEND / ENGINEERING',
+    intro: 'Engineering scalable web systems, high-QPS APIs & AI products.',
+    headingLine1: "LET'S BUILD",
+    headingLine2: 'SOMETHING GREAT.',
+    emailAria: `Email ${personal.name} ${personal.surname}`,
     copyBtn: copied
-      ? (language === 'de' ? 'Kopiert ✓' : 'Copied ✓')
-      : (language === 'de' ? 'E-Mail kopieren' : 'Copy email'),
+      ? 'Copied ✓'
+      : 'Copy email',
     copyStatus: copied
-      ? (language === 'de' ? 'E-Mail-Adresse kopiert.' : 'Email address copied.')
+      ? 'Email address copied.'
       : '',
-    location: language === 'de' ? 'Delhi, Indien' : 'Delhi, India',
-    resumeLink: language === 'de' ? 'Lebenslauf ↗' : 'Résumé ↗',
+    location: 'Delhi, India',
+    resumeLink: 'Résumé ↗',
     copyright: `© 2026 ${personal.name.toUpperCase()} ${personal.surname.toUpperCase()}`,
-    tagline: language === 'de' ? 'PERFORMANT GEBAUT. KONTINUIERLICH WEITERENTWICKELT.' : 'SCALABLE ARCHITECTURE. CRAFTED WITH CARE.',
-    backToTop: language === 'de' ? 'NACH OBEN ↑' : 'BACK TO TOP ↑',
+    tagline: 'SCALABLE ARCHITECTURE. CRAFTED WITH CARE.',
+    backToTop: 'BACK TO TOP ↑',
   };
 
   return (

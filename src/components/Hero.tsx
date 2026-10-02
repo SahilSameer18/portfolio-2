@@ -2,45 +2,43 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useLanguage } from '../context/LanguageContext';
 import { portfolioData } from '../data/portfolioData';
 
 export const Hero: React.FC = () => {
-  const { language } = useLanguage();
   const { personal } = portfolioData;
 
   const labels = {
-    eyebrow: language === 'de' ? 'HALLO, ICH BIN SAHIL' : "HELLO, I'M SAHIL",
-    explore: language === 'de' ? 'Arbeiten entdecken' : 'Explore selected work',
-    resume: language === 'de' ? 'Lebenslauf ansehen' : 'View résumé',
-    edition: language === 'de' ? '01 — VORSTELLUNG' : '01 — INTRODUCTION',
-    scroll: language === 'de' ? 'WEITER SCROLLEN ↓' : 'SCROLL TO EXPLORE ↓',
-    photoCaption: language === 'de' ? 'SYSTEME. DATENBANKEN. SKALIERUNG.' : 'SYSTEMS. DATABASES. SCALE.',
-    photoAlt: language === 'de' ? 'Sahil Sameer Siddique Porträt' : 'Sahil Sameer Siddique portrait',
+    eyebrow: "HELLO, I'M SAHIL",
+    explore: 'Explore selected work',
+    resume: 'View résumé',
+    edition: '01 — INTRODUCTION',
+    scroll: 'SCROLL TO EXPLORE ↓',
+    photoCaption: 'SYSTEMS. DATABASES. SCALE.',
+    photoAlt: 'Sahil Sameer Siddique portrait',
     portfolioYear: 'PORTFOLIO / 2026',
   };
 
   return (
     <section className="hero" id="home" aria-labelledby="hero-title">
       <div className="hero-top">
-        <span>{personal.location[language]}</span>
+        <span>{personal.location}</span>
         <span>{labels.portfolioYear}</span>
       </div>
 
       <h1 id="hero-title">
         {personal.name.toUpperCase()}
-        <span className="sr-only"> {personal.surname} — {personal.role[language]}</span>
+        <span className="sr-only"> {personal.surname} — {personal.role}</span>
       </h1>
 
       <div className="hero-stage">
         <div className="hero-intro">
           <span className="eyebrow">{labels.eyebrow}</span>
           <h2>
-            {personal.heroHeadline[language]}
+            {personal.heroHeadline}
             <br />
-            <em>{personal.heroItalic[language]}</em>
+            <em>{personal.heroItalic}</em>
           </h2>
-          <p>{personal.heroBio[language]}</p>
+          <p>{personal.heroBio}</p>
           <a className="line-link" href="#work">
             {labels.explore} <span>↘</span>
           </a>
@@ -50,8 +48,9 @@ export const Hero: React.FC = () => {
           <Image
             src={personal.outdoorPhoto}
             alt={labels.photoAlt}
-            width={1086}
-            height={1448}
+            width={864}
+            height={1184}
+            sizes="(max-width: 900px) 90vw, 40vw"
             priority
             className="hero-image"
           />
@@ -59,8 +58,8 @@ export const Hero: React.FC = () => {
         </figure>
 
         <div className="hero-aside">
-          <span className="availability">{personal.availability[language]}</span>
-          <p>{personal.asideCopy[language]}</p>
+          <span className="availability">{personal.availability}</span>
+          <p>{personal.asideCopy}</p>
           <a
             href={personal.resumePdf}
             target="_blank"
@@ -78,7 +77,7 @@ export const Hero: React.FC = () => {
       </div>
 
       <div className="hero-bottom">
-        <span>{personal.subrole[language]}</span>
+        <span>{personal.subrole}</span>
         <a href="#work">{labels.scroll}</a>
       </div>
     </section>

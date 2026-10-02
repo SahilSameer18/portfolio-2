@@ -2,31 +2,27 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useLanguage } from '../context/LanguageContext';
 import { portfolioData } from '../data/portfolioData';
 
 export const SelectedWork: React.FC = () => {
-  const { language } = useLanguage();
   const { projects, personal } = portfolioData;
 
   const countStr = projects.length < 10 ? `0${projects.length}` : `${projects.length}`;
 
   const labels = {
-    sectionAria: language === 'de' ? 'Ausgewählte Arbeiten' : 'Selected Work',
-    eyebrow: language === 'de' ? '01 / PROJEKTÜBERSICHT' : '01 / SELECTED WORK',
-    category: language === 'de' ? 'FULL-STACK & SYSTEMARCHITEKTUR' : 'FULL-STACK & SYSTEMS ARCHITECTURE',
-    headingLine1: language === 'de' ? 'AUSGEWÄHLTE' : 'SELECTED',
-    headingLine2: language === 'de' ? 'SYSTEME' : 'PROJECTS',
-    workCountAria: `${projects.length} ${language === 'de' ? 'Projekte' : 'Projects'}`,
-    workNote: language === 'de' ? 'Systeme, die skalieren.' : 'Architected to scale.',
-    workIntro: language === 'de'
-      ? 'Ausgewählte Full-Stack-Anwendungen, relationale Datenmodelle und KI-Integrationen mit Node.js, PostgreSQL, MongoDB und React.'
-      : 'Production web systems, compound-indexed database architectures, and GenAI platforms engineered with Node.js, PostgreSQL, MongoDB, and React.',
-    resumeLink: language === 'de' ? 'Lebenslauf ansehen' : 'View résumé',
-    openProject: language === 'de' ? 'PROJEKT ÖFFNEN ↗' : 'LIVE DEMO ↗',
+    sectionAria: 'Selected Work',
+    eyebrow: '01 / SELECTED WORK',
+    category: 'FULL-STACK & SYSTEMS ARCHITECTURE',
+    headingLine1: 'SELECTED',
+    headingLine2: 'PROJECTS',
+    workCountAria: `${projects.length} Projects`,
+    workNote: 'Architected to scale.',
+    workIntro: 'Production web systems, compound-indexed database architectures, and GenAI platforms engineered with Node.js, PostgreSQL, MongoDB, and React.',
+    resumeLink: 'View résumé',
+    openProject: 'LIVE DEMO ↗',
     openGithub: 'GITHUB ↗',
-    ctaPrompt: language === 'de' ? 'Ein technisches Problem zu lösen?' : 'Building a scalable platform?',
-    ctaAction: language === 'de' ? 'Lass uns sprechen ↗' : "Let's connect ↗",
+    ctaPrompt: 'Building a scalable platform?',
+    ctaAction: "Let's connect ↗",
   };
 
   return (
@@ -62,15 +58,15 @@ export const SelectedWork: React.FC = () => {
 
       <div className="project-grid">
         {projects.map((project) => {
-          const targetUrl = project.link || project.github || project.image;
+          const targetUrl = project.link || project.github;
           return (
             <article
               key={project.id}
               className={`project ${project.wide ? 'project-wide' : ''}`}
             >
               <div className="project-kicker">
-                <span>{project.kicker[language]}</span>
-                <span>{project.badge[language]}</span>
+                <span>{project.kicker}</span>
+                <span>{project.badge}</span>
               </div>
 
               <a
@@ -78,11 +74,11 @@ export const SelectedWork: React.FC = () => {
                 href={targetUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${labels.openProject} - ${project.title[language]}`}
+                aria-label={`${labels.openProject} - ${project.title}`}
               >
                 <Image
                   src={project.image}
-                  alt={project.imageAlt[language]}
+                  alt={project.imageAlt}
                   width={1200}
                   height={800}
                   loading="lazy"
@@ -94,23 +90,23 @@ export const SelectedWork: React.FC = () => {
               <div className="project-heading">
                 <span className="project-number">{project.number}</span>
                 <div>
-                  <h3>{project.title[language]}</h3>
-                  <p>{project.subtitle[language]}</p>
+                  <h3>{project.title}</h3>
+                  <p>{project.subtitle}</p>
                 </div>
                 <a
                   href={targetUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Open ${project.title[language]}`}
+                  aria-label={`Open ${project.title}`}
                 >
                   ↗
                 </a>
               </div>
 
-              <p className="project-description">{project.description[language]}</p>
+              <p className="project-description">{project.description}</p>
 
               <div className="tags">
-                {project.tags[language].map((tag, idx) => (
+                {project.tags.map((tag, idx) => (
                   <span key={idx}>{tag}</span>
                 ))}
                 {project.github && project.link && (
@@ -118,7 +114,7 @@ export const SelectedWork: React.FC = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ textDecoration: 'underline', padding: '7px 10px', fontSize: '12px' }}
+                    className="px-2.5 py-[7px] text-xs underline"
                   >
                     {labels.openGithub}
                   </a>

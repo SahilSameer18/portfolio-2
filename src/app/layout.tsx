@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Barlow_Condensed, Italiana, DM_Sans } from 'next/font/google';
 import './globals.css';
-import { LanguageProvider } from '@/context/LanguageContext';
 
 const barlowCondensed = Barlow_Condensed({
   weight: ['600', '700', '800'],
@@ -45,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="de"
+      lang="en"
       suppressHydrationWarning
       className={`${barlowCondensed.variable} ${italiana.variable} ${dmSans.variable}`}
     >
@@ -57,7 +56,7 @@ export default function RootLayout({
                 var h = document.documentElement;
                 if (!location.hash && !matchMedia("(prefers-reduced-motion: reduce)").matches && (window.scrollY || 0) === 0) {
                   h.classList.add("intro");
-                  setTimeout(function() { h.classList.remove("intro"); }, 6000);
+                  setTimeout(function() { h.classList.remove("intro"); }, 3500);
                 }
               } catch (e) {}
             `,
@@ -72,7 +71,7 @@ export default function RootLayout({
         ` }} />
       </head>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        {children}
       </body>
     </html>
   );

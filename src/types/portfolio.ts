@@ -1,26 +1,14 @@
-export type Language = 'de' | 'en';
-
-export interface LocalizedString {
-  de: string;
-  en: string;
-}
-
-export interface LocalizedStringArray {
-  de: string[];
-  en: string[];
-}
-
 export interface Project {
   id: string;
   number: string;
-  kicker: LocalizedString;
-  badge: LocalizedString;
-  title: LocalizedString;
-  subtitle: LocalizedString;
-  description: LocalizedString;
+  kicker: string;
+  badge: string;
+  title: string;
+  subtitle: string;
+  description: string;
   image: string;
-  imageAlt: LocalizedString;
-  tags: LocalizedStringArray;
+  imageAlt: string;
+  tags: string[];
   wide?: boolean;
   link?: string;
   github?: string;
@@ -28,15 +16,15 @@ export interface Project {
 
 export interface SkillCategory {
   number: string;
-  title: LocalizedString;
-  content: LocalizedString;
+  title: string;
+  content: string;
 }
 
 export interface ExperienceItem {
-  meta: LocalizedString;
-  title: LocalizedString;
-  organization: LocalizedString;
-  description: LocalizedString;
+  meta: string;
+  title: string;
+  organization: string;
+  description: string;
 }
 
 export interface PortfolioData {
@@ -45,17 +33,17 @@ export interface PortfolioData {
     surname: string;
     monogram: string;
     email: string;
-    location: LocalizedString;
-    role: LocalizedString;
-    subrole: LocalizedString;
-    heroHeadline: LocalizedString;
-    heroItalic: LocalizedString;
-    heroBio: LocalizedString;
-    availability: LocalizedString;
-    asideCopy: LocalizedString;
-    aboutHeadline: LocalizedString;
-    aboutItalic: LocalizedString;
-    aboutParagraphs: LocalizedStringArray;
+    location: string;
+    role: string;
+    subrole: string;
+    heroHeadline: string;
+    heroItalic: string;
+    heroBio: string;
+    availability: string;
+    asideCopy: string;
+    aboutHeadline: string;
+    aboutItalic: string;
+    aboutParagraphs: string[];
     resumePdf: string;
     portraitPhoto: string;
     outdoorPhoto: string;

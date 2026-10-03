@@ -10,6 +10,8 @@
   --color-paper: #eeeae1;
   --color-ink: #23231f;
   --color-accent: #9a4030;
+  --color-accent-soft: #a2654f;
+  --color-accent-light: #d7a68f;
   --color-line: #c8c2b6;
   --color-muted: #636057;
 
@@ -73,7 +75,7 @@
   }
 
   .dark a:hover {
-    color: #d7a48d;
+    color: var(--color-accent-light);
   }
 
   button {

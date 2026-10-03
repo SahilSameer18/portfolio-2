@@ -26,7 +26,7 @@ export const Contact: React.FC = () => {
       id="contact"
     >
       <div className="flex justify-between gap-6 border-b border-[#494943] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
-        <span className="text-[12px] font-medium tracking-label text-[#c9a493]">{labels.eyebrow}</span>
+        <span className="text-[12px] font-medium tracking-label text-accent-light">{labels.eyebrow}</span>
         <span className="text-[#b7b3a8] phone:hidden">{labels.sub}</span>
       </div>
 
@@ -43,7 +43,7 @@ export const Contact: React.FC = () => {
         >
           {labels.headingLine1}
           <br />
-          <span className="text-[#c89d87]">{labels.headingLine2}</span>
+          <span className="text-accent-light">{labels.headingLine2}</span>
         </h2>
         <a
           className="absolute bottom-[12%] right-[2%] flex size-[145px] items-center justify-center rounded-[50%] border border-[#8c8a80] font-sans text-[110px] font-normal leading-[normal] [transition:transform_.35s_var(--ease-expo)] hover:[transform:scale(1.05)] tablet:size-[100px] tablet:text-[75px] phone:bottom-5 phone:right-0 phone:size-[58px] phone:text-[40px]"

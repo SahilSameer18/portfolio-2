@@ -28,7 +28,7 @@ export const Education: React.FC = () => {
         >
           {labels.headingLine}
           <br />
-          <em className="not-italic text-[#a2654f]">{labels.headingItalic}</em>
+          <em className="not-italic text-accent-soft">{labels.headingItalic}</em>
         </h2>
 
         <div>

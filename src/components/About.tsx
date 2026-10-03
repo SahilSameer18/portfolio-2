@@ -50,7 +50,7 @@ export const About: React.FC = () => {
           <h2 className="m-0 mb-8 font-serif text-[length:clamp(38px,4vw,62px)] font-normal leading-[1.05] phone:text-[43px]">
             {personal.aboutHeadline}
             <br />
-            <em className="not-italic text-[#a2654f]">{personal.aboutItalic}</em>
+            <em className="not-italic text-accent-soft">{personal.aboutItalic}</em>
           </h2>
 
           {personal.aboutParagraphs.map((paragraph, idx) => (

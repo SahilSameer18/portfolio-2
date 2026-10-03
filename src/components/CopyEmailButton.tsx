@@ -26,7 +26,7 @@ export function CopyEmailButton({ email }: { email: string }) {
         {copied ? 'Copied ✓' : 'Copy email'} <span>↗</span>
       </button>
       {copied && (
-        <span className="text-[12px] text-[#c89d87]" role="status" aria-live="polite">
+        <span className="text-[12px] text-accent-light" role="status" aria-live="polite">
           Email address copied.
         </span>
       )}

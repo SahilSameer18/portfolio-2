@@ -31,17 +31,17 @@ export const SelectedWork: React.FC = () => {
       aria-label={labels.sectionAria}
     >
       <div className="flex justify-between gap-6 border-b border-[#45463f] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
-        <span className="text-[12px] font-medium tracking-label text-[#d7a68f]">{labels.eyebrow}</span>
+        <span className="text-[12px] font-medium tracking-label text-accent-light">{labels.eyebrow}</span>
         <span className="text-[#b7b3a8] phone:hidden">{labels.category}</span>
       </div>
 
       <div className="mb-16 mt-14 grid grid-cols-[1.8fr_1fr] items-end justify-between gap-[6%] phone:my-[35px] phone:block">
         <h2 className="m-0 font-display text-[length:clamp(76px,10.8vw,174px)] font-bold leading-[.86] tracking-[-.025em] phone:text-[length:clamp(45px,16vw,76px)]">
-          <span className="inline-flex items-start text-[#d7a68f]" data-motion="work-title-line">
+          <span className="inline-flex items-start text-accent-light" data-motion="work-title-line">
             {labels.headingLine1}
           </span>
           <br />
-          <span className="inline-flex items-start text-[#d7a68f]" data-motion="work-title-line">
+          <span className="inline-flex items-start text-accent-light" data-motion="work-title-line">
             {labels.headingLine2}
             <span
               className="ml-5 mt-3 font-serif text-[24px] font-normal leading-[1.2] tracking-[0] text-paper"
@@ -83,7 +83,7 @@ export const SelectedWork: React.FC = () => {
                 }`}
                 data-motion="project-kicker"
               >
-                <span className="text-[#d7a68f]">{project.kicker}</span>
+                <span className="text-accent-light">{project.kicker}</span>
                 <span>{project.badge}</span>
               </div>
 
@@ -128,7 +128,7 @@ export const SelectedWork: React.FC = () => {
                 } phone:gap-3.5 phone:pt-5`}
                 data-motion="project-heading"
               >
-                <span className="[align-self:start] pt-[7px] font-sans text-[15px] font-normal leading-[normal] tracking-label text-[#d7a68f]">
+                <span className="[align-self:start] pt-[7px] font-sans text-[15px] font-normal leading-[normal] tracking-label text-accent-light">
                   {project.number}
                 </span>
                 <div className="min-w-0 flex-1">
@@ -144,7 +144,7 @@ export const SelectedWork: React.FC = () => {
                   <p className="text-[14px] leading-[1.5] text-[#babbb1]">{project.subtitle}</p>
                 </div>
                 <a
-                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-[#d7a68f] hover:text-[#191a17]"
+                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-accent-light hover:text-[#191a17]"
                   href={targetUrl}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -170,7 +170,7 @@ export const SelectedWork: React.FC = () => {
                 >
                   {project.metrics.map((metric) => (
                     <div key={metric.value} className="max-w-[180px]">
-                      <span className="block font-display text-[40px] font-semibold leading-none tracking-[.01em] text-[#d7a68f]">
+                      <span className="block font-display text-[40px] font-semibold leading-none tracking-[.01em] text-accent-light">
                         {metric.value}
                       </span>
                       <span className="mt-2 block text-[12px] leading-[1.5] text-[#bcbeb3]">{metric.label}</span>

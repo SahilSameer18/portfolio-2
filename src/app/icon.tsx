@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og';
+import { colors } from '../config/colors';
 
 export const size = { width: 64, height: 64 };
 export const contentType = 'image/png';
@@ -14,14 +15,14 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#23231f',
-          color: '#eeeae1',
+          background: colors.ink,
+          color: colors.paper,
           fontSize: 38,
           letterSpacing: -2,
         }}
       >
         ss
-        <span style={{ color: '#c0705c' }}>.</span>
+        <span style={{ color: colors.accentLight }}>.</span>
       </div>
     ),
     size

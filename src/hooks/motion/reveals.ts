@@ -65,15 +65,15 @@ export function createReveals() {
 export function registerSectionReveals({ rise, wipe }: Pick<ReturnType<typeof createReveals>, 'rise' | 'wipe'>) {
   wipe(m('about-image'));
   rise(m('about-copy'));
-  rise(m('expertise-title'), { filter: 'blur(3px)' });
+  rise(m('expertise-title'), { filter: 'blur(6px)' });
   rise(m('strength'));
   rise(m('skill-row'));
-  rise(m('education-title'), { filter: 'blur(3px)' });
+  rise(m('education-title'), { filter: 'blur(6px)' });
   rise(m('timeline-item'));
   rise(m('contact-lead'));
-  rise(m('contact-title'), { filter: 'blur(3px)' });
+  rise(m('contact-title'), { filter: 'blur(6px)' });
 
-  rise(m('work-title-line'), { filter: 'blur(3px)' });
+  rise(m('work-title-line'), { filter: 'blur(6px)' });
   rise(m('work-intro'));
   document.querySelectorAll(m('project')).forEach((p) => {
     rise([p.querySelector(m('project-kicker')), p.querySelector(m('project-image'))].filter(Boolean) as HTMLElement[], {

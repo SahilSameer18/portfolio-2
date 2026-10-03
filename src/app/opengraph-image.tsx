@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { ImageResponse } from 'next/og';
 import { site } from '../config/site';
+import { colors } from '../config/colors';
 
 export const alt = 'Sahil Sameer Siddique — Backend-Focused Full Stack Developer';
 export const size = { width: 1200, height: 630 };
@@ -42,8 +43,8 @@ export default async function OpenGraphImage() {
           width: '100%',
           height: '100%',
           display: 'flex',
-          background: '#eeeae1',
-          color: '#23231f',
+          background: colors.paper,
+          color: colors.ink,
           fontFamily: family,
         }}
       >
@@ -56,7 +57,7 @@ export default async function OpenGraphImage() {
             padding: '56px 64px',
           }}
         >
-          <div style={{ display: 'flex', fontSize: 24, letterSpacing: 5, color: '#636057' }}>
+          <div style={{ display: 'flex', fontSize: 24, letterSpacing: 5, color: colors.muted }}>
             PORTFOLIO / 2026
           </div>
 
@@ -67,11 +68,11 @@ export default async function OpenGraphImage() {
             <div style={{ display: 'flex', fontSize: 116, lineHeight: 0.95, fontWeight: 800, whiteSpace: 'nowrap' }}>
               Siddique
             </div>
-            <div style={{ display: 'flex', width: 96, height: 6, background: '#9a4030', margin: '30px 0 24px' }} />
-            <div style={{ display: 'flex', fontSize: 40, color: '#9a4030' }}>{site.role}</div>
+            <div style={{ display: 'flex', width: 96, height: 6, background: colors.accent, margin: '30px 0 24px' }} />
+            <div style={{ display: 'flex', fontSize: 40, color: colors.accent }}>{site.role}</div>
           </div>
 
-          <div style={{ display: 'flex', fontSize: 26, letterSpacing: 2, color: '#636057' }}>
+          <div style={{ display: 'flex', fontSize: 26, letterSpacing: 2, color: colors.muted }}>
             NODE.JS / POSTGRESQL / MONGODB / REACT / AI
           </div>
         </div>

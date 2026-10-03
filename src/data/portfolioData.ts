@@ -16,7 +16,7 @@ export const portfolioData: PortfolioData = {
     subrole: 'NODE.JS / POSTGRESQL / MONGODB / REACT / AI',
     heroHeadline: 'Engineering scalable systems.',
     heroItalic: 'Built for performance.',
-    heroBio: 'Backend-focused full stack developer architecting resilient server-side architectures, high-QPS APIs, optimized databases, and AI-driven platforms.',
+    heroBio: 'Backend-focused full stack developer architecting resilient, high-performance server-side systems, high-QPS APIs, optimized databases, and AI-driven platforms.',
     availability: 'OPEN TO OPPORTUNITIES',
     asideCopy: 'From database schema modeling to production-grade interfaces.',
     aboutHeadline: 'Architecture first.',

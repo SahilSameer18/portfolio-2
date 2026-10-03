@@ -65,10 +65,10 @@ export const Navigation: React.FC = () => {
         </span>
         <a
           className={`${dockLink} border-l border-ink pl-[9px] tablet:border-l-0 tablet:pl-0`}
-          href={`mailto:${personal.email}`}
+          href="#contact"
           data-section="contact"
         >
-          {labels.contact} <span aria-hidden="true">↗</span>
+          {labels.contact} <span aria-hidden="true">↓</span>
         </a>
       </nav>
     </>

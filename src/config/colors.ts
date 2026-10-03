@@ -5,6 +5,10 @@
 export const colors = {
   paper: '#eeeae1',
   ink: '#23231f',
+  /** darker ink used by the Work section */
+  inkDeep: '#191a17',
+  /** slightly darker paper used by the Education section */
+  paperAlt: '#e3dfd5',
   muted: '#636057',
   /** terracotta on light backgrounds */
   accent: '#9a4030',

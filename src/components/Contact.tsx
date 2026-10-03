@@ -12,8 +12,7 @@ export const Contact: React.FC = () => {
     intro: 'Engineering scalable web systems, high-QPS APIs & AI products.',
     headingLine1: "LET'S BUILD",
     headingLine2: 'SOMETHING GREAT.',
-    emailAria: `Email ${site.fullName}`,
-    resumeLink: 'Résumé ↗',
+    resumeLink: 'Résumé',
     copyright: `© 2026 ${site.fullName.toUpperCase()}`,
     tagline: 'TURNING IDEAS INTO CODE, ONE COMMIT AT A TIME ☕',
     backToTop: 'BACK TO TOP ↑',
@@ -48,7 +47,8 @@ export const Contact: React.FC = () => {
         <a
           className="absolute bottom-[12%] right-[2%] flex size-[145px] items-center justify-center rounded-[50%] border border-[#8c8a80] font-sans text-[110px] font-normal leading-[normal] [transition:transform_.35s_var(--ease-expo)] hover:[transform:scale(1.05)] tablet:size-[100px] tablet:text-[75px] phone:bottom-5 phone:right-0 phone:size-[58px] phone:text-[40px]"
           href={`mailto:${personal.email}`}
-          aria-label={labels.emailAria}
+          tabIndex={-1}
+          aria-hidden="true"
         >
           ↗
         </a>
@@ -72,7 +72,8 @@ export const Contact: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {social.label} ↗
+              {social.label} <span aria-hidden="true">↗</span>
+              <span className="sr-only"> (opens in new tab)</span>
             </a>
           ))}
           <a
@@ -81,7 +82,8 @@ export const Contact: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {labels.resumeLink}
+            {labels.resumeLink} <span aria-hidden="true">↗</span>
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
         </div>
       </div>

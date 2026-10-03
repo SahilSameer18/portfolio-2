@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
     explore: 'Explore selected work',
     resume: 'View résumé',
     edition: '01 — INTRODUCTION',
-    scroll: 'SCROLL TO EXPLORE ↓',
+    scroll: 'SCROLL TO EXPLORE',
     photoCaption: 'SYSTEMS. DATABASES. SCALE.',
     photoAlt: 'Sahil Sameer Siddique portrait',
     portfolioYear: 'PORTFOLIO / 2026',
@@ -51,14 +51,17 @@ export const Hero: React.FC = () => {
           <h2 className="my-6 font-serif text-[length:clamp(26px,2.8vw,46px)] font-normal leading-[1.15] phone:my-4 phone:text-[38px]">
             {personal.heroHeadline}
             <br />
-            <em className="not-italic text-accent">{personal.heroItalic}</em>
+            <span className="text-accent">{personal.heroItalic}</span>
           </h2>
           <p className="max-w-[285px] text-[16px] text-muted phone:max-w-full">{personal.heroBio}</p>
+          <span className="mt-5 hidden border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent tablet:inline-block">
+            {personal.availability}
+          </span>
           <a
             className="link-underline nudge-se mt-5 flex max-w-[230px] justify-between border-b border-ink py-4 text-[14px] phone:mt-2.5 phone:max-w-full"
             href="#work"
           >
-            {labels.explore} <span>↘</span>
+            {labels.explore} <span aria-hidden="true">↘</span>
           </a>
         </div>
 
@@ -93,7 +96,8 @@ export const Hero: React.FC = () => {
             rel="noopener noreferrer"
             className="link-underline nudge-ne inline-flex gap-8 border-b border-line py-3.5 text-[14px]"
           >
-            {labels.resume} <span>↗</span>
+            {labels.resume} <span aria-hidden="true">↗</span>
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
           <span className={`${meta} mt-[70px] block text-muted`}>{labels.edition}</span>
         </div>
@@ -112,8 +116,9 @@ export const Hero: React.FC = () => {
         data-motion="hero-bottom"
       >
         <span>{personal.subrole}</span>
-        <a className="-mt-[9px] py-[9px]" href="#work">
-          {labels.scroll}
+        {/* Pointer-only shortcut: the "Explore selected work" link above is the accessible one. */}
+        <a className="-mt-[9px] py-[9px]" href="#work" tabIndex={-1} aria-hidden="true">
+          {labels.scroll} ↓
         </a>
       </div>
     </section>

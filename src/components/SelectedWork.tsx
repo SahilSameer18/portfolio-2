@@ -17,15 +17,15 @@ export const SelectedWork: React.FC = () => {
     workNote: 'Architected to scale.',
     workIntro: 'Production web systems, compound-indexed database architectures, and GenAI platforms engineered with Node.js, PostgreSQL, MongoDB, and React.',
     resumeLink: 'View résumé',
-    openProject: 'LIVE DEMO ↗',
-    openGithub: 'GITHUB ↗',
+    openProject: 'LIVE DEMO',
+    openGithub: 'GITHUB',
     ctaPrompt: 'Building a scalable platform?',
-    ctaAction: "Let's connect ↗",
+    ctaAction: "Let's connect",
   };
 
   return (
     <section
-      className="dark dark-depth bg-[#191a17] pb-20 pl-[6%] pr-[6%] pt-16 text-paper desk:pb-28 desk:pl-[max(6%,108px)] desk:pt-24"
+      className="dark dark-depth bg-ink-deep pb-20 pl-[6%] pr-[6%] pt-16 text-paper desk:pb-28 desk:pl-[max(6%,108px)] desk:pt-24"
       data-motion="dark"
       id="work"
       aria-label={labels.sectionAria}
@@ -61,6 +61,7 @@ export const SelectedWork: React.FC = () => {
             rel="noopener noreferrer"
           >
             {labels.resumeLink} <span className="text-[20px]" aria-hidden="true">↗</span>
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
         </div>
       </div>
@@ -95,7 +96,7 @@ export const SelectedWork: React.FC = () => {
                 href={targetUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={`${labels.openProject} - ${project.title}`}
+                aria-label={`Open live demo: ${project.title} (opens in new tab)`}
               >
                 <div className="overflow-hidden border border-[#0d0e0b]/40 bg-[#111210] [box-shadow:0_40px_70px_-30px_rgba(25,26,23,.55),0_12px_24px_-12px_rgba(25,26,23,.35)] [transition:transform_.6s_var(--ease-expo)] group-hover:[transform:translateY(-6px)]">
                   <div
@@ -118,7 +119,7 @@ export const SelectedWork: React.FC = () => {
                   />
                 </div>
                 <span className="absolute bottom-[18px] right-[18px] border border-[#ffffff2b] bg-[#1e211d] px-[18px] py-3.5 text-[12px] tracking-[1px] text-[#f4eee3] [transition:background_.2s,color_.2s] group-hover:bg-paper group-hover:text-ink phone:bottom-3 phone:right-3 phone:p-3">
-                  {labels.openProject}
+                  {labels.openProject} ↗
                 </span>
               </a>
 
@@ -144,11 +145,12 @@ export const SelectedWork: React.FC = () => {
                   <p className="text-[14px] leading-[1.5] text-[#babbb1]">{project.subtitle}</p>
                 </div>
                 <a
-                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-accent-light hover:text-[#191a17]"
+                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-accent-light hover:text-ink-deep"
                   href={targetUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`Open ${project.title}`}
+                  tabIndex={-1}
+                  aria-hidden="true"
                 >
                   ↗
                 </a>
@@ -195,7 +197,8 @@ export const SelectedWork: React.FC = () => {
                     rel="noopener noreferrer"
                     className="px-2.5 py-[7px] text-[12px] underline"
                   >
-                    {labels.openGithub}
+                    {labels.openGithub} <span aria-hidden="true">↗</span>
+                    <span className="sr-only"> (opens in new tab)</span>
                   </a>
                 )}
               </div>
@@ -208,7 +211,9 @@ export const SelectedWork: React.FC = () => {
         className="mt-14 flex items-center justify-between border-t border-[#45463f] pt-6 text-[16px] phone:mt-[15px] phone:gap-5 phone:text-[14px] phone:leading-[1.7]"
         href={`mailto:${personal.email}`}
       >
-        {labels.ctaPrompt} <span className="font-serif text-[26px] font-normal leading-[normal]">{labels.ctaAction}</span>
+        {labels.ctaPrompt} <span className="font-serif text-[26px] font-normal leading-[normal]">
+          {labels.ctaAction} <span aria-hidden="true">↗</span>
+        </span>
       </a>
     </section>
   );

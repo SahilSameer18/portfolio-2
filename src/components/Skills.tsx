@@ -40,7 +40,7 @@ export const Skills: React.FC = () => {
         >
           {labels.headline}
           <br />
-          <em className="not-italic text-accent-light">{labels.italic}</em>
+          <span className="text-accent-light">{labels.italic}</span>
         </h3>
 
         {skills.map((skill) => (

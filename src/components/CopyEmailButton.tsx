@@ -4,16 +4,16 @@ import { useState } from 'react';
 
 /** The only interactive piece of the Contact section: copies the email and confirms it. */
 export function CopyEmailButton({ email }: { email: string }) {
-  const [copied, setCopied] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
 
   const copy = async () => {
     try {
       await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
+      setStatus('copied');
     } catch {
-      // clipboard blocked: nothing to do
+      setStatus('failed');
     }
+    setTimeout(() => setStatus('idle'), 3000);
   };
 
   return (
@@ -23,15 +23,13 @@ export function CopyEmailButton({ email }: { email: string }) {
         className="nudge-ne cursor-pointer border-0 bg-transparent px-[5px] py-3.5 text-[14px] text-[#c2beb3] hover:text-white"
         onClick={copy}
       >
-        {copied ? 'Copied ✓' : 'Copy email'} <span>↗</span>
+        {status === 'copied' ? 'Copied ✓' : 'Copy email'} <span aria-hidden="true">↗</span>
       </button>
-      {copied && (
+      {status !== 'idle' && (
         <span className="text-[12px] text-accent-light" role="status" aria-live="polite">
-          Email address copied.
+          {status === 'copied' ? 'Email address copied.' : 'Could not copy. Please copy it manually.'}
         </span>
       )}
     </>
   );
 }
-
-

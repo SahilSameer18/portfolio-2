@@ -50,7 +50,7 @@ export const About: React.FC = () => {
           <h2 className="m-0 mb-8 font-serif text-[length:clamp(38px,4vw,62px)] font-normal leading-[1.05] phone:text-[43px]">
             {personal.aboutHeadline}
             <br />
-            <em className="not-italic text-accent-soft">{personal.aboutItalic}</em>
+            <span className="text-accent-soft">{personal.aboutItalic}</span>
           </h2>
 
           {personal.aboutParagraphs.map((paragraph, idx) => (
@@ -72,7 +72,8 @@ export const About: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            {labels.resumeLink} <span>↗</span>
+            {labels.resumeLink} <span aria-hidden="true">↗</span>
+            <span className="sr-only"> (opens in new tab)</span>
           </a>
 
           <div

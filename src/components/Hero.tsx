@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
+import { site } from '../config/site';
 
 const meta = 'text-[12px] font-medium tracking-label';
 
@@ -40,7 +39,7 @@ export const Hero: React.FC = () => {
         data-motion="hero-title"
       >
         {personal.name.toUpperCase()}
-        <span className="sr-only"> {personal.surname} — {personal.role}</span>
+        <span className="sr-only"> {site.restOfName} — {site.role}</span>
       </h1>
 
       <div className="relative mt-[-58px] grid min-h-[610px] grid-cols-[1fr_1.4fr_.75fr] items-center gap-[5%] wide:min-h-[730px] tablet:mt-[-25px] tablet:min-h-[570px] tablet:grid-cols-[1fr_1.25fr] tablet:gap-[6%] phone:mt-[-9px] phone:flex phone:min-h-0 phone:flex-col phone:items-stretch phone:gap-0">

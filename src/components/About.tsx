@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { portfolioData } from '../data/portfolioData';
@@ -28,12 +26,12 @@ export const About: React.FC = () => {
       </div>
 
       <div className="mb-[85px] mt-[70px] grid grid-cols-[.9fr_1.2fr] items-center gap-[12%] tablet:gap-[7%] phone:mb-[50px] phone:mt-10 phone:flex phone:flex-col phone:gap-[38px]">
-        <figure className="relative m-0 phone:w-[90%] phone:[align-self:start]">
+        <figure className="group relative m-0 phone:w-[90%] phone:[align-self:start]">
           <Image
             data-motion="about-image"
             src={personal.aboutPhoto}
             alt={labels.photoAlt}
-            className="border border-ink/10"
+            className="border border-ink/10 [transition:filter_.6s_var(--ease-expo)] group-hover:[filter:grayscale(1)]"
             sizes="(max-width: 900px) 90vw, 45vw"
             placeholder="blur"
             loading="lazy"

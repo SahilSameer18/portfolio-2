@@ -1,21 +1,10 @@
-'use client';
-
-import React, { useState } from 'react';
+import React from 'react';
 import { portfolioData } from '../data/portfolioData';
+import { site } from '../config/site';
+import { CopyEmailButton } from './CopyEmailButton';
 
 export const Contact: React.FC = () => {
   const { personal } = portfolioData;
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(personal.email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
-    } catch {
-      // Fallback
-    }
-  };
 
   const labels = {
     eyebrow: '05 / GET IN TOUCH',
@@ -23,11 +12,9 @@ export const Contact: React.FC = () => {
     intro: 'Engineering scalable web systems, high-QPS APIs & AI products.',
     headingLine1: "LET'S BUILD",
     headingLine2: 'SOMETHING GREAT.',
-    emailAria: `Email ${personal.name} ${personal.surname}`,
-    copyBtn: copied ? 'Copied ✓' : 'Copy email',
-    copyStatus: copied ? 'Email address copied.' : '',
+    emailAria: `Email ${site.fullName}`,
     resumeLink: 'Résumé ↗',
-    copyright: `© 2026 ${personal.name.toUpperCase()} ${personal.surname.toUpperCase()}`,
+    copyright: `© 2026 ${site.fullName.toUpperCase()}`,
     tagline: 'TURNING IDEAS INTO CODE, ONE COMMIT AT A TIME ☕',
     backToTop: 'BACK TO TOP ↑',
   };
@@ -74,44 +61,20 @@ export const Contact: React.FC = () => {
         >
           {personal.email}
         </a>
-        <button
-          type="button"
-          className="nudge-ne cursor-pointer border-0 bg-transparent px-[5px] py-3.5 text-[14px] text-[#c2beb3] hover:text-white"
-          onClick={handleCopyEmail}
-        >
-          {labels.copyBtn} <span>↗</span>
-        </button>
-        {copied && (
-          <span className="text-[12px] text-[#c89d87]" role="status" aria-live="polite">
-            {labels.copyStatus}
-          </span>
-        )}
+        <CopyEmailButton email={personal.email} />
 
         <div className="ml-auto flex gap-6 text-[14px] tablet:ml-0 tablet:w-full phone:mt-[15px]">
-          <a
-            className="-my-[13px] py-[13px]"
-            href="https://github.com/SahilSameer18"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub ↗
-          </a>
-          <a
-            className="-my-[13px] py-[13px]"
-            href="https://www.linkedin.com/in/sahil-sameer-siddique/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            className="-my-[13px] py-[13px]"
-            href="https://www.instagram.com/sahilsameer18/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram ↗
-          </a>
+          {site.socials.map((social) => (
+            <a
+              key={social.label}
+              className="-my-[13px] py-[13px]"
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.label} ↗
+            </a>
+          ))}
           <a
             className="-my-[13px] py-[13px]"
             href={personal.resumePdf}

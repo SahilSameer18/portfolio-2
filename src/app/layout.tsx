@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from 'next';
 import { Barlow_Condensed, Italiana, DM_Sans } from 'next/font/google';
 import './globals.css';
+import { IS_PRODUCTION, SITE_URL, site } from '../config/site';
+import { JsonLd } from '../components/JsonLd';
 
 const barlowCondensed = Barlow_Condensed({
   weight: ['600', '700', '800'],
@@ -24,17 +26,54 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Sahil Sameer Siddique — Backend-Focused Full Stack Developer',
-  description:
-    'Backend-Focused Full Stack Developer building scalable web applications with Node.js, PostgreSQL, MongoDB, Prisma ORM, and secure APIs. Creator of PrepStack and SkillBridge AI.',
-  icons: {
-    icon: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23232320'/%3E%3Ctext x='7' y='44' font-family='serif' font-size='34' fill='%23eee9df'%3ESS%3C/text%3E%3C/svg%3E",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: site.title,
+    template: `%s | ${site.fullName}`,
   },
+  description: site.description,
+  applicationName: site.fullName,
+  keywords: [
+    site.fullName,
+    site.alternateName,
+    'backend developer',
+    'full stack developer',
+    'Node.js developer',
+    'PostgreSQL',
+    'Delhi, India',
+  ],
+  authors: [{ name: site.fullName, url: SITE_URL }],
+  creator: site.fullName,
+  alternates: { canonical: '/' },
+  // Only the production deployment is indexable; Vercel preview URLs are not.
+  robots: {
+    index: IS_PRODUCTION,
+    follow: IS_PRODUCTION,
+    googleBot: { index: IS_PRODUCTION, follow: IS_PRODUCTION, 'max-image-preview': 'large', 'max-snippet': -1 },
+  },
+  openGraph: {
+    type: 'website',
+    url: SITE_URL,
+    siteName: site.fullName,
+    title: site.title,
+    description: site.description,
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: site.title,
+    description: site.description,
+  },
+  // Paste the Google Search Console HTML-tag code into NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION to verify ownership.
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  themeColor: '#eeeae1',
 };
 
 export default function RootLayout({
@@ -64,6 +103,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <JsonLd />
         {children}
       </body>
     </html>

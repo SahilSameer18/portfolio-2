@@ -1,6 +1,6 @@
 import { PortfolioData } from '../types/portfolio';
-import heroPhoto from '../../public/assets/sahil-outdoor.webp';
-import aboutPhoto from '../../public/assets/sahil-portrait.jpg';
+import heroPhoto from '../../public/assets/sahil-hero.webp';
+import aboutPhoto from '../../public/assets/sahil-about.png';
 import prepstackImage from '../../public/assets/prepstack.png';
 import skillbridgeImage from '../../public/assets/skillbridgeAI.png';
 import vaultdriveImage from '../../public/assets/vaultdrive.png';

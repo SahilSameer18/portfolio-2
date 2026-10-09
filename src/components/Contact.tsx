@@ -14,7 +14,7 @@ export const Contact: React.FC = () => {
     headingLine2: 'SOMETHING GREAT.',
     resumeLink: 'Résumé',
     copyright: `© 2026 ${site.fullName.toUpperCase()}`,
-    tagline: 'TURNING IDEAS INTO CODE, ONE COMMIT AT A TIME ☕',
+    tagline: 'TURNING IDEAS INTO CODE, ONE COMMIT AT A TIME',
     backToTop: 'BACK TO TOP ↑',
   };
 
@@ -24,9 +24,9 @@ export const Contact: React.FC = () => {
       data-motion="dark"
       id="contact"
     >
-      <div className="flex justify-between gap-6 border-b border-[#494943] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
+      <div className="flex justify-between gap-6 border-b border-dark-line pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
         <span className="text-[12px] font-medium tracking-label text-accent-light">{labels.eyebrow}</span>
-        <span className="text-[#b7b3a8] phone:hidden">{labels.sub}</span>
+        <span className="text-dark-label phone:hidden">{labels.sub}</span>
       </div>
 
       <div className="relative pb-[30px] pt-[55px] phone:pb-5 phone:pt-[38px]">
@@ -88,7 +88,7 @@ export const Contact: React.FC = () => {
         </div>
       </div>
 
-      <footer className="flex justify-between gap-[25px] border-t border-[#494943] py-[25px] text-[12px] tracking-[1px] text-[#bbb7ad] phone:flex-wrap phone:gap-[18px] phone:text-[11px]">
+      <footer className="flex justify-between gap-[25px] border-t border-dark-line py-[25px] text-[12px] tracking-[1px] text-[#bbb7ad] phone:flex-wrap phone:gap-[18px] phone:text-[11px]">
         <span className="whitespace-nowrap">{labels.copyright}</span>
         <span className="phone:hidden">{labels.tagline}</span>
         <a className="-my-4 whitespace-nowrap py-4" href="#home">

@@ -32,7 +32,7 @@ export const SelectedWork: React.FC = () => {
     >
       <div className="flex justify-between gap-6 border-b border-[#45463f] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
         <span className="text-[12px] font-medium tracking-label text-accent-light">{labels.eyebrow}</span>
-        <span className="text-[#b7b3a8] phone:hidden">{labels.category}</span>
+        <span className="text-dark-label phone:hidden">{labels.category}</span>
       </div>
 
       <div className="mb-16 mt-14 grid grid-cols-[1.8fr_1fr] items-end justify-between gap-[6%] phone:my-[35px] phone:block">
@@ -53,7 +53,7 @@ export const SelectedWork: React.FC = () => {
         </h2>
         <div className="max-w-[330px] pb-1 [justify-self:end] phone:mt-8" data-motion="work-intro">
           <span className="font-serif text-[32px] font-normal leading-[1.15] text-paper">{labels.workNote}</span>
-          <p className="mb-[22px] mt-[18px] text-[16px] leading-[1.7] text-[#babbb1]">{labels.workIntro}</p>
+          <p className="mb-[22px] mt-[18px] text-[16px] leading-[1.7] text-dark-text">{labels.workIntro}</p>
           <a
             className="link-underline nudge-ne flex justify-between border-b border-[#77776b] py-3.5 text-[14px]"
             href={personal.resumePdf}
@@ -142,7 +142,7 @@ export const SelectedWork: React.FC = () => {
                   >
                     {project.title}
                   </h3>
-                  <p className="text-[14px] leading-[1.5] text-[#babbb1]">{project.subtitle}</p>
+                  <p className="text-[14px] leading-[1.5] text-dark-text">{project.subtitle}</p>
                 </div>
                 <a
                   className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-accent-light hover:text-ink-deep"
@@ -186,7 +186,7 @@ export const SelectedWork: React.FC = () => {
                 data-motion="project-tags"
               >
                 {project.tags.map((tag, i) => (
-                  <span key={i} className="border border-[#484b40] px-2.5 py-[7px] text-[12px] text-[#d1d1c6]">
+                  <span key={i} className="border border-dark-chip px-2.5 py-[7px] text-[12px] text-dark-chip-text">
                     {tag}
                   </span>
                 ))}

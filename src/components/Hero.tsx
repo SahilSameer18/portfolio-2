@@ -12,7 +12,6 @@ export const Hero: React.FC = () => {
     eyebrow: "HELLO, I'M SAHIL",
     explore: 'Explore selected work',
     resume: 'View résumé',
-    edition: '01 — INTRODUCTION',
     scroll: 'SCROLL TO EXPLORE',
     photoCaption: 'SYSTEMS. DATABASES. SCALE.',
     photoAlt: 'Sahil Sameer Siddique portrait',
@@ -44,7 +43,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative mt-[-58px] grid min-h-[610px] grid-cols-[1fr_1.4fr_.75fr] items-center gap-[5%] wide:min-h-[730px] tablet:mt-[-25px] tablet:min-h-[570px] tablet:grid-cols-[1fr_1.25fr] tablet:gap-[6%] phone:mt-[-9px] phone:flex phone:min-h-0 phone:flex-col phone:items-stretch phone:gap-0">
         <div
-          className="z-[2] pb-[115px] tablet:pb-[70px] phone:order-1 phone:pb-[30px] phone:pt-[35px]"
+          className="z-[2] pb-[115px] tablet:pb-[calc(37px_+_17.6vw)] phone:order-1 phone:pb-[30px] phone:pt-[35px]"
           data-motion="hero-intro"
         >
           <span className={`${meta} text-accent phone:text-[11px]`}>{labels.eyebrow}</span>
@@ -99,7 +98,6 @@ export const Hero: React.FC = () => {
             {labels.resume} <span aria-hidden="true">↗</span>
             <span className="sr-only"> (opens in new tab)</span>
           </a>
-          <span className={`${meta} mt-[70px] block text-muted`}>{labels.edition}</span>
         </div>
 
         <div

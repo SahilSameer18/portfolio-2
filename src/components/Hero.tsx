@@ -10,7 +10,7 @@ export const Hero: React.FC = () => {
 
   const labels = {
     eyebrow: "HELLO, I'M SAHIL",
-    explore: 'Explore selected work',
+    explore: 'View work',
     resume: 'View résumé',
     scroll: 'SCROLL TO EXPLORE',
     photoCaption: 'SYSTEMS. DATABASES. SCALE.',
@@ -53,11 +53,14 @@ export const Hero: React.FC = () => {
             <span className="text-accent">{personal.heroItalic}</span>
           </h2>
           <p className="max-w-[285px] text-[16px] text-muted phone:max-w-full">{personal.heroBio}</p>
-          <span className="mt-5 hidden border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent tablet:inline-block">
-            {personal.availability}
-          </span>
           <a
-            className="link-underline nudge-se mt-5 flex max-w-[230px] justify-between border-b border-ink py-4 text-[14px] desk:w-fit desk:max-w-none desk:justify-start desk:gap-2 phone:mt-2.5 phone:max-w-full"
+            href="#contact"
+            className="mt-5 hidden border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent [transition:background_.2s,color_.2s] hover:bg-accent hover:text-paper tablet:inline-block"
+          >
+            {personal.availability}
+          </a>
+          <a
+            className="nudge-se mt-5 flex w-fit items-center gap-3 bg-ink px-5 py-3.5 text-[14px] text-paper [transition:background_.2s] hover:bg-accent hover:text-paper phone:mt-4 phone:w-full phone:justify-between"
             href="#work"
           >
             {labels.explore} <span aria-hidden="true">↘</span>
@@ -85,9 +88,12 @@ export const Hero: React.FC = () => {
         </figure>
 
         <div className="relative z-3 [align-self:start] pt-[155px] tablet:hidden" data-motion="hero-aside">
-          <span className="inline-block border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent">
+          <a
+            href="#contact"
+            className="inline-block border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent [transition:background_.2s,color_.2s] hover:bg-accent hover:text-paper"
+          >
             {personal.availability}
-          </span>
+          </a>
           <p className="my-6 text-[14px] text-muted">{personal.asideCopy}</p>
           <a
             href={personal.resumePdf}
@@ -114,7 +120,7 @@ export const Hero: React.FC = () => {
         data-motion="hero-bottom"
       >
         <span>{personal.subrole}</span>
-        {/* Pointer-only shortcut: the "Explore selected work" link above is the accessible one. */}
+        {/* Pointer-only shortcut: the "View work" button above is the accessible one. */}
         <a className="-mt-[9px] py-[9px]" href="#work" tabIndex={-1} aria-hidden="true">
           {labels.scroll} ↓
         </a>

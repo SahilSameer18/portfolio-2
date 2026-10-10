@@ -17,6 +17,7 @@ export const Skills: React.FC = () => {
       data-motion="dark"
       id="skills"
     >
+      <h2 className="sr-only">Skills</h2>
       <div className="flex justify-between gap-6 border-b border-dark-line pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
         <span className="text-[12px] font-medium tracking-label text-accent-light phone:text-[12px]">{labels.eyebrow}</span>
         <span className="text-dark-label phone:hidden">{labels.tagline}</span>
@@ -26,7 +27,7 @@ export const Skills: React.FC = () => {
         {strengths.map((item) => (
           <div key={item.number} className="py-[22px]" data-motion="strength">
             <span className="text-[12px] text-accent-light">{item.number}</span>
-            <h4 className="m-0 mt-2.5 font-serif text-[26px] font-normal leading-[1.15]">{item.label}</h4>
+            <h3 className="m-0 mt-2.5 font-serif text-[26px] font-normal leading-[1.15]">{item.label}</h3>
             <p className="mb-0 mt-2.5 text-[14px] text-dark-text">{item.detail}</p>
           </div>
         ))}

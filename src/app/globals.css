@@ -95,6 +95,12 @@
     outline-offset: 6px;
   }
 
+  /* The default accent ring is only 2.4:1 on the dark sections; use the light accent there (7.3:1). */
+  .dark a:focus-visible,
+  .dark button:focus-visible {
+    outline-color: var(--color-accent-light);
+  }
+
   p {
     line-height: 1.7;
     text-wrap: pretty;

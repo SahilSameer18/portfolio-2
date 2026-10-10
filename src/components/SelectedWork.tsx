@@ -206,7 +206,7 @@ export const SelectedWork: React.FC = () => {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2.5 py-[7px] text-[12px] underline"
+                    className="-my-[6px] px-2.5 py-[13px] text-[12px] underline"
                   >
                     {labels.openGithub} <span aria-hidden="true">↗</span>
                     <span className="sr-only"> (opens in new tab)</span>

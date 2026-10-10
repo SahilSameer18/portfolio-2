@@ -10,7 +10,7 @@ const dockLink =
   'tablet:after:origin-left tablet:after:[transform:scaleX(0)] tablet:hover:after:[transform:scaleX(1)] tablet:data-[active=true]:after:[transform:scaleX(1)] ' +
   'phone:px-0 phone:text-[11px] phone:tracking-[.1px] ' +
   // invisible larger touch area on the horizontal (mobile) dock; layout is unchanged
-  "tablet:before:absolute tablet:before:-inset-x-1 tablet:before:-inset-y-2 tablet:before:content-['']";
+  "tablet:before:absolute tablet:before:-inset-x-1 tablet:before:-inset-y-[12px] tablet:before:content-['']";
 
 export const Navigation: React.FC = () => {
   const { personal, projects } = portfolioData;
@@ -42,7 +42,7 @@ export const Navigation: React.FC = () => {
         data-motion="dock"
       >
         <a
-          className="relative inline-block pl-1 pr-0.5 font-serif text-[28px] leading-none tracking-[-2px] tablet:pr-1 tablet:text-[24px] tablet:tracking-[-4px] phone:text-[22px] tablet:before:absolute tablet:before:-inset-x-1 tablet:before:-inset-y-2 tablet:before:content-['']"
+          className="relative inline-block pl-1 pr-0.5 font-serif text-[28px] leading-none tracking-[-2px] tablet:pr-1 tablet:text-[24px] tablet:tracking-[-4px] phone:text-[22px] tablet:before:absolute tablet:before:-inset-x-1 tablet:before:-inset-y-[12px] tablet:before:content-['']"
           href="#home"
           aria-label={labels.homeAria}
         >

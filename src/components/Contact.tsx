@@ -9,7 +9,7 @@ export const Contact: React.FC = () => {
   const labels = {
     eyebrow: '05 / GET IN TOUCH',
     sub: 'FULL-STACK / BACKEND / ENGINEERING',
-    intro: 'Engineering scalable web systems, high-QPS APIs & AI products.',
+    intro: 'Backend-focused web apps, APIs and AI features.',
     headingLine1: "LET'S BUILD",
     headingLine2: 'SOMETHING GREAT.',
     resumeLink: 'Résumé',

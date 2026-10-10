@@ -38,6 +38,7 @@ export const portfolioData: PortfolioData = {
       badge: 'React 19 · Express 5 · Gemini AI',
       title: 'PrepStack',
       subtitle: 'Centralized DSA tracking & AI project blueprint generator',
+      problem: 'Interview prep is scattered across DSA sheets, CS notes, behavioural tips and generic AI project ideas.',
       description: 'A full-stack interview preparation ecosystem unifying Gemini AI project generation, asynchronous DSA progress tracking across industry sheets, and sub-40ms single-roundtrip dashboard aggregation.',
       image: prepstackImage,
       imageAlt: 'PrepStack SDE Interview Ecosystem dashboard preview',
@@ -57,7 +58,8 @@ export const portfolioData: PortfolioData = {
       badge: 'Node.js · BullMQ · PostgreSQL · Gemini',
       title: 'InForge',
       subtitle: 'Gmail triage where the AI only suggests and fixed rules decide',
-      description: "AI can't be trusted to change a real mailbox. InForge lets Gemini suggest actions while a rule engine decides what is allowed: bank, security and legal mail is never touched, nothing is deleted or sent, and every change can be undone. Built with background job queues, live Gmail push updates and encrypted tokens.",
+      problem: "AI can't be trusted to change a real mailbox.",
+      description: "InForge lets Gemini suggest actions while a rule engine decides what is allowed: bank, security and legal mail is never touched, nothing is deleted or sent, and every change can be undone. Built with background job queues, live Gmail push updates and encrypted tokens.",
       image: inforgeImage,
       imageAlt: 'InForge landing page: The AI proposes. The Safety Engine disposes.',
       metrics: [
@@ -75,6 +77,7 @@ export const portfolioData: PortfolioData = {
       badge: 'React · Node.js · PostgreSQL · Cloudinary',
       title: 'VaultDrive',
       subtitle: 'Direct-to-cloud uploads, nested folders and secure file sharing',
+      problem: 'Storing and sharing files securely, without the server handling large uploads or exposing raw storage links.',
       description: 'A cloud storage platform with a zero-memory, direct-to-cloud upload pipeline, nested folder trees with cycle guards, soft-delete trash recovery, and user-to-user or public-link sharing with instant access revocation, secured by JWT token rotation and Google OAuth 2.0.',
       image: vaultdriveImage,
       imageAlt: 'VaultDrive cloud storage workspace preview',
@@ -88,22 +91,36 @@ export const portfolioData: PortfolioData = {
     }
   ],
   skills: [
-    { number: '01', title: 'Programming Languages', items: ['JavaScript', 'TypeScript', 'C++'] },
-    { number: '02', title: 'Frontend', items: ['React.js', 'HTML', 'CSS', 'Tailwind CSS'] },
+    { number: '01', title: 'Languages', items: ['JavaScript', 'TypeScript', 'C++'] },
+    {
+      number: '02',
+      title: 'Backend & APIs',
+      items: ['Node.js', 'Express.js', 'REST APIs', 'Zod validation', 'Rate limiting']
+    },
     {
       number: '03',
-      title: 'Backend',
-      items: ['Node.js', 'Express.js', 'Socket.IO', 'Zod', 'REST APIs', 'JWT Auth', 'Google OAuth 2.0']
+      title: 'Databases & Caching',
+      items: ['PostgreSQL (Neon)', 'MongoDB', 'Prisma ORM', 'Redis', 'Schema design & indexing']
     },
-    { number: '04', title: 'Databases', items: ['MongoDB', 'PostgreSQL (Neon)', 'Redis', 'Prisma ORM'] },
-    { number: '05', title: 'AI & APIs', items: ['Gemini API'] },
-    { number: '06', title: 'Tools & Deployment', items: ['Git', 'GitHub', 'Postman', 'Vercel', 'Render', 'Cloudinary'] }
+    {
+      number: '04',
+      title: 'Auth & Security',
+      items: ['JWT refresh-token rotation', 'Google OAuth 2.0', 'HTTP-only cookies', 'AES-256-GCM encryption']
+    },
+    { number: '05', title: 'Queues & Real-time', items: ['BullMQ', 'Socket.IO', 'Google Pub/Sub'] },
+    { number: '06', title: 'AI Features', items: ['Gemini API', 'Structured output', 'Zod-validated responses'] },
+    { number: '07', title: 'Frontend', items: ['React.js', 'Tailwind CSS', 'HTML', 'CSS'] },
+    {
+      number: '08',
+      title: 'Tools & Deployment',
+      items: ['Git', 'GitHub', 'Postman', 'Vercel', 'Render', 'Cloudinary']
+    }
   ],
   strengths: [
-    { number: '01', label: 'DB Indexing', detail: 'B-Trees, Poolers & Cascades' },
-    { number: '02', label: 'High-QPS APIs', detail: 'Cache-Aside & Sub-50ms REST' },
-    { number: '03', label: 'Auth & Security', detail: 'HttpOnly Refresh Token Rotation' },
-    { number: '04', label: 'AI Streaming', detail: 'Strict JSON Schema Enforcement' }
+    { number: '01', label: 'Database Design', detail: 'Indexes, migrations and safe cascading deletes' },
+    { number: '02', label: 'Reliable APIs', detail: 'Validation, rate limiting and clear errors' },
+    { number: '03', label: 'Auth & Security', detail: 'Rotating refresh tokens and Google sign-in' },
+    { number: '04', label: 'AI Features', detail: 'Structured, validated AI responses' }
   ],
   education: [
     {

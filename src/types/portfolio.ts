@@ -7,6 +7,7 @@ export interface Project {
   badge: string;
   title: string;
   subtitle: string;
+  problem?: string;
   description: string;
   image: StaticImageData;
   imageAlt: string;

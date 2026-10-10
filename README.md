@@ -17,9 +17,9 @@ An editorial, single-page site with scroll-driven motion, built to be fast, acce
 
 | Project | What it is |
 |---|---|
-| **PrepStack** | Interview-preparation ecosystem with simulated coding assessments and analytics. |
-| **SkillBridge AI** | Career diagnostic engine that analyses résumés and maps personalised learning paths. |
-| **VaultDrive** | Cloud storage with direct-to-cloud uploads, nested folders, trash recovery and secure sharing. |
+| [**PrepStack**](https://prepstack-ss.vercel.app) | Interview prep in one place: DSA sheet tracking, CS notes, roadmaps and AI-generated project ideas. |
+| [**InForge**](https://inforge-s.vercel.app) | Gmail triage where the AI only suggests and a fixed rule engine decides, with background job queues and one-click undo. Code available on request. |
+| [**VaultDrive**](https://vaultdrive-s.vercel.app) | Cloud storage with direct-to-cloud uploads, nested folders, trash recovery and secure sharing. |
 
 ## Tech stack
 

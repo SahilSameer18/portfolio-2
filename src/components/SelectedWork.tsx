@@ -156,9 +156,20 @@ export const SelectedWork: React.FC = () => {
                 </a>
               </div>
 
+              {project.problem && (
+                <p
+                  className={`font-serif text-[22px] leading-[1.3] text-paper ${
+                    wide ? 'col-start-2 mt-7' : 'mt-[22px]'
+                  }`}
+                  data-motion="project-description"
+                >
+                  {project.problem}
+                </p>
+              )}
+
               <p
-                className={`max-w-full text-[16px] leading-[1.7] text-[#bcbeb3] ${
-                  wide ? 'col-start-2 mt-7' : 'mt-[22px]'
+                className={`max-w-full text-[16px] leading-[1.7] text-[#bcbeb3] ${wide ? 'col-start-2' : ''} ${
+                  project.problem ? 'mt-3' : wide ? 'mt-7' : 'mt-[22px]'
                 }`}
                 data-motion="project-description"
               >

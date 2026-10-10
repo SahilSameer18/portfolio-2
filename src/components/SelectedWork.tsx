@@ -201,6 +201,9 @@ export const SelectedWork: React.FC = () => {
                     <span className="sr-only"> (opens in new tab)</span>
                   </a>
                 )}
+                {project.note && (
+                  <span className="basis-full text-[12px] leading-[1.5] text-dark-label">{project.note}</span>
+                )}
               </div>
             </article>
           );

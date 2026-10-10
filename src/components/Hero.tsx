@@ -43,7 +43,7 @@ export const Hero: React.FC = () => {
 
       <div className="relative mt-[-58px] grid min-h-[610px] grid-cols-[1fr_1.4fr_.75fr] items-center gap-[5%] wide:min-h-[730px] tablet:mt-[-25px] tablet:min-h-[570px] tablet:grid-cols-[1fr_1.25fr] tablet:gap-[6%] phone:mt-[-9px] phone:flex phone:min-h-0 phone:flex-col phone:items-stretch phone:gap-0">
         <div
-          className="z-[2] pb-[115px] tablet:pb-[calc(37px_+_17.6vw)] phone:order-1 phone:pb-[30px] phone:pt-[35px]"
+          className="z-[2] pb-[170px] tablet:pb-[calc(37px_+_17.6vw)] phone:order-1 phone:pb-[30px] phone:pt-[35px]"
           data-motion="hero-intro"
         >
           <span className={`${meta} text-accent phone:text-[11px]`}>{labels.eyebrow}</span>
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
             {personal.availability}
           </span>
           <a
-            className="link-underline nudge-se mt-5 flex max-w-[230px] justify-between border-b border-ink py-4 text-[14px] phone:mt-2.5 phone:max-w-full"
+            className="link-underline nudge-se mt-5 flex max-w-[230px] justify-between border-b border-ink py-4 text-[14px] desk:w-fit desk:max-w-none desk:justify-start desk:gap-2 phone:mt-2.5 phone:max-w-full"
             href="#work"
           >
             {labels.explore} <span aria-hidden="true">↘</span>

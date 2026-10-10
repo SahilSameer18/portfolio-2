@@ -2,7 +2,7 @@ import { PortfolioData } from '../types/portfolio';
 import heroPhoto from '../../public/assets/sahil-hero.webp';
 import aboutPhoto from '../../public/assets/sahil-about.png';
 import prepstackImage from '../../public/assets/prepstack.png';
-import skillbridgeImage from '../../public/assets/skillbridgeAI.png';
+import inforgeImage from '../../public/assets/inforge.png';
 import vaultdriveImage from '../../public/assets/vaultdrive.png';
 
 export const portfolioData: PortfolioData = {
@@ -14,18 +14,18 @@ export const portfolioData: PortfolioData = {
     location: 'DELHI, INDIA / BACKEND & SYSTEMS',
     role: 'Backend-Focused Full Stack Developer',
     subrole: 'NODE.JS / POSTGRESQL / MONGODB / REACT / AI',
-    heroHeadline: 'Engineering scalable systems.',
-    heroItalic: 'Built for performance.',
-    heroBio: 'Backend-focused full stack developer architecting resilient, high-performance server-side systems, high-QPS APIs, optimized databases, and AI-driven platforms.',
+    heroHeadline: 'Backend-first full-stack developer.',
+    heroItalic: 'APIs, data, and AI that behave.',
+    heroBio: 'Full-stack developer who likes the backend best. I build APIs, databases and background jobs, and I add AI features carefully, with validation and a human in the loop.',
     availability: 'OPEN TO OPPORTUNITIES',
-    asideCopy: 'From database schema modeling to production-grade interfaces.',
+    asideCopy: 'From database schema to finished interface.',
     aboutHeadline: 'Architecture first.',
     aboutItalic: 'Driven by precision.',
     aboutParagraphs: [
-        "I'm Sahil Sameer Siddique, a full-stack software engineer specializing in backend architecture, database indexing, and high-performance API design.",
-        'My core focus centers on architecting resilient microservices, achieving sub-40ms database query times via compound indexing, implementing replay-proof dual-token authentication, and building deterministic GenAI pipelines with Zod schema validation.',
-        'While my passion lies in backend systems and database engineering, I pair this structural rigor with modern, highly responsive React and Next.js interfaces to deliver complete, production-grade web applications.'
-      ],
+      "I'm Sahil Sameer Siddique, a full-stack developer who likes the backend best: APIs, databases, sign-in and security, and the background work that keeps an app dependable.",
+      "I like projects where the engineering behind the interface matters: secure authentication, uploads that don't overload the server, job queues for background work, and AI features that are checked before they touch real data.",
+      "I also build the React interface, because a fast API only helps if the product around it feels good. I graduated in 2025 with a B.Tech in Computer Science, I'm based in Delhi, and I'm looking for backend or full-stack roles."
+    ],
     resumePdf: '/assets/sameer-resume.pdf',
     heroPhoto,
     aboutPhoto
@@ -51,18 +51,22 @@ export const portfolioData: PortfolioData = {
       github: 'https://github.com/SahilSameer18/prepstack'
     },
     {
-      id: 'skillbridge-ai',
+      id: 'inforge',
       number: '02',
-      kicker: '02 / AI CAREER & RESUME ANALYZER',
-      badge: 'PostgreSQL · Neon · Prisma · Redis',
-      title: 'SkillBridge AI',
-      subtitle: 'Deterministic skill gap resolution & readiness scoring',
-      description: 'Transforms resumes and job descriptions into structured AI readiness reports with word-boundary regex skill gap resolution, Redis fail-open caching, and compound-indexed PostgreSQL queries.',
-      image: skillbridgeImage,
-      imageAlt: 'SkillBridge AI Career Diagnostic Engine preview',
-      tags: ['PostgreSQL', 'Neon', 'Prisma ORM', 'Redis Cloud', 'Gemini AI', 'Express 5'],
-      link: 'https://skillbridgeai-s.vercel.app/',
-      github: 'https://github.com/SahilSameer18/skillbridgeAI'
+      kicker: '02 / GMAIL SAFETY & AUTOMATION',
+      badge: 'Node.js · BullMQ · PostgreSQL · Gemini',
+      title: 'InForge',
+      subtitle: 'Gmail triage where the AI only suggests and fixed rules decide',
+      description: "AI can't be trusted to change a real mailbox. InForge lets Gemini suggest actions while a rule engine decides what is allowed: bank, security and legal mail is never touched, nothing is deleted or sent, and every change can be undone. Built with background job queues, live Gmail push updates and encrypted tokens.",
+      image: inforgeImage,
+      imageAlt: 'InForge landing page: The AI proposes. The Safety Engine disposes.',
+      metrics: [
+        { value: '41', label: 'automated test suites covering safety rules, queues and security' },
+        { value: '~16s', label: 'from a new email to showing in the app (live push test)' }
+      ],
+      tags: ['Node.js', 'PostgreSQL', 'Prisma ORM', 'Redis + BullMQ', 'Gemini AI', 'Gmail API'],
+      link: 'https://inforge-s.vercel.app/',
+      note: 'Code available on request. The first load can take about 30 seconds while the server wakes up.'
     },
     {
       id: 'vaultdrive',

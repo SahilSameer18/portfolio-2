@@ -15,6 +15,7 @@ export interface Project {
   wide?: boolean;
   link?: string;
   github?: string;
+  note?: string;
 }
 
 export interface SkillCategory {

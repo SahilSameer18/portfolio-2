@@ -9,7 +9,7 @@ An editorial, single-page site with scroll-driven motion, built to be fast, acce
 
 - **Editorial design, hand-built motion.** Cinematic hero intro, scroll reveals, a light-to-dark colour morph between sections, a trailing cursor ring and Lenis smooth scrolling. Everything respects `prefers-reduced-motion` and touch devices.
 - **Server-first Next.js.** The page and every section are React Server Components; only two small client islands ship JavaScript (`MotionController` and `CopyEmailButton`).
-- **Search-ready.** Metadata API, canonical URL, JSON-LD (`Person`, `WebSite`, `ProfilePage`), generated Open Graph / Twitter image, favicon and Apple icon, `sitemap.xml`, `robots.txt` and Google Search Console verification. Preview deployments are automatically `noindex`.
+- **Search-ready.** Metadata API, canonical URL, JSON-LD (`Person`, `WebSite`, `ProfilePage`), generated Open Graph / Twitter image, favicon and Apple icon, `sitemap.xml` (the résumé PDF is deliberately not listed), `robots.txt` and Google Search Console verification. Preview deployments are automatically `noindex`.
 - **Responsive and accessible.** Layout audited from 320 px to 2560 px (side dock on desktop, bottom dock on tablet and phone), skip link, semantic landmarks, keyboard-friendly links, screen-reader-safe arrows and "opens in new tab" hints.
 - **Content lives in one file.** Text, skills, education and projects are edited in `src/data/portfolioData.ts`; nothing is hard-coded across components.
 

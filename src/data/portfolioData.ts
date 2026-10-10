@@ -39,12 +39,12 @@ export const portfolioData: PortfolioData = {
       title: 'PrepStack',
       subtitle: 'Centralized DSA tracking & AI project blueprint generator',
       problem: 'Interview prep is scattered across DSA sheets, CS notes, behavioural tips and generic AI project ideas.',
-      description: 'A full-stack interview preparation ecosystem unifying Gemini AI project generation, asynchronous DSA progress tracking across industry sheets, and sub-40ms single-roundtrip dashboard aggregation.',
+      description: 'A full-stack interview preparation ecosystem unifying Gemini AI project generation, asynchronous DSA progress tracking across industry sheets, and single-request dashboard aggregation.',
       image: prepstackImage,
       imageAlt: 'PrepStack SDE Interview Ecosystem dashboard preview',
       metrics: [
-        { value: '−31%', label: 'initial bundle size via route-based code splitting' },
-        { value: '<20s', label: 'AI project ideation, down from hours' }
+        { value: '−31%', label: 'initial bundle size, measured before and after route-based code splitting' },
+        { value: '<20s', label: 'average AI idea generation time (varies with the API)' }
       ],
       tags: ['React 19', 'Express 5', 'MongoDB', 'Zod', 'Gemini AI', 'JWT'],
       wide: true,
@@ -64,7 +64,7 @@ export const portfolioData: PortfolioData = {
       imageAlt: 'InForge landing page: The AI proposes. The Safety Engine disposes.',
       metrics: [
         { value: '41', label: 'automated test suites covering safety rules, queues and security' },
-        { value: '~16s', label: 'from a new email to showing in the app (live push test)' }
+        { value: '6', label: 'background workers: sync, classify, actions, unsubscribe, maintenance and replies' }
       ],
       tags: ['Node.js', 'PostgreSQL', 'Prisma ORM', 'Redis + BullMQ', 'Gemini AI', 'Gmail API'],
       link: 'https://inforge-s.vercel.app/',
@@ -82,8 +82,8 @@ export const portfolioData: PortfolioData = {
       image: vaultdriveImage,
       imageAlt: 'VaultDrive cloud storage workspace preview',
       metrics: [
-        { value: '100MB', label: 'files uploaded direct-to-cloud with zero server memory' },
-        { value: 'O(1)', label: 'refresh-token lookup through an indexed token ID' }
+        { value: '100MB', label: 'per-file limit, tested; uploads go straight to cloud storage' },
+        { value: '1 lookup', label: 'to find a refresh token, by ID instead of scanning all tokens' }
       ],
       tags: ['React', 'Node.js', 'PostgreSQL (Neon)', 'Prisma ORM', 'Cloudinary', 'JWT', 'Google OAuth 2.0'],
       link: 'https://vaultdrive-s.vercel.app/',

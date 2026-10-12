@@ -5,11 +5,20 @@ import { portfolioData } from '../data/portfolioData';
 export const SelectedWork: React.FC = () => {
   const { projects, personal } = portfolioData;
 
+  const safeHost = (url?: string) => {
+    if (!url) return '';
+    try {
+      return new URL(url).host;
+    } catch {
+      return url.replace(/^https?:\/\//, '').split('/')[0];
+    }
+  };
+
   const countStr = projects.length < 10 ? `0${projects.length}` : `${projects.length}`;
 
   const labels = {
     sectionAria: 'Selected Work',
-    eyebrow: '01 / SELECTED WORK',
+    eyebrow: 'SELECTED WORK',
     category: 'FULL-STACK & SYSTEMS ARCHITECTURE',
     headingLine1: 'SELECTED',
     headingLine2: 'PROJECTS',
@@ -20,7 +29,7 @@ export const SelectedWork: React.FC = () => {
     openProject: 'LIVE DEMO',
     openGithub: 'GITHUB',
     ctaPrompt: 'Building a scalable platform?',
-    ctaAction: "Let's connect",
+    ctaAction: "Let's talk",
   };
 
   return (
@@ -55,12 +64,18 @@ export const SelectedWork: React.FC = () => {
           <span className="font-serif text-[32px] font-normal leading-[1.15] text-paper">{labels.workNote}</span>
           <p className="mb-[22px] mt-[18px] text-[16px] leading-[1.7] text-dark-text">{labels.workIntro}</p>
           <a
-            className="link-underline nudge-ne flex justify-between border-b border-[#77776b] py-3.5 text-[14px]"
+            className="group flex items-center justify-between border-b border-[#77776b] py-3 text-[14px] transition-colors hover:text-accent-light active:scale-[0.98]"
             href={personal.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {labels.resumeLink} <span className="text-[20px]" aria-hidden="true">↗</span>
+            <span>{labels.resumeLink}</span>
+            <span
+              className="flex size-6 items-center justify-center rounded-full bg-white/5 text-[12px] transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:bg-accent-light group-hover:text-ink-deep"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
             <span className="sr-only"> (opens in new tab)</span>
           </a>
         </div>
@@ -89,7 +104,7 @@ export const SelectedWork: React.FC = () => {
               </div>
 
               <a
-                className={`group relative isolate block overflow-hidden border border-[#d6d0c3]/60 bg-[linear-gradient(145deg,#ddd7ca,#c8c1b2)] ${
+                className={`group relative isolate block overflow-hidden border border-[#d6d0c3]/60 bg-[linear-gradient(145deg,#ddd7ca,#c8c1b2)] transition-transform active:scale-[0.99] ${
                   wide ? 'col-[1/-1] row-auto px-[8%] py-[5%]' : 'p-[7%]'
                 } phone:p-[6%]`}
                 data-motion="project-image"
@@ -100,15 +115,21 @@ export const SelectedWork: React.FC = () => {
               >
                 <div className="overflow-hidden border border-[#0d0e0b]/40 bg-[#111210] [box-shadow:0_40px_70px_-30px_rgba(25,26,23,.55),0_12px_24px_-12px_rgba(25,26,23,.35)] [transition:transform_.6s_var(--ease-expo)] group-hover:[transform:translateY(-6px)]">
                   <div
-                    className="flex items-center gap-1.5 border-b border-white/10 bg-[#191a16] px-3 py-[9px]"
+                    className="flex items-center gap-1.5 border-b border-white/10 bg-[#191a16] px-3.5 py-[9px]"
                     aria-hidden="true"
                   >
-                    <span className="size-[7px] rounded-[50%] bg-[#4b4d44]" />
-                    <span className="size-[7px] rounded-[50%] bg-[#4b4d44]" />
-                    <span className="size-[7px] rounded-[50%] bg-[#4b4d44]" />
-                    <span className="ml-3 truncate text-[11px] leading-none tracking-[.04em] text-[#8d9084]">
-                      {targetUrl ? new URL(targetUrl).host : ''}
-                    </span>
+                    <div className="flex items-center gap-1.5">
+                      <span className="size-[7px] rounded-full bg-[#4b4d44]" />
+                      <span className="size-[7px] rounded-full bg-[#4b4d44]" />
+                      <span className="size-[7px] rounded-full bg-[#4b4d44]" />
+                    </div>
+                    <div className="ml-3 flex items-center gap-2 truncate text-[11px] leading-none tracking-[.04em] text-[#8d9084]">
+                      <span className="relative flex size-1.5">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                        <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
+                      </span>
+                      <span className="truncate">{safeHost(targetUrl)}</span>
+                    </div>
                   </div>
                   <Image
                     className="block h-auto w-full"
@@ -145,7 +166,7 @@ export const SelectedWork: React.FC = () => {
                   <p className="text-[14px] leading-[1.5] text-dark-text">{project.subtitle}</p>
                 </div>
                 <a
-                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-[50%] border border-[#65685c] text-[26px] [transition:background_.2s,color_.2s] hover:bg-accent-light hover:text-ink-deep"
+                  className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border border-[#65685c] text-[26px] transition-all duration-300 hover:scale-105 hover:bg-accent-light hover:text-ink-deep active:scale-95"
                   href={targetUrl}
                   target="_blank"
                   rel="noopener noreferrer"

@@ -7,7 +7,7 @@ export const Contact: React.FC = () => {
   const { personal } = portfolioData;
 
   const labels = {
-    eyebrow: '05 / GET IN TOUCH',
+    eyebrow: 'INITIATE CONTACT',
     sub: 'FULL-STACK / BACKEND / ENGINEERING',
     intro: 'Backend-focused web apps, APIs and AI features.',
     headingLine1: "LET'S BUILD",
@@ -45,18 +45,20 @@ export const Contact: React.FC = () => {
           <span className="text-accent-light">{labels.headingLine2}</span>
         </h2>
         <a
-          className="absolute bottom-[12%] right-[2%] flex size-[145px] items-center justify-center rounded-[50%] border border-[#8c8a80] font-sans text-[110px] font-normal leading-[normal] [transition:transform_.35s_var(--ease-expo)] hover:[transform:scale(1.05)] tablet:size-[100px] tablet:text-[75px] phone:bottom-5 phone:right-0 phone:size-[58px] phone:text-[40px]"
+          className="group absolute bottom-[12%] right-[2%] flex size-[145px] items-center justify-center rounded-full border border-dark-line/80 bg-white/[0.02] p-2 backdrop-blur-sm transition-all duration-500 ease-out hover:border-accent-light/60 hover:bg-white/[0.06] hover:scale-[1.06] active:scale-[0.96] tablet:size-[100px] phone:bottom-5 phone:right-0 phone:size-[60px]"
           href={`mailto:${personal.email}`}
           tabIndex={-1}
           aria-hidden="true"
         >
-          ↗
+          <div className="flex size-full items-center justify-center rounded-full border border-white/10 font-sans text-[90px] leading-none text-paper transition-all duration-300 group-hover:bg-accent-light group-hover:text-ink-deep tablet:text-[60px] phone:text-[34px]">
+            ↗
+          </div>
         </a>
       </div>
 
       <div className="flex flex-wrap items-center gap-5 pb-[55px] pt-[30px] phone:gap-x-[18px] phone:gap-y-2.5 phone:pb-[35px]">
         <a
-          className="link-underline border-b border-[#6a695f] py-3 text-[length:clamp(17px,2vw,27px)] phone:max-w-full phone:text-[18px] phone:[overflow-wrap:anywhere]"
+          className="link-underline border-b border-[#6a695f] py-3 text-[length:clamp(17px,2vw,27px)] transition-colors hover:text-accent-light active:scale-[0.98] phone:max-w-full phone:text-[18px] phone:[overflow-wrap:anywhere]"
           href={`mailto:${personal.email}`}
         >
           {personal.email}
@@ -67,22 +69,28 @@ export const Contact: React.FC = () => {
           {site.socials.map((social) => (
             <a
               key={social.label}
-              className="-my-[13px] py-[13px]"
+              className="group -my-[13px] flex items-center gap-1.5 py-[13px] transition-colors hover:text-accent-light active:scale-[0.98]"
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {social.label} <span aria-hidden="true">↗</span>
+              <span>{social.label}</span>
+              <span className="text-[12px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
+                ↗
+              </span>
               <span className="sr-only"> (opens in new tab)</span>
             </a>
           ))}
           <a
-            className="-my-[13px] py-[13px]"
+            className="group -my-[13px] flex items-center gap-1.5 py-[13px] transition-colors hover:text-accent-light active:scale-[0.98]"
             href={personal.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {labels.resumeLink} <span aria-hidden="true">↗</span>
+            <span>{labels.resumeLink}</span>
+            <span className="text-[12px] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
+              ↗
+            </span>
             <span className="sr-only"> (opens in new tab)</span>
           </a>
         </div>

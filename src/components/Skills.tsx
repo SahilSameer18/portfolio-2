@@ -5,8 +5,8 @@ export const Skills: React.FC = () => {
   const { skills, strengths } = portfolioData;
 
   const labels = {
-    eyebrow: '03 / SKILLS',
-    tagline: 'TOOLS I WORK WITH',
+    eyebrow: 'TECHNICAL CAPABILITIES',
+    tagline: 'ENGINEERED FOR RESILIENCE',
     headline: 'The Core Stack.',
     italic: 'Engineered to scale.',
   };
@@ -24,36 +24,43 @@ export const Skills: React.FC = () => {
 
       <div className="mb-[85px] mt-[70px] grid grid-cols-4 gap-x-6 border-t border-dark-line tablet:grid-cols-2 phone:mb-[50px] phone:mt-10 phone:grid-cols-1">
         {strengths.map((item) => (
-          <div key={item.number} className="py-[22px]" data-motion="strength">
-            <span className="text-[12px] text-accent-light">{item.number}</span>
-            <h4 className="m-0 mt-2.5 font-serif text-[26px] font-normal leading-[1.15]">{item.label}</h4>
-            <p className="mb-0 mt-2.5 text-[14px] text-dark-text">{item.detail}</p>
+          <div
+            key={item.number}
+            className="group py-[22px] transition-transform duration-300 hover:-translate-y-1"
+            data-motion="strength"
+          >
+            <span className="text-[12px] text-accent-light transition-colors group-hover:text-paper">{item.number}</span>
+            <h4 className="m-0 mt-2.5 font-serif text-[26px] font-normal leading-[1.15] transition-colors group-hover:text-accent-light">{item.label}</h4>
+            <p className="mb-0 mt-2.5 text-[14px] text-dark-text leading-[1.6]">{item.detail}</p>
           </div>
         ))}
       </div>
 
       <div className="grid grid-cols-[1fr_2fr] gap-x-[10%] tablet:gap-x-[5%] phone:block">
         <h3
-          className="my-5 font-serif text-[40px] font-normal leading-[1.12] phone:mb-8 phone:mt-0 phone:text-[36px]"
+          className="my-5 font-serif text-[40px] font-normal leading-[1.16] phone:mb-8 phone:mt-0 phone:text-[36px]"
           style={{ gridRow: `1 / ${skills.length + 1}` }}
           data-motion="expertise-title"
         >
           {labels.headline}
           <br />
-          <span className="text-accent-light">{labels.italic}</span>
+          <span className="inline-block pb-1 text-accent-light">{labels.italic}</span>
         </h3>
 
         {skills.map((skill) => (
           <div
             key={skill.number}
-            className="grid grid-cols-[30px_1fr] gap-x-[18px] gap-y-0 border-t border-dark-line py-[22px]"
+            className="group grid grid-cols-[30px_1fr] gap-x-[18px] gap-y-0 border-t border-dark-line py-[22px] transition-colors hover:border-dark-line/90"
             data-motion="skill-row"
           >
-            <span className="pt-[5px] text-[12px] text-accent-light">{skill.number}</span>
-            <h4 className="m-0 text-[19px] font-medium">{skill.title}</h4>
+            <span className="pt-[5px] text-[12px] text-accent-light transition-colors group-hover:text-paper">{skill.number}</span>
+            <h4 className="m-0 text-[19px] font-medium transition-colors group-hover:text-accent-light">{skill.title}</h4>
             <div className="col-start-2 mt-3.5 flex flex-wrap gap-2">
               {skill.items.map((item) => (
-                <span key={item} className="border border-dark-chip px-2.5 py-[7px] text-[13px] text-dark-chip-text">
+                <span
+                  key={item}
+                  className="border border-dark-chip/90 bg-white/[0.02] px-3 py-[7px] text-[13px] text-dark-chip-text transition-all duration-200 hover:border-accent-light/60 hover:bg-white/[0.08] hover:text-paper hover:scale-[1.03] select-none"
+                >
                   {item}
                 </span>
               ))}

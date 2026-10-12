@@ -47,20 +47,26 @@ export const Hero: React.FC = () => {
           data-motion="hero-intro"
         >
           <span className={`${meta} text-accent phone:text-[11px]`}>{labels.eyebrow}</span>
-          <h2 className="my-6 font-serif text-[length:clamp(26px,2.8vw,46px)] font-normal leading-[1.15] phone:my-4 phone:text-[38px]">
+          <h2 className="my-6 font-serif text-[length:clamp(26px,2.8vw,46px)] font-normal leading-[1.18] phone:my-4 phone:text-[38px]">
             {personal.heroHeadline}
             <br />
-            <span className="text-accent">{personal.heroItalic}</span>
+            <span className="inline-block pb-1 text-accent">{personal.heroItalic}</span>
           </h2>
           <p className="max-w-[285px] text-[16px] text-muted phone:max-w-full">{personal.heroBio}</p>
           <span className="mt-5 hidden border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent tablet:inline-block">
             {personal.availability}
           </span>
           <a
-            className="link-underline nudge-se mt-5 flex max-w-[230px] justify-between border-b border-ink py-4 text-[14px] desk:w-fit desk:max-w-none desk:justify-start desk:gap-2 phone:mt-2.5 phone:max-w-full"
+            className="group mt-6 inline-flex max-w-[240px] items-center justify-between border-b border-ink/80 pb-3 text-[14px] font-medium transition-colors hover:text-accent active:scale-[0.98] desk:w-fit desk:max-w-none desk:justify-start desk:gap-3 phone:mt-3 phone:max-w-full"
             href="#work"
           >
-            {labels.explore} <span aria-hidden="true">↘</span>
+            <span>{labels.explore}</span>
+            <span
+              className="flex size-6 items-center justify-center rounded-full bg-ink/5 text-[12px] transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1 group-hover:bg-accent group-hover:text-paper"
+              aria-hidden="true"
+            >
+              ↘
+            </span>
           </a>
         </div>
 
@@ -93,9 +99,15 @@ export const Hero: React.FC = () => {
             href={personal.resumePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="link-underline nudge-ne inline-flex gap-8 border-b border-line py-3.5 text-[14px]"
+            className="group inline-flex items-center gap-4 border-b border-line pb-3 text-[14px] transition-colors hover:text-accent active:scale-[0.98]"
           >
-            {labels.resume} <span aria-hidden="true">↗</span>
+            <span>{labels.resume}</span>
+            <span
+              className="flex size-6 items-center justify-center rounded-full bg-ink/5 text-[12px] transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:bg-accent group-hover:text-paper"
+              aria-hidden="true"
+            >
+              ↗
+            </span>
             <span className="sr-only"> (opens in new tab)</span>
           </a>
         </div>

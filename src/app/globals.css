@@ -85,8 +85,15 @@
     color: var(--color-accent-light);
   }
 
+  a,
   button {
     font: inherit;
+    transition: color .2s, transform .15s var(--ease-expo);
+  }
+
+  a:active,
+  button:active {
+    transform: scale(0.975);
   }
 
   a:focus-visible,
@@ -193,22 +200,25 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 26px;
-  height: 26px;
-  margin: -13px 0 0 -13px;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
   border: 1px solid var(--color-paper);
   border-radius: 50%;
   pointer-events: none;
   z-index: 80;
   mix-blend-mode: difference;
-  will-change: transform;
-  transition: width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+  will-change: transform, opacity;
+  transition: transform 0.28s var(--ease-expo), opacity 0.2s ease, background-color 0.2s ease;
 }
 
 .cursor-ring.cursor-hover {
-  width: 52px;
-  height: 52px;
-  margin: -26px 0 0 -26px;
+  transform: scale(1.85);
+  background-color: rgba(238, 234, 225, 0.12);
+}
+
+.cursor-ring.cursor-hidden {
+  opacity: 0;
 }
 
 @media (pointer: coarse), (prefers-reduced-motion: reduce) {

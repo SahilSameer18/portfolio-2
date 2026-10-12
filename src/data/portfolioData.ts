@@ -34,7 +34,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 'prepstack',
       number: '01',
-      kicker: '01 / SDE INTERVIEW ECOSYSTEM',
+      kicker: 'SDE INTERVIEW ECOSYSTEM',
       badge: 'React 19 · Express 5 · Gemini AI',
       title: 'PrepStack',
       subtitle: 'Centralized DSA tracking & AI project blueprint generator',
@@ -54,7 +54,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 'inforge',
       number: '02',
-      kicker: '02 / GMAIL SAFETY & AUTOMATION',
+      kicker: 'GMAIL SAFETY & AUTOMATION',
       badge: 'Node.js · BullMQ · PostgreSQL · Gemini',
       title: 'InForge',
       subtitle: 'Gmail triage where the AI only suggests and fixed rules decide',
@@ -73,7 +73,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 'vaultdrive',
       number: '03',
-      kicker: '03 / CLOUD STORAGE & SECURITY',
+      kicker: 'CLOUD STORAGE & SECURITY',
       badge: 'React · Node.js · PostgreSQL · Cloudinary',
       title: 'VaultDrive',
       subtitle: 'Direct-to-cloud uploads, nested folders and secure file sharing',

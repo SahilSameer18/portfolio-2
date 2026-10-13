@@ -1,34 +1,36 @@
-import React from 'react';
-import Image from 'next/image';
-import { portfolioData } from '../data/portfolioData';
+import React from "react";
+import Image from "next/image";
+import { portfolioData } from "../data/portfolioData";
 
 export const SelectedWork: React.FC = () => {
   const { projects, personal } = portfolioData;
 
   const safeHost = (url?: string) => {
-    if (!url) return '';
+    if (!url) return "";
     try {
       return new URL(url).host;
     } catch {
-      return url.replace(/^https?:\/\//, '').split('/')[0];
+      return url.replace(/^https?:\/\//, "").split("/")[0];
     }
   };
 
-  const countStr = projects.length < 10 ? `0${projects.length}` : `${projects.length}`;
+  const countStr =
+    projects.length < 10 ? `0${projects.length}` : `${projects.length}`;
 
   const labels = {
-    sectionAria: 'Selected Work',
-    eyebrow: 'SELECTED WORK',
-    category: 'FULL-STACK & SYSTEMS ARCHITECTURE',
-    headingLine1: 'SELECTED',
-    headingLine2: 'PROJECTS',
+    sectionAria: "Selected Work",
+    eyebrow: "SELECTED WORK",
+    category: "FULL-STACK & SYSTEMS ARCHITECTURE",
+    headingLine1: "SELECTED",
+    headingLine2: "PROJECTS",
     workCountAria: `${projects.length} Projects`,
-    workNote: 'Architected to scale.',
-    workIntro: 'Production web systems, compound-indexed database architectures, and GenAI platforms engineered with Node.js, PostgreSQL, MongoDB, and React.',
-    resumeLink: 'View résumé',
-    openProject: 'LIVE DEMO',
-    openGithub: 'GITHUB',
-    ctaPrompt: 'Building a scalable platform?',
+    workNote: "Architected to scale.",
+    workIntro:
+      "Production web systems, compound-indexed database architectures, and GenAI platforms engineered with Node.js, PostgreSQL, MongoDB, and React.",
+    resumeLink: "View résumé",
+    openProject: "LIVE DEMO",
+    openGithub: "GITHUB",
+    ctaPrompt: "Building a scalable platform?",
     ctaAction: "Let's talk",
   };
 
@@ -40,17 +42,25 @@ export const SelectedWork: React.FC = () => {
       aria-label={labels.sectionAria}
     >
       <div className="flex justify-between gap-6 border-b border-[#45463f] pb-6 text-[12px] tracking-label phone:items-start phone:text-[11px] phone:tracking-[.7px]">
-        <span className="text-[12px] font-medium tracking-label text-accent-light">{labels.eyebrow}</span>
+        <span className="text-[12px] font-medium tracking-label text-accent-light">
+          {labels.eyebrow}
+        </span>
         <span className="text-dark-label phone:hidden">{labels.category}</span>
       </div>
 
       <div className="mb-16 mt-14 grid grid-cols-[1.8fr_1fr] items-end justify-between gap-[6%] phone:my-[35px] phone:block">
         <h2 className="m-0 font-display text-[length:clamp(76px,10.8vw,174px)] font-bold leading-[.86] tracking-[-.025em] phone:text-[length:clamp(45px,16vw,76px)]">
-          <span className="inline-flex items-start text-accent-light" data-motion="work-title-line">
+          <span
+            className="inline-flex items-start text-accent-light"
+            data-motion="work-title-line"
+          >
             {labels.headingLine1}
           </span>
           <br />
-          <span className="inline-flex items-start text-accent-light" data-motion="work-title-line">
+          <span
+            className="inline-flex items-start text-accent-light"
+            data-motion="work-title-line"
+          >
             {labels.headingLine2}
             <span
               className="ml-5 mt-3 font-serif text-[24px] font-normal leading-[1.2] tracking-[0] text-paper"
@@ -60,9 +70,16 @@ export const SelectedWork: React.FC = () => {
             </span>
           </span>
         </h2>
-        <div className="max-w-[330px] pb-1 [justify-self:end] phone:mt-8" data-motion="work-intro">
-          <span className="font-serif text-[32px] font-normal leading-[1.15] text-paper">{labels.workNote}</span>
-          <p className="mb-[22px] mt-[18px] text-[16px] leading-[1.7] text-dark-text">{labels.workIntro}</p>
+        <div
+          className="max-w-[330px] pb-1 [justify-self:end] phone:mt-8"
+          data-motion="work-intro"
+        >
+          <span className="font-serif text-[32px] font-normal leading-[1.15] text-paper">
+            {labels.workNote}
+          </span>
+          <p className="mb-[22px] mt-[18px] text-[16px] leading-[1.7] text-dark-text">
+            {labels.workIntro}
+          </p>
           <a
             className="group flex items-center justify-between border-b border-[#77776b] py-3 text-[14px] transition-colors hover:text-accent-light active:scale-[0.98]"
             href={personal.resumePdf}
@@ -89,13 +106,15 @@ export const SelectedWork: React.FC = () => {
             <article
               key={project.id}
               className={`m-0 min-w-0 p-0 phone:mb-[45px] ${
-                wide ? 'col-[1/-1] grid grid-cols-[1.2fr_1fr] gap-x-[8%] gap-y-0 tablet:block' : ''
+                wide
+                  ? "col-[1/-1] grid grid-cols-[1.2fr_1fr] gap-x-[8%] gap-y-0 tablet:block"
+                  : ""
               }`}
               data-motion="project"
             >
               <div
                 className={`flex justify-between gap-5 pb-[17px] text-[12px] leading-[1.5] tracking-[1.3px] text-[#c6c5ba] ${
-                  wide ? 'col-[1/-1]' : ''
+                  wide ? "col-[1/-1]" : ""
                 }`}
                 data-motion="project-kicker"
               >
@@ -105,7 +124,7 @@ export const SelectedWork: React.FC = () => {
 
               <a
                 className={`group relative isolate block overflow-hidden border border-[#d6d0c3]/60 bg-[linear-gradient(145deg,#ddd7ca,#c8c1b2)] transition-transform active:scale-[0.99] ${
-                  wide ? 'col-[1/-1] row-auto px-[8%] py-[5%]' : 'p-[7%]'
+                  wide ? "col-[1/-1] row-auto px-[8%] py-[5%]" : "p-[7%]"
                 } phone:p-[6%]`}
                 data-motion="project-image"
                 href={targetUrl}
@@ -135,7 +154,11 @@ export const SelectedWork: React.FC = () => {
                     className="block h-auto w-full"
                     src={project.image}
                     alt={project.imageAlt}
-                    sizes={wide ? '(max-width: 900px) 90vw, 55vw' : '(max-width: 600px) 90vw, (max-width: 900px) 42vw, 36vw'}
+                    sizes={
+                      wide
+                        ? "(max-width: 900px) 90vw, 55vw"
+                        : "(max-width: 600px) 90vw, (max-width: 900px) 42vw, 36vw"
+                    }
                     placeholder="blur"
                   />
                 </div>
@@ -146,7 +169,7 @@ export const SelectedWork: React.FC = () => {
 
               <div
                 className={`flex items-center gap-[15px] ${
-                  wide ? '[align-self:start] pt-7' : 'pt-[25px]'
+                  wide ? "[align-self:start] pt-7" : "pt-[25px]"
                 } phone:gap-3.5 phone:pt-5`}
                 data-motion="project-heading"
               >
@@ -157,13 +180,15 @@ export const SelectedWork: React.FC = () => {
                   <h3
                     className={`mb-2.5 font-display font-semibold leading-none tracking-[0] [overflow-wrap:anywhere] phone:text-[28px] ${
                       wide
-                        ? 'text-[length:clamp(48px,5.2vw,76px)]'
-                        : 'text-[length:clamp(28px,3vw,44px)]'
+                        ? "text-[length:clamp(48px,5.2vw,76px)]"
+                        : "text-[length:clamp(28px,3vw,44px)]"
                     }`}
                   >
                     {project.title}
                   </h3>
-                  <p className="text-[14px] leading-[1.5] text-dark-text">{project.subtitle}</p>
+                  <p className="text-[14px] leading-[1.5] text-dark-text">
+                    {project.subtitle}
+                  </p>
                 </div>
                 <a
                   className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border border-[#65685c] text-[26px] transition-all duration-300 hover:scale-105 hover:bg-accent-light hover:text-ink-deep active:scale-95"
@@ -180,7 +205,7 @@ export const SelectedWork: React.FC = () => {
               {project.problem && (
                 <p
                   className={`font-serif text-[22px] leading-[1.3] text-paper ${
-                    wide ? 'col-start-2 mt-7' : 'mt-[22px]'
+                    wide ? "col-start-2 mt-7" : "mt-[22px]"
                   }`}
                   data-motion="project-description"
                 >
@@ -189,8 +214,8 @@ export const SelectedWork: React.FC = () => {
               )}
 
               <p
-                className={`max-w-full text-[16px] leading-[1.7] text-[#bcbeb3] ${wide ? 'col-start-2' : ''} ${
-                  project.problem ? 'mt-3' : wide ? 'mt-7' : 'mt-[22px]'
+                className={`max-w-full text-[16px] leading-[1.7] text-[#bcbeb3] ${wide ? "col-start-2" : ""} ${
+                  project.problem ? "mt-3" : wide ? "mt-7" : "mt-[22px]"
                 }`}
                 data-motion="project-description"
               >
@@ -199,7 +224,7 @@ export const SelectedWork: React.FC = () => {
 
               {project.metrics && (
                 <div
-                  className={`mt-6 flex flex-wrap gap-x-9 gap-y-4 ${wide ? 'col-start-2' : ''}`}
+                  className={`mt-6 flex flex-wrap gap-x-9 gap-y-4 ${wide ? "col-start-2" : ""}`}
                   data-motion="project-metrics"
                 >
                   {project.metrics.map((metric) => (
@@ -207,18 +232,23 @@ export const SelectedWork: React.FC = () => {
                       <span className="block font-display text-[40px] font-semibold leading-none tracking-[.01em] text-accent-light">
                         {metric.value}
                       </span>
-                      <span className="mt-2 block text-[12px] leading-[1.5] text-[#bcbeb3]">{metric.label}</span>
+                      <span className="mt-2 block text-[12px] leading-[1.5] text-[#bcbeb3]">
+                        {metric.label}
+                      </span>
                     </div>
                   ))}
                 </div>
               )}
 
               <div
-                className={`mt-[19px] flex flex-wrap gap-2 [align-self:start] ${wide ? 'col-start-2' : ''}`}
+                className={`mt-[19px] flex flex-wrap gap-2 [align-self:start] ${wide ? "col-start-2" : ""}`}
                 data-motion="project-tags"
               >
                 {project.tags.map((tag, i) => (
-                  <span key={i} className="border border-dark-chip px-2.5 py-[7px] text-[12px] text-dark-chip-text">
+                  <span
+                    key={i}
+                    className="border border-dark-chip px-2.5 py-[7px] text-[12px] text-dark-chip-text"
+                  >
                     {tag}
                   </span>
                 ))}
@@ -234,7 +264,9 @@ export const SelectedWork: React.FC = () => {
                   </a>
                 )}
                 {project.note && (
-                  <span className="basis-full text-[12px] leading-[1.5] text-dark-label">{project.note}</span>
+                  <span className="basis-full text-[12px] leading-[1.5] text-dark-label">
+                    {project.note}
+                  </span>
                 )}
               </div>
             </article>
@@ -246,7 +278,8 @@ export const SelectedWork: React.FC = () => {
         className="mt-14 flex items-center justify-between border-t border-[#45463f] pt-6 text-[16px] phone:mt-[15px] phone:gap-5 phone:text-[14px] phone:leading-[1.7]"
         href={`mailto:${personal.email}`}
       >
-        {labels.ctaPrompt} <span className="font-serif text-[26px] font-normal leading-[normal]">
+        {labels.ctaPrompt}{" "}
+        <span className="font-serif text-[26px] font-normal leading-[normal]">
           {labels.ctaAction} <span aria-hidden="true">↗</span>
         </span>
       </a>

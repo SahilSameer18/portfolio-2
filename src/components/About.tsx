@@ -49,7 +49,7 @@ export const About: React.FC = () => {
         </figure>
 
         <div data-motion="about-copy">
-          <h2 className="m-0 mb-8 font-serif text-[length:clamp(38px,4vw,62px)] font-normal leading-[1.14] phone:text-[43px]">
+          <h2 data-motion="about-title" className="m-0 mb-8 font-serif text-[length:clamp(38px,4vw,62px)] font-normal leading-[1.14] phone:text-[43px]">
             {personal.aboutHeadline}
             <br />
             <span className="inline-block pb-1 text-accent-soft">{personal.aboutItalic}</span>

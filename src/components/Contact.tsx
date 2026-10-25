@@ -46,7 +46,7 @@ export const Contact: React.FC = () => {
         </h2>
         <a
           className="group absolute bottom-[12%] right-[2%] flex size-[145px] items-center justify-center rounded-full border border-dark-line/80 bg-white/[0.02] p-2 backdrop-blur-sm transition-all duration-500 ease-out hover:border-accent-light/60 hover:bg-white/[0.06] hover:scale-[1.06] active:scale-[0.96] tablet:size-[100px] phone:bottom-5 phone:right-0 phone:size-[60px]"
-          href={`mailto:${personal.email}`}
+          href={`mailto:${personal.email}`} data-magnetic="9"
           tabIndex={-1}
           aria-hidden="true"
         >

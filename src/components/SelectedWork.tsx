@@ -192,7 +192,7 @@ export const SelectedWork: React.FC = () => {
                 </div>
                 <a
                   className="flex size-12 min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border border-[#65685c] text-[26px] transition-all duration-300 hover:scale-105 hover:bg-accent-light hover:text-ink-deep active:scale-95"
-                  href={targetUrl}
+                  href={targetUrl} data-magnetic
                   target="_blank"
                   rel="noopener noreferrer"
                   tabIndex={-1}

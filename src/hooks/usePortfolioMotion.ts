@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initSmoothScroll } from './motion/smoothScroll';
 import { initCursor } from './motion/cursor';
+import { initMagnetic } from './motion/magnetic';
 import { initIntro } from './motion/intro';
 import { createReveals, registerSectionReveals } from './motion/reveals';
 import { registerDarkMorph } from './motion/darkMorph';
@@ -23,6 +24,7 @@ export function usePortfolioMotion() {
 
     const { lenis, cleanup: cleanupScroll } = initSmoothScroll(isMotionOk);
     const cleanupCursor = isFinePointer && isMotionOk ? initCursor() : () => {};
+    const cleanupMagnetic = isFinePointer && isMotionOk ? initMagnetic() : () => {};
     const cleanupIntro = initIntro(root, lenis, isMotionOk);
     const cleanupProgress = initProgress(lenis);
     const cleanupActive = initActiveSection();
@@ -46,6 +48,7 @@ export function usePortfolioMotion() {
       cleanupProgress();
       cleanupActive();
       cleanupCursor();
+      cleanupMagnetic();
       cleanupScroll();
       mm.revert();
       ScrollTrigger.getAll().forEach((t) => t.kill());

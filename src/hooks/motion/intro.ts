@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import { SplitText } from 'gsap/SplitText';
 import type Lenis from 'lenis';
 import { m } from './selector';
 
@@ -10,7 +11,8 @@ const DUR = 0.95;
  * Returns a cleanup that cancels this run (the intro state is left for a re-run to pick up).
  */
 export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean): () => void {
-  const fig = document.querySelector('[data-motion="hero-photo"]') as HTMLElement | null;
+  gsap.registerPlugin(SplitText);
+  const fig =document.querySelector('[data-motion="hero-photo"]') as HTMLElement | null;
   const heroImg = fig?.querySelector('img') as HTMLImageElement | null;
   const runIntro = isMotionOk && root.classList.contains('intro') && fig && heroImg && window.scrollY === 0;
 
@@ -27,6 +29,12 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
 
   let over = false;
   let tl: gsap.core.Timeline | null = null;
+  // Letter splits of the two name words; reverted afterwards so the page ends with its original text nodes.
+  const splits: SplitText[] = [];
+  const revertSplits = () => {
+    splits.forEach((s) => s.revert());
+    splits.length = 0;
+  };
   let skipBtn: HTMLButtonElement | null = null;
   let fallback: ReturnType<typeof setTimeout> | undefined;
   const skipEvents = ['wheel', 'touchmove', 'keydown', 'pointerdown'];
@@ -41,6 +49,7 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
       tl.kill();
       tl = null;
     }
+    revertSplits();
     gsap.set([fig, heroImg], { clearProps: 'all' });
     gsap.set(m('dock'), { clearProps: 'transform' });
     introDone();
@@ -88,16 +97,27 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
     const settle = HOLD + DUR * 0.9;
     tl.call(() => root.classList.remove('intro-lift'), [], settle);
 
+    // The two display words arrive letter by letter (SAHIL, then SAMEER); everything else fades in as a block.
+    const letters = (sel: string, at: number) => {
+      const el = document.querySelector<HTMLElement>(m(sel));
+      if (!el) return false;
+      const split = new SplitText(el, { type: 'chars', ignore: '.sr-only' });
+      splits.push(split);
+      gsap.set(el, { opacity: 1, y: 0 });
+      tl?.from(split.chars, { opacity: 0, yPercent: 45, duration: 0.5, ease: 'power3.out', stagger: 0.035 }, settle + at);
+      return true;
+    };
+
     const stage: [string, number][] = [
       ['dock', 0],
       ['hero-top', 0.05],
-      ['hero-title', 0.11],
       ['hero-intro', 0.19],
       ['hero-aside', 0.25],
       ['hero-caption', 0.25],
       ['hero-bottom', 0.31],
-      ['hero-surname', 0.38],
     ];
+    if (!letters('hero-title', 0.11)) stage.push(['hero-title', 0.11]);
+    if (!letters('hero-surname', 0.38)) stage.push(['hero-surname', 0.38]);
     stage.forEach(([sel, d]) => {
       const el = document.querySelector(m(sel));
       if (!el) return;
@@ -130,6 +150,7 @@ export function initIntro(root: HTMLElement, lenis: Lenis, isMotionOk: boolean):
     skipEvents.forEach((t) => window.removeEventListener(t, finishIntro));
     tl?.kill();
     tl = null;
+    revertSplits();
     skipBtn?.remove();
     skipBtn = null;
   };

@@ -54,14 +54,14 @@ export const Hero: React.FC = () => {
           </h2>
           <p className="max-w-[285px] text-[16px] text-muted phone:max-w-full">{personal.heroBio}</p>
           <a
-            href="#contact"
+            href="#contact" data-magnetic
             className="mt-5 hidden border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent [transition:background_.2s,color_.2s] hover:bg-accent hover:text-paper active:scale-[0.98] tablet:inline-block"
           >
             {personal.availability}
           </a>
           <a
             className="group mt-6 flex w-fit max-w-[240px] items-center justify-between border-b border-ink/80 pb-3 text-[14px] font-medium transition-colors hover:text-accent active:scale-[0.98] desk:w-fit desk:max-w-none desk:justify-start desk:gap-3 phone:mt-3 phone:max-w-full"
-            href="#work"
+            href="#work" data-magnetic
           >
             <span>{labels.explore}</span>
             <span
@@ -95,7 +95,7 @@ export const Hero: React.FC = () => {
 
         <div className="relative z-3 [align-self:start] pt-[155px] tablet:hidden" data-motion="hero-aside">
           <a
-            href="#contact"
+            href="#contact" data-magnetic
             className="inline-block border border-accent p-3 text-[12px] font-medium tracking-[1px] text-accent [transition:background_.2s,color_.2s] hover:bg-accent hover:text-paper"
           >
             {personal.availability}

@@ -144,7 +144,7 @@ export const SelectedWork: React.FC = () => {
                     </div>
                     <div className="ml-3 flex items-center gap-2 truncate text-[11px] leading-none tracking-[.04em] text-[#8d9084]">
                       <span className="relative flex size-1.5">
-                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                        <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-emerald-400 opacity-60" />
                         <span className="relative inline-flex size-1.5 rounded-full bg-emerald-500" />
                       </span>
                       <span className="truncate">{safeHost(targetUrl)}</span>

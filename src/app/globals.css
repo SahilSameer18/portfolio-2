@@ -215,11 +215,13 @@
   z-index: 80;
   mix-blend-mode: difference;
   will-change: transform, opacity;
-  transition: transform 0.28s var(--ease-expo), opacity 0.2s ease, background-color 0.2s ease;
+  /* GSAP moves the ring with an inline `transform`, so the hover grow uses the separate `scale` property
+     (and `transform` is not transitioned, which would add a second layer of easing and make the ring lag). */
+  transition: scale 0.28s var(--ease-expo), opacity 0.2s ease, background-color 0.2s ease;
 }
 
 .cursor-ring.cursor-hover {
-  transform: scale(1.85);
+  scale: 1.85;
   background-color: rgba(238, 234, 225, 0.12);
 }
 

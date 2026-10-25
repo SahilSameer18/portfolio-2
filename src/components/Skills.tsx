@@ -5,8 +5,8 @@ export const Skills: React.FC = () => {
   const { skills, strengths } = portfolioData;
 
   const labels = {
-    eyebrow: 'TECHNICAL CAPABILITIES',
-    tagline: 'ENGINEERED FOR RESILIENCE',
+    eyebrow: 'SKILLS',
+    tagline: 'TOOLS I WORK WITH',
     headline: 'The Core Stack.',
     italic: 'Engineered to scale.',
   };

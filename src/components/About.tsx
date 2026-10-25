@@ -8,7 +8,7 @@ export const About: React.FC = () => {
   const { personal } = portfolioData;
 
   const labels = {
-    eyebrow: 'ENGINEERING PHILOSOPHY',
+    eyebrow: 'THE DEVELOPER BEHIND THE CODE',
     location: personal.location,
     photoAlt: `${personal.name} ${personal.surname} — ${personal.role}`,
     photoCaption: `${personal.name.toUpperCase()} ${personal.surname.toUpperCase()} / ${personal.role.toUpperCase()}`,

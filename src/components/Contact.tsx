@@ -7,7 +7,7 @@ export const Contact: React.FC = () => {
   const { personal } = portfolioData;
 
   const labels = {
-    eyebrow: 'INITIATE CONTACT',
+    eyebrow: 'GET IN TOUCH',
     sub: 'FULL-STACK / BACKEND / ENGINEERING',
     intro: 'Backend-focused web apps, APIs and AI features.',
     headingLine1: "LET'S BUILD",
@@ -65,7 +65,7 @@ export const Contact: React.FC = () => {
         </a>
         <CopyEmailButton email={personal.email} />
 
-        <div className="ml-auto flex gap-6 text-[14px] tablet:ml-0 tablet:w-full phone:mt-[15px]">
+        <div className="ml-auto flex flex-wrap gap-x-6 gap-y-3 text-[14px] tablet:ml-0 tablet:w-full phone:mt-[15px]">
           {site.socials.map((social) => (
             <a
               key={social.label}

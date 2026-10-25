@@ -60,7 +60,7 @@ export const Hero: React.FC = () => {
             {personal.availability}
           </a>
           <a
-            className="group mt-6 inline-flex max-w-[240px] items-center justify-between border-b border-ink/80 pb-3 text-[14px] font-medium transition-colors hover:text-accent active:scale-[0.98] desk:w-fit desk:max-w-none desk:justify-start desk:gap-3 phone:mt-3 phone:max-w-full"
+            className="group mt-6 flex w-fit max-w-[240px] items-center justify-between border-b border-ink/80 pb-3 text-[14px] font-medium transition-colors hover:text-accent active:scale-[0.98] desk:w-fit desk:max-w-none desk:justify-start desk:gap-3 phone:mt-3 phone:max-w-full"
             href="#work"
           >
             <span>{labels.explore}</span>

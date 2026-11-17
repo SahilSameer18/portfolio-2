@@ -2,8 +2,7 @@ import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-/** Lenis smooth scroll driven by the GSAP ticker; hash links are routed through it.
- *  With smooth=false (reduced motion) wheel scrolling stays native and anchor jumps are instant. */
+/** Lenis handles wheel motion while the browser handles in-page navigation. */
 export function initSmoothScroll(smooth = true) {
   const lenis = new Lenis({
     autoRaf: false,
@@ -18,21 +17,23 @@ export function initSmoothScroll(smooth = true) {
   gsap.ticker.add(tick);
   gsap.ticker.lagSmoothing(0);
 
-  const onAnchorClick = (e: MouseEvent) => {
-    const anchor = (e.target as HTMLElement).closest('a[href^="#"]');
-    const href = anchor?.getAttribute('href');
-    if (!href || href === '#') return;
+  const stopWheelInertia = () => {
+    if (lenis.isScrolling !== 'smooth') return;
+    lenis.stop();
+    lenis.start();
+  };
 
-    const element = document.querySelector(href);
-    if (element) {
-      e.preventDefault();
-      lenis.scrollTo(element as HTMLElement, { offset: -24, immediate: !smooth });
-    }
+  const onAnchorClick = (event: MouseEvent) => {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    const anchor = event.target instanceof Element && event.target.closest('a[href^="#"]');
+    if (anchor) stopWheelInertia();
   };
   document.addEventListener('click', onAnchorClick);
+  window.addEventListener('popstate', stopWheelInertia);
 
   const cleanup = () => {
     document.removeEventListener('click', onAnchorClick);
+    window.removeEventListener('popstate', stopWheelInertia);
     gsap.ticker.remove(tick);
     lenis.destroy();
   };

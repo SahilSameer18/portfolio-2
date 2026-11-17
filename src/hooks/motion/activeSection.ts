@@ -1,20 +1,42 @@
-/**
- * Marks the dock link of the section currently in the middle of the viewport (data-active="true").
- * Links opt in with data-section="<section id>". Styling lives in Navigation.tsx.
- */
+/** Keeps the dock's visual and accessible current-section state in sync with scrolling. */
 export function initActiveSection(): () => void {
-  const links = [...document.querySelectorAll<HTMLElement>('[data-motion="dock"] [data-section]')];
-  const sections = [...new Set(links.map((l) => l.dataset.section!))]
-    .map((id) => document.getElementById(id))
-    .filter((el): el is HTMLElement => !!el);
+  const links = [...document.querySelectorAll<HTMLAnchorElement>('[data-motion="dock"] [data-section]')];
+  const sections = links.flatMap((link) => {
+    const section = document.getElementById(link.dataset.section ?? '');
+    return section ? [{ link, section }] : [];
+  });
+  if (!sections.length) return () => {};
 
-  const setActive = (id: string) => links.forEach((l) => (l.dataset.active = String(l.dataset.section === id)));
+  let active: HTMLAnchorElement | undefined;
+  let frame: number | undefined;
 
-  const io = new IntersectionObserver(
-    (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
-    { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
-  );
-  sections.forEach((s) => io.observe(s));
+  const update = () => {
+    frame = undefined;
+    const viewport = window.innerHeight;
+    const atBottom = window.scrollY > 0 &&
+      window.scrollY + viewport >= document.documentElement.scrollHeight - 1;
+    const next = atBottom
+      ? sections[sections.length - 1].link
+      : sections.findLast(({ section }) => section.getBoundingClientRect().top <= viewport * 0.35)?.link
+        ?? sections[0].link;
 
-  return () => io.disconnect();
+    if (next === active) return;
+    active?.removeAttribute('aria-current');
+    next.setAttribute('aria-current', 'location');
+    active = next;
+  };
+
+  const scheduleUpdate = () => {
+    frame ??= requestAnimationFrame(update);
+  };
+  update();
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate);
+
+  return () => {
+    window.removeEventListener('scroll', scheduleUpdate);
+    window.removeEventListener('resize', scheduleUpdate);
+    if (frame !== undefined) cancelAnimationFrame(frame);
+    active?.removeAttribute('aria-current');
+  };
 }

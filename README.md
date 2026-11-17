@@ -17,8 +17,8 @@ An editorial, single-page site with scroll-driven motion, built to be fast, acce
 
 | Project | What it is |
 |---|---|
-| [**PrepStack**](https://prepstack-ss.vercel.app) | Interview prep in one place: DSA sheet tracking, CS notes, roadmaps and AI-generated project ideas. |
-| [**InForge**](https://inforge-s.vercel.app) | Gmail triage where the AI only suggests and a fixed rule engine decides, with background job queues and one-click undo. Code available on request. |
+| [**PrepStack**](https://prepstack-ss.vercel.app) | An interview study planner that fits coding practice, CS notes, and reviews into the learner’s schedule. The Role Analyzer connects résumé gaps to study tasks. |
+| [**InForge**](https://inforge-s.vercel.app) | Rules-based Gmail triage with AI suggestions, an approval flow, and an audit log that supports undo for label changes. Code available on request. |
 | [**VaultDrive**](https://vaultdrive-s.vercel.app) | Cloud storage with direct-to-cloud uploads, nested folders, trash recovery and secure sharing. |
 
 ## Tech stack

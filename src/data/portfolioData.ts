@@ -35,25 +35,24 @@ export const portfolioData: PortfolioData = {
     {
       id: "prepstack",
       number: "01",
-      kicker: "SDE INTERVIEW ECOSYSTEM",
-      badge: "React 19 · Express 5 · Gemini AI",
+      kicker: "INTERVIEW PREP & STUDY PLANNING",
+      badge: "React 19 · Express 5 · MongoDB",
       title: "PrepStack",
-      subtitle: "Centralized DSA tracking & AI project blueprint generator",
+      subtitle: "A study planner for software engineering interviews",
       problem:
-        "Interview prep is scattered across DSA sheets, CS notes, behavioural tips and generic AI project ideas.",
+        "Interview prep is scattered across problem lists and notes. The harder part is deciding what to study today.",
       description:
-        "A full-stack interview preparation ecosystem unifying Gemini AI project generation, asynchronous DSA progress tracking across industry sheets, and single-request dashboard aggregation.",
+        "I built a planner that schedules coding practice, CS notes, and reviews around the time you have. The Role Analyzer checks AI-cited evidence against your résumé and calculates a score from the job requirements. You can preview how the report’s recommendations would change your study plan before adding them.",
       image: prepstackImage,
-      imageAlt: "PrepStack SDE Interview Ecosystem dashboard preview",
+      imageAlt: "PrepStack homepage with links to DSA sheets, roadmaps, and AI projects",
       metrics: [
         {
-          value: "−31%",
-          label:
-            "initial bundle size, measured before and after route-based code splitting",
+          value: "5 sheets",
+          label: "DSA problem sets available in the study planner",
         },
         {
-          value: "<20s",
-          label: "average AI idea generation time (varies with the API)",
+          value: "1 request",
+          label: "for dashboard DSA progress and generated project counts",
         },
       ],
       tags: ["React 19", "Express 5", "MongoDB", "Zod", "Gemini AI", "JWT"],
@@ -64,22 +63,20 @@ export const portfolioData: PortfolioData = {
     {
       id: "inforge",
       number: "02",
-      kicker: "GMAIL SAFETY & AUTOMATION",
+      kicker: "RULES-BASED GMAIL TRIAGE",
       badge: "Node.js · BullMQ · PostgreSQL · Gemini",
       title: "InForge",
-      subtitle:
-        "Gmail triage where the AI only suggests and fixed rules decide",
-      problem: "AI can't be trusted to change a real mailbox.",
+      subtitle: "AI suggestions with rules, approval, and undo",
+      problem: "Inbox automation can make a mess when a model misreads an important email.",
       description:
-        "InForge lets Gemini suggest actions while a rule engine decides what is allowed: bank, security and legal mail is never touched, nothing is deleted or sent, and every change can be undone. Built with background job queues, live Gmail push updates and encrypted tokens.",
+        "Gemini suggests actions, and a rules engine blocks unsafe changes or asks for approval. BullMQ workers handle Gmail sync and allowed actions in the background. An audit log records previous labels so users can undo changes like archiving.",
       image: inforgeImage,
       imageAlt:
         "InForge landing page: The AI proposes. The Safety Engine disposes.",
       metrics: [
         {
           value: "41",
-          label:
-            "automated test suites covering safety rules, queues and security",
+          label: "test suites covering rules, rollback, queues, and more",
         },
         {
           value: "6",
